@@ -11,3 +11,9 @@
     justify-content: flex-center;
     width: 80%;
 }
+.fondo{
+    background-color: rgb(204, 218, 224);
+}
+.fondo-titulos{
+    background-color: rgba(229, 229, 229, 0.765);
+}
