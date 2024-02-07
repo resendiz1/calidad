@@ -17,3 +17,6 @@
 .fondo-titulos{
     background-color: rgba(229, 229, 229, 0.765);
 }
+small{
+    font-size: 0.8em;
+}
