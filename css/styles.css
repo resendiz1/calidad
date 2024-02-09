@@ -20,3 +20,21 @@
 small{
     font-size: 0.8em;
 }
+
+.sombra{
+    box-shadow: 10px 10px 10px 10px rgba(0.3, 0.3, 0.3, 0.3);
+}
+body{
+    background-image: url(../img/fondo.webp) ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.area-a-imprimir {
+    display: block; /* Asegura que el área sea visible durante la impresión */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
