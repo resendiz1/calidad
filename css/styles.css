@@ -56,9 +56,25 @@ body{
 
 .resizeable-div {
     transition: all 0.3s ease;
+    background-color: white;
 }
 
 /* Estilo cuando el mouse pasa por encima */
 .resizeable-div:hover {
+    background-color: #ffffffad;
     transform: scale(1.2); /* Hace el div 20% más grande */
+}
+
+.resizeable-table{
+    transition: all 0.3s ease;
+    background-color: white;
+}
+.resizeable-table:hover{
+    background-color: #e9e7e7;
+    transform: scale(1.01); /* Hace el div 20% más grande */
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }
