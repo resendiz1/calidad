@@ -399,7 +399,7 @@
                     <div class="col-sm-12 col-md-12 col-lg-4 border text-center">
                     <label for="" class="fw-bold">DICTAMEN FINAL: <mark> {{$fvu->usuario_logeado}} </mark></label>
                     <br> <br>
-                        @if ($fvu->dictamen_final= 'LIBERADO')
+                        @if ($fvu->dictamen_final== 'LIBERADO')
                         
                         <h5 class="mx-3 text-white bg-success py-1 px-2"><i class="fa fa-circle-check"></i> {{$fvu->dictamen_final}}</h5>
                             

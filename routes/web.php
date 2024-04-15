@@ -68,13 +68,30 @@ Route::get('/admin/busqueda/fvu/{fvu}/lleno', [Controlador::class, 'fvu_lleno'])
 
 
 
+//Rutas de los productos, proveedores y linea transportista
+Route::get('admin/datos', [Controlador::class, 'datos_admin'])->name('datos.admin');
+Route::post('admin/datos/add_proveedor', [Controlador::class, 'add_proveedores'])->name('add.proveedores');
+Route::delete('admin/datos/{proveedor}/delete_proveedor', [Controlador::class, 'delete_proveedor'])->name('delete.proveedor');
+
+
+Route::post('admin/datos/add_transportista', [Controlador::class, 'add_transportista'])->name('add.transportista');
+Route::delete('admin/datos/{transportista}/delete_transportista', [Controlador::class, 'delete_transportista'])->name('delete.transportista');
+
+
+Route::post('/admin/datos/add_productos', [Controlador::class, 'add_productos'])->name('add.productos');
+Route::delete('/admin/datos/{producto}/delete_producto', [ Controlador::class, 'delete_producto'])->name('delete.producto');
+
+
+//Rutas de los productos, proveedores y linea transportista
+
+
 
 
 
 
 
 //Rutas del usuario
-Route::view('/user', 'user.perfil')->name('user.perfil')->middleware('auth');
+Route::view('/user', 'user.perfil')->name('user.perfil');
 
 
 //Rutas del formato de materia prima
@@ -110,12 +127,21 @@ Route::get('/user/fvu/{fvu}/fvu_lleno', [Controlador::class, 'fvu_lleno'])->name
 
 
 
-Route::get('/user/fvu/almacen/pendientes', [Controlador::class, 'fvu_pendientes'])->name('fvu.pendientes');
-Route::get('/users/fvu/almace/pendientes/{fvu}/verificar', [Controlador::class, 'fvu_verificar'])->name('fvu.verificar');
+Route::get('/user/fvu/almacen/pendientes', [Controlador::class, 'fvu_pendientes'])->name('fvu.pendientes')->middleware('auth');
+Route::get('/users/fvu/almace/pendientes/{fvu}/verificar', [Controlador::class, 'fvu_verificar'])->name('fvu.verificar')->middleware('auth');
 
-Route::post('/user/fvu/almacen/verificado/post',[Controlador::class, 'almacen_fvu_verificar'])->name('almacen.fvu.verificar');
+Route::post('/user/fvu/almacen/verificado/post',[Controlador::class, 'almacen_fvu_verificar'])->name('almacen.fvu.verificar')->middleware('auth');
 
 //Rutas del formato de verificacion de vehiculos
+
+
+
+
+
+
+
+
+
 
 
 

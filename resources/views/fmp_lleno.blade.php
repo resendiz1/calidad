@@ -7,7 +7,6 @@
 
 <div class="container bg-white  p-5 sombra .area-a-imprimir"> <!--Contenedor de todo -->
 
-
 <!-- encabezado -->
 
 <div class="container shadow shadow-sm">

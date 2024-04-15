@@ -1,5 +1,5 @@
 <!-- BARRA DE NAVEGACIÓN -->
-<div class="container-fluid bg-light border-bottom border-5 tiempo">
+<div class="container-fluid p-0 bg-light border-bottom border-5">
     <div class="row p-2 justify-content-center">
 
         <div class="col-sm-6 col-md-4 col-lg-2 d-flex align-items-center text-center mt-2 mb-2">

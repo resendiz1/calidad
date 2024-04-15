@@ -7,6 +7,9 @@ use App\Models\Fmp;
 use App\Models\Fvu;
 use App\Models\Fpnc;
 use App\Models\User;
+use App\Models\Producto;
+use App\Models\Proveedor;
+use App\Models\Transportista;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -69,6 +72,71 @@ class Controlador extends Controller
 
     public function showAdmin(){
         return view('admin.perfil');
+    }
+
+
+
+    public function datos_admin(){
+
+        $proveedores = DB::select("SELECT*FROM proveedores");
+        $transportistas = DB::select("SELECT*FROM transportista");
+        $productos = DB::select("SELECT*FROM productos");
+
+        return view('admin.datos', compact('proveedores', 'transportistas', 'productos'));
+    }
+
+
+
+    public function delete_proveedor(Proveedor $proveedor){
+  
+        $proveedor->delete();
+        return back()->with('proveedor_eliminado', 'El proveedor fue eliminado');
+
+    }
+
+
+
+
+    public function add_proveedores(){
+
+        $proveedor = new Proveedor();
+        $proveedor->nombre_proveedor = request('nombre_proveedor');
+        $proveedor->save();
+        
+
+        return back()->with('add_proveedor', 'El proveedor fue agregado');
+    }
+
+    public function add_transportista(){
+
+        $transportista = new Transportista();
+        $transportista->nombre_transportista = request('nombre_transportista');
+        $transportista->save();
+        return back()->with('add_transportista', 'El Transportista fue agregado');
+
+    }
+
+    public function delete_transportista(Transportista $transportista){
+        $transportista->delete();
+        return back()->with('delete_transportista', 'El transportista fue eliminado');
+    }
+
+
+    public function add_productos(){
+
+        $producto = new Producto();
+        $producto->nombre_producto = request('nombre_producto');
+        $producto->save();
+
+        return back()->with('add_producto', 'El producto se agrego con exito');
+
+
+    }
+
+    public function delete_producto(Producto $producto){
+        $producto->delete();
+
+        return back()->with('producto_delete', 'El producto fue borrado');
     }
 
 

@@ -36,7 +36,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-lock p-1"></i> </span>
                             </div>
-                            <input type="password" name="password" class="form-control form-control-sm login" value="{{old('password')}}" aria-describedby="input-group-prepend" placeholder="Contraseña" >
+                            <input type="password" name="password" class="form-control form-control-sm login" value="{{old('password')}}"  placeholder="Contraseña" >
                         </div>
                     </div>
                 </div>

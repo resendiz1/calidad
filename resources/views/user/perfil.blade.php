@@ -242,6 +242,10 @@
  
 @endif
 
+
+
+
+
 {{-- alertas de que el usurio se agrego con exito o que hubo un error se desaparecen en 3 segundos--}}
 @if (session('agregado'))
     <script>

@@ -97,4 +97,28 @@ a{
 }
 
 
+/* Estilos personalizados */
+.table-coqueta {
+  background-color: #f8f9fa; /* Fondo gris claro */
+}
+
+.table-coqueta th,
+.table-coqueta td {
+  border-top: none; /* Eliminar la línea superior de las celdas */
+}
+
+.table-coqueta th {
+  border-bottom: 2px solid #e9ecef; /* Línea inferior */
+}
+
+.table-coqueta tbody tr:hover {
+  background-color: #e2e6ea; /* Cambio de color al pasar el ratón sobre la fila */
+}
+
+.scroll-tabla{
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+
 

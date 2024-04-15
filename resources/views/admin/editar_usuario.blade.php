@@ -71,20 +71,31 @@
                         
                         @if ($usuario->area == 'CALIDAD')
                             <option selected value="{{$usuario->area}}">{{$usuario->area}}</option>
-                            <option value="PRODUCCIÓN">PRODUCCIÓN</option>
+                            <option value="PRODUCCION">PRODUCCIÓN</option>
                             <option value="BASCULA">BASCULA</option>
+                            <option value="ALMACEN">ALMACEN</option>
                         @endif
 
-                        @if ($usuario->area == 'PRODUCCIÓN')
+                        @if ($usuario->area == 'PRODUCCION')
                             <option selected value="{{$usuario->area}}">{{$usuario->area}}</option>
                             <option value="CALIDAD">CALIDAD</option>
                             <option value="BASCULA">BASCULA</option>
+                            <option value="ALMACEN">ALMACEN</option>
                         @endif
 
                         @if ($usuario->area == 'BASCULA')
                             <option selected value="{{$usuario->area}}">{{$usuario->area}}</option>
                             <option value="CALIDAD">CALIDAD</option>
-                            <option value="PRODUCCIÓN">PRODUCCIÓN</option>
+                            <option value="PRODUCCION">PRODUCCIÓN</option>
+                            <option value="ALMACEN">ALMACEN</option>
+                        @endif
+
+                        
+                        @if ($usuario->area == 'ALMACEN')
+                        <option selected value="{{$usuario->area}}">{{$usuario->area}}</option>
+                        <option value="CALIDAD">CALIDAD</option>
+                        <option value="PRODUCCION">PRODUCCIÓN</option>
+                        <option value="BASCULA">BASCULA</option>
                         @endif
 
 

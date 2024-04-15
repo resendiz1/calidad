@@ -46,7 +46,7 @@
                     </div>
                     <div class="row">
                     <div class="col-sm-6 col-md-4 col-lg-4 border fw-bold text-center">Pagina</div>
-                    <div class="col-sm-6 col-md-8 col-lg-8 border p-0 text-center" >1 de 4</div>
+                    <div class="col-sm-6 col-md-8 col-lg-8 border p-0 text-center" >1 de 1</div>
                     </div>
             
                 </div>

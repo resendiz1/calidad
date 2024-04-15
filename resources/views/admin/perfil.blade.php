@@ -103,7 +103,7 @@
 <div class="col-sm-12 col-md-6 col-lg-4 m-3 border border-5 fondo p-3 mt-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h6>GESTIONAR USUARIOS</h6>
+            <h6>GESTIONAR DATOS</h6>
         </div>
     </div>
 
@@ -119,6 +119,23 @@
                     </div>
                     <div class="col-12">
                         <i class="fa fa-pencil fa-2x mt-2"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{-- card rellenar  formatos materia prima --}}
+
+
+
+        {{-- card rellenar  formatos materia prima --}}
+        <div class="col-sm-12 col-lg-6 sombra btn resizeable-div   border border-5 m-2">
+            <a href="{{route('datos.admin')}}">
+                <div class="row">
+                    <div class="col-12">
+                        <h6 class="mx-auto mt-3">GESTIONAR DATOS</h6>
+                    </div>
+                    <div class="col-12">
+                        <i class="fa fa-table fa-2x mt-2"></i>
                     </div>
                 </div>
             </a>
