@@ -140,9 +140,11 @@
 
               <div class="col-10 text-left p-0">
                 <select class="text-left form-select form-control mt-1" name="producto">
-                  <option value="Pulidura de arroz">Pulidura de arroz</option>
-                  <option value="Salvadillo">Salvadillo</option>
-                  <option value="Alfalfa">Alfalfa</option>
+                  @forelse ($productos as $producto)
+                    <option value="{{$producto->nombre_producto}}">{{$producto->nombre_producto}}</option>  
+                  @empty
+                      <option value="no hay productos">no hay productos</option>
+                  @endforelse
                 </select>
               </div>
 
@@ -152,8 +154,13 @@
 
               <div class="col-10 p-0">
                 <select class="text-left form-select form-control mt-1" name="proveedor">
-                  <option value="Roberto Beristain">Roberto Beristain</option>
-                  <option value="PROMEXA">PROMEXA</option>
+                  @forelse ($proveedores as $proveedor)
+                    <option value="{{$proveedor->nombre_proveedor}}">{{$proveedor->nombre_proveedor}}</option>      
+                  @empty
+                    <option value="sin proveedor">sin proveedor</option>
+                      
+                  @endforelse
+           
                 </select>
               </div>
 
@@ -186,10 +193,13 @@
               
               <div class="col-10 text-left p-0">
                 <select class="text-left form-select form-control mt-2" name="linea_transportista">
-                  <option value="Tinisa">Tinisa</option>
-                  <option value="SCP">SCP</option>
-                  <option value="villaueva">villaueva</option>
-                  <option value="BMER">BMER</option>
+                  @forelse ($transportes as $transporte)
+                    <option value="{{$transporte->nombre_transportista}}">{{$transporte->nombre_transportista}}</option>  
+                  @empty
+                    <option value="no hay transporte">no hay transporte</option>  
+
+                      
+                  @endforelse
                 </select>
               </div>
 

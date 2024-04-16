@@ -5,8 +5,18 @@
 
 
 
-<div class="container mt-5">
-    <div class="row justify-content-around">
+<div class="container mt-3">
+
+    <div class="row justify-content-center mb-5">
+        <div class="col-3 text-center">
+            <a href="{{route('admin.view')}}" class="btn btn-success w-100">Regresar</a>
+        </div>
+    </div>
+
+
+
+
+    <div class="row justify-content-around mt-5">
 
 
 
@@ -102,7 +112,7 @@
                         <form action="{{route('add.proveedores')}}" method="POST" class="mt-4">
                             @csrf
                             <div class="form-group">
-                                <input type="text" name="nombre_proveedor" class="form-control w-100" placeholder="Nombre">
+                                <input type="text" name="nombre_proveedor" id="nombre_proveedor" class="form-control w-100 text-uppercase" placeholder="Nombre">
                             </div>
                             <div class="form-group mt-3">
                                 <button class="btn btn-success btn-sm w-100">Agregar</button>
@@ -227,7 +237,7 @@
                         <form action="{{route('add.transportista')}}" method="POST" class="mt-4">
                             @csrf
                             <div class="form-group">
-                                <input type="text" name="nombre_transportista" class="form-control w-100" placeholder="Nombre">
+                                <input type="text" name="nombre_transportista" id="nombre_transportista" class="form-control w-100 text-uppercase" placeholder="Nombre">
                             </div>
                             <div class="form-group mt-3">
                                 <button class="btn btn-success btn-sm w-100">Agregar</button>
@@ -357,7 +367,7 @@
                         <form action="{{route('add.productos')}}" method="POST" class="mt-4">
                             @csrf
                             <div class="form-group">
-                                <input type="text" name="nombre_producto" class="form-control w-100" placeholder="Nombre">
+                                <input type="text" name="nombre_producto" id="nombre_productos" class="form-control w-100 text-uppercase" placeholder="Nombre">
                             </div>
                             <div class="form-group mt-3">
                                 <button class="btn btn-success btn-sm w-100">Agregar</button>
@@ -400,6 +410,28 @@
 
 
 
+<script>
+    
+    // {{-- focus en el modal de agregar proveedor --}}
+    $('#add_proveedores').on('shown.bs.modal', function(){
+        $('#nombre_proveedor').focus();
+    })
+
+    $('#add_transportistas').on('shown.bs.modal', function(){
+        $('#nombre_transportista').focus();
+    })
+
+    $('#add_productos').on('shown.bs.modal', function(){
+        $('#nombre_productos').focus();
+    })
+
+
+    
+    // {{-- focus en el modal de agregar proveedor --}}
+</script>
+
+
+
 
 {{-- notificaciones  --}}
 
@@ -415,7 +447,7 @@
 
             setTimeout(function(){
                 window.location.replace(window.location.href);
-            }, 2500);
+            }, 500);
          });
         
     </script>
@@ -437,7 +469,7 @@
 
             setTimeout(function(){
                 window.location.replace(window.location.href);
-            }, 2500);
+            }, 500);
          });
         
     </script>
@@ -458,7 +490,7 @@
 
             setTimeout(function(){
                 window.location.replace(window.location.href);
-            }, 2500);
+            }, 500);
          });
         
     </script>
@@ -500,7 +532,7 @@
 
             setTimeout(function(){
                 window.location.replace(window.location.href);
-            }, 2500);
+            }, 500);
          });
         
     </script>

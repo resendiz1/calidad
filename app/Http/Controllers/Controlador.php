@@ -134,6 +134,7 @@ class Controlador extends Controller
     }
 
     public function delete_producto(Producto $producto){
+
         $producto->delete();
 
         return back()->with('producto_delete', 'El producto fue borrado');
@@ -259,8 +260,21 @@ class Controlador extends Controller
         $usuarios_planta = DB::select("SELECT nombre_completo FROM USERS WHERE planta LIKE $planta AND area LIKE '$area' ");
         //Obteniendo todos los usuario
 
+        //Datos del proveedor//
+        $proveedores = DB::select("SELECT*FROM proveedores");
+        //Datos del proveedor//
 
-        return view('user.fmp_rellenar', compact('fecha', 'usuarios_planta'));
+
+        //Datos del producto
+        $productos = DB::select("SELECT*FROM productos");
+        //Datos del producto
+
+        //Datos de los transportes
+        $transportes = DB::select("SELECT*FROM transportista");
+        //Datos de los transportes
+
+
+        return view('user.fmp_rellenar', compact('fecha', 'usuarios_planta', 'proveedores', 'productos', 'transportes'));
 
 
     }
@@ -670,8 +684,19 @@ class Controlador extends Controller
         //Obteniendo la fecha
 
 
+        //DATOS DEL TRANSPORTISTA
+        $transportes = DB::select("SELECT*FROM transportista");
+        //DATOS DEL TRANSPORTISTA
 
-        return view('user.fvu_rellenar', compact('fecha'));
+        //DATOS DEL PROVEEDOR / CLIENTE
+        $proveedores = DB::select("SELECT*FROM proveedores");
+        //DATOS DEL PROVEEDOR / CLIENTE
+
+
+
+
+
+        return view('user.fvu_rellenar', compact('fecha', 'transportes', 'proveedores'));
     }
 
 
