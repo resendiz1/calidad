@@ -188,6 +188,28 @@
                 </a>
             </div>
         </div>
+
+
+
+            {{-- card documentos generados formato materia prima --}}
+        <div class="col-sm-12 col-md-3 mt-1 col-lg-3 sombra btn resizeable-div  border border-5 mt-5">
+            <a href="{{route('fmp.generados')}}">
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <h5 class="mx-auto">DOCUMENTOS GENERADOS</h5>
+                        <small>FORMATO DE RECEPCIÓN DE MATERIA PRIMA</small>
+                    </div>
+                <div class="col-12">
+                       <i class="fa-solid fa-magnifying-glass fa-2x mt-3"></i>
+                 </div>
+                </div>
+            </a>
+        </div>
+              {{-- card documentos generados formato materia prima --}}            
+
+        
+
+
  
 @endif
 

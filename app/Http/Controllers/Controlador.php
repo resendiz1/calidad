@@ -17,6 +17,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 class Controlador extends Controller
 {
+
+
     protected $guard = 'adminis'; 
 
 
@@ -147,7 +149,7 @@ class Controlador extends Controller
 
         request()->validate([
             'nombre' => 'required|string|max:100',
-            'email'  => 'required|email|unique:users',
+            'email'  => 'required',
             'password' => 'required|string|min:6'
         ]);    
 
@@ -407,11 +409,18 @@ class Controlador extends Controller
     }
 
 
+
+    
+
+
     public function fmp_lleno(Fmp $fmp){
 
         return view('fmp_lleno', compact('fmp'));
 
     }
+
+
+
 
 
     public function pendientes_revisar(){
@@ -443,6 +452,9 @@ class Controlador extends Controller
    
         return view('user.tabla_fmp_por_revisar', compact('pendientes', 'reviso'));
     }
+
+
+
 
 
 

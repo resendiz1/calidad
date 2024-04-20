@@ -511,6 +511,7 @@
               </div>
               <div class="col-6">
                 <select class="text-left form-select mt-1 form-control" name="equipo_muestreo">
+                  <option value="NO APLICA">NO APLICA</option>
                   <option value="CALADOR DE ALVEOLOS">CALADOR DE ALVEOLOS</option>
                   <option value="CALDO DE MANO">CALADOR DE MANO</option>
                   <option value="CAVA HOYOS">CAVA HOYOS</option>
@@ -580,6 +581,7 @@
               
               <div class="col-12 border p-2">
                 <select class="text-center form-select mt-1 form-control p-0" name="aceptado_concesion">
+                  <option value="NO APLICA">NO APLICA</option>
                   <option value="SR. ROBERTO BERISTAIN ">SR. ROBERTO BERISTAIN </option>
                   <option value="DR. SAMUEL BERISTAIN ">DR. SAMUEL BERISTAIN </option>
                   <option value="SR. MOISES BRITAIN ">SR. MOISES BERISTAIN </option>

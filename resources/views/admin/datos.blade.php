@@ -112,7 +112,7 @@
                         <form action="{{route('add.proveedores')}}" method="POST" class="mt-4">
                             @csrf
                             <div class="form-group">
-                                <input type="text" name="nombre_proveedor" id="nombre_proveedor" class="form-control w-100 text-uppercase" placeholder="Nombre">
+                                <input type="text" name="nombre_proveedor" id="nombre_proveedor" class="form-control w-100 text-uppercase" placeholder="Nombre" required>
                             </div>
                             <div class="form-group mt-3">
                                 <button class="btn btn-success btn-sm w-100">Agregar</button>
@@ -237,7 +237,7 @@
                         <form action="{{route('add.transportista')}}" method="POST" class="mt-4">
                             @csrf
                             <div class="form-group">
-                                <input type="text" name="nombre_transportista" id="nombre_transportista" class="form-control w-100 text-uppercase" placeholder="Nombre">
+                                <input type="text" name="nombre_transportista" id="nombre_transportista" class="form-control w-100 text-uppercase" placeholder="Nombre" required>
                             </div>
                             <div class="form-group mt-3">
                                 <button class="btn btn-success btn-sm w-100">Agregar</button>
@@ -367,7 +367,7 @@
                         <form action="{{route('add.productos')}}" method="POST" class="mt-4">
                             @csrf
                             <div class="form-group">
-                                <input type="text" name="nombre_producto" id="nombre_productos" class="form-control w-100 text-uppercase" placeholder="Nombre">
+                                <input type="text" name="nombre_producto" id="nombre_productos" class="form-control w-100 text-uppercase" placeholder="Nombre" required>
                             </div>
                             <div class="form-group mt-3">
                                 <button class="btn btn-success btn-sm w-100">Agregar</button>
