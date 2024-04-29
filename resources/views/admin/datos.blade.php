@@ -59,14 +59,14 @@
                 <td>{{substr($proveedor->created_at, 0, -9)}}</td>
                 <td>{{$proveedor->nombre_proveedor}}</td>
                 <td>
-                    <button class="btn btn-danger btn-sm w-50" data-bs-toggle="modal" data-bs-target="#d{{$proveedor->id}}">
+                    <button class="btn btn-danger btn-sm " data-bs-toggle="modal" data-bs-target="#veedor{{$proveedor->id}}">
                         <i class="fa fa-eraser"></i>
                     </button>
                 </td>
             </tr>
 
                                 {{-- modal confirma eliminacion --}}
-            <div class="modal fade" id="d{{$proveedor->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="veedor{{$proveedor->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-sm">
                     <div class="modal-content ">
                         <div class="modal-body">
@@ -179,11 +179,11 @@
                     <tr>
                         <td>{{substr($transportista->created_at, 0, -9)}}</td>
                         <td>{{$transportista->nombre_transportista}}</td>
-                        <td><button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#d{{$transportista->id}}"><i class="fa fa-eraser"></i></button></td>
+                        <td><button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#trans{{$transportista->id}}"><i class="fa fa-eraser"></i></button></td>
                     </tr>
 
                                 {{-- modal confirma eliminacion --}}
-                    <div class="modal fade" id="d{{$transportista->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="trans{{$transportista->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-sm">
                             <div class="modal-content ">
                                 <div class="modal-body">
@@ -307,12 +307,12 @@
                     <tr>
                         <td>{{substr($producto->created_at, 0 , -9)}}</td>
                         <td>{!!$producto->nombre_producto!!}</td>
-                        <td><button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#d{{$producto->id}}"><i class="fa fa-eraser"></i></button></td>
+                        <td><button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#pro{{$producto->id}}"><i class="fa fa-eraser"></i></button></td>
                     </tr>
 
 
                                 {{-- modal confirma eliminacion --}}
-                    <div class="modal fade" id="d{{$producto->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="pro{{$producto->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-sm">
                             <div class="modal-content ">
                                 <div class="modal-body">
