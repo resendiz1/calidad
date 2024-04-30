@@ -208,7 +208,7 @@
               </div>
 
               <div class="col-10 p-0">
-                <input type="text" class="form-control mt-1" name="operador" value="{{old('operador')}}">
+                <input type="text" class="form-control mt-1" id="operador" oninput="convertir()"  name="operador" value="{{old('operador')}}">
                 {!! $errors->first('operador', '<small class="text-danger fw-bold">:message</small> ' ) !!}
               </div>
               <div class="col-10 p-0 fondo-titulos mt-3">        
@@ -739,6 +739,18 @@
 
 
 </div><!--Cierra contenedor de todo-->
+
+
+
+
+
+<script>
+
+
+
+
+
+</script>
 
 
 

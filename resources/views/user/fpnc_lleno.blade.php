@@ -261,12 +261,18 @@
         <div class="col-sm-6 col-md-4 col-lg-4 p-4">
             <div class="row">
                 <div class="col-12 border text-center" id="imagen1">
-                    <img src="{{Storage::url($fpnc->foto1)}}" class="img-fluid"  alt="" data-bs-toggle="modal" data-bs-target="#e{{$fpnc->lote}}">
+                    @if ($fpnc->foto1 != '')
+                        <img src="{{Storage::url($fpnc->foto1)}}" class="img-fluid"  alt="" data-bs-toggle="modal" data-bs-target="#b{{$fpnc->lote}}">
+
+                    @else
+                        <img src="{{asset('img/no_image.png')}}" class="img-fluid" alt="">
+
+                    @endif
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="e{{$fpnc->lote}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="b{{$fpnc->lote}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
             <div class="modal-content">
                     <img src="{{Storage::url($fpnc->foto1)}}" class="img-fluid"  alt="" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -283,7 +289,15 @@
         <div class="col-sm-6 col-md-4 col-lg-4 p-4">
             <div class="row">
                 <div class="col-12 border text-center" id="imagen1">
-                    <img src="{{Storage::url($fpnc->foto2)}}" class="img-fluid"  alt="" data-bs-toggle="modal" data-bs-target="#e{{$fpnc->via_notificacion}}">
+                    @if ($fpnc->foto2 != '')
+                        <img src="{{Storage::url($fpnc->foto2)}}" class="img-fluid"  alt="" data-bs-toggle="modal" data-bs-target="#e{{$fpnc->via_notificacion}}">
+
+                    @else
+                        <img src="{{asset('img/no_image.png')}}" class="img-fluid" alt="">
+
+                    @endif
+
+
                 </div>
             </div>
         </div>
@@ -305,12 +319,18 @@
         <div class="col-sm-6 col-md-4 col-lg-4 p-4">
             <div class="row">
                 <div class="col-12 border text-center" id="imagen1">
-                    <img src="{{Storage::url($fpnc->foto3)}}" class="img-fluid"  data-bs-toggle="modal" data-bs-target="#e{{$fpnc->folio}}">
+                    @if ($fpnc->foto3 != '')
+                    <img src="{{Storage::url($fpnc->foto3)}}" class="img-fluid"  alt="" data-bs-toggle="modal" data-bs-target="#k{{$fpnc->lote}}">
+
+                @else
+                    <img src="{{asset('img/no_image.png')}}" class="img-fluid" alt="">
+
+                @endif
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="e{{$fpnc->folio}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="k{{$fpnc->folio}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
             <div class="modal-content ">
                     <img src="{{Storage::url($fpnc->foto3)}}" class="img-fluid"  alt="" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -428,12 +448,26 @@
 
 
 
+
+
 <!-- boton de guardar todo alv -->
 
 </div><!--Cierra contenedor de todo-->
 
 
-
+{{-- para que se vea --}}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 

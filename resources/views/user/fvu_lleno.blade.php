@@ -360,7 +360,15 @@
                             </div>
 
                             <div class="col-12 p-2 border border border-2" id="firma_preview">
-                                 <img src="{{Storage::url($fvu->firma_operador)}}" alt="Firma {{$fvu->operador}}" class="img-fluid w-50 fotos" alt="" data-bs-toggle="modal" data-bs-target="#sign{{$fvu->folio}}">
+
+                                @if ($fvu->firma_operador != null)
+                                    <img src="{{Storage::url($fvu->firma_operador)}}" alt="Firma {{$fvu->operador}}" class="img-fluid w-50 fotos" alt="" data-bs-toggle="modal" data-bs-target="#sign{{$fvu->folio}}">
+                                    
+                                @else
+                                    <img src="{{asset('img/no_image.png')}}" class="img-fluid" alt="">
+                                @endif
+
+
                             </div>
 
                             {{-- modal de la imagen 3 --}}
@@ -438,7 +446,13 @@
                 <div class="col-sm-12 col-md-4 col-lg-4 border text-center shadow shadow-sm">
                     <div class="row">
                         <div class="col-12 fotos" id="imagenPrevia">
-                             <img src="{{Storage::url($fvu->evidencia1)}}" class="img-fluid" alt="Evidencia 1" data-bs-toggle="modal" data-bs-target="#b{{$fvu->folio}}">
+                            @if ($fvu->evidencia != null)
+                                <img src="{{Storage::url($fvu->evidencia1)}}" class="img-fluid" alt="Evidencia 1" data-bs-toggle="modal" data-bs-target="#b{{$fvu->folio}}">
+                                
+                            @else
+                                <img src="{{asset('img/no_image.png')}}" class="img-fluid" alt="">
+                            @endif
+
                         </div>
                     </div>
                 </div>
@@ -461,7 +475,15 @@
                 <div class="col-sm-12 col-md-4 col-lg-4 border text-center shadow shadow-sm">
                     <div class="row">
                         <div class="col-12 fotos" id="imagenPrevia2">
-                            <img src="{{Storage::url($fvu->evidencia2)}}" class="img-fluid" alt="Evidencia 2" data-bs-toggle="modal" data-bs-target="#a{{$fvu->folio}}">
+
+                            @if ($fvu->evidencia2 != null)
+                                <img src="{{Storage::url($fvu->evidencia2)}}" class="img-fluid" alt="Evidencia 2" data-bs-toggle="modal" data-bs-target="#a{{$fvu->folio}}">
+                                
+                            @else
+                                <img src="{{asset('img/no_image.png')}}" class="img-fluid" alt="">
+                            @endif
+
+
                         </div>
                      </div>
                 </div>
@@ -486,7 +508,13 @@
                 <div class="col-sm-12 col-md-4 col-lg-4 border text-center shadow shadow-sm">
                      <div class="row">
                         <div class="col-12  fotos" id="imagenPrevia3">
-                            <img src="{{Storage::url($fvu->evidencia3)}}" class="img-fluid" alt="Evidencia 3" data-bs-toggle="modal" data-bs-target="#e{{$fvu->folio}}">
+                            @if ($fvu->evidencia3 != null)
+                                <img src="{{Storage::url($fvu->evidencia3)}}" class="img-fluid" alt="Evidencia 3" data-bs-toggle="modal" data-bs-target="#e{{$fvu->folio}}">
+                                
+                            @else
+                                <img src="{{asset('img/no_image.png')}}" class="img-fluid" alt="">
+                            @endif
+
                         </div>
                      </div>
                 </div>
@@ -539,6 +567,14 @@
         </div>
             <!-- contenedor de todo -->
 
+<script>
+    
+
+ 
+
+
+
+</script>
 
 
 @endsection

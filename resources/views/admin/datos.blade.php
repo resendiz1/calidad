@@ -41,9 +41,11 @@
             <hr>
 
         <div class="row scroll-tabla">
-
+            <div class="col-12 mt-2">
+                <input type="text" class="form-control w-100 form-control-sm" id="buscador_proveedores" placeholder="Buscar . . .">
+            </div>
         
-            <table class="table  table-striped mt-3 ">
+            <table class="table  table-striped mt-3 " id="lista_proveedores">
                 <thead>
                   <tr>
                     <th scope="col">Creado</th>
@@ -567,7 +569,26 @@
 
 
 
+<script>
+{
 
+    document.getElementById("buscador_proveedores").addEventListener("input", function() {
+      var filtro = this.value.toUpperCase();
+      var lista = document.getElementById("lista_proveedores");
+      var elementos = lista.getElementsByTagName("tr");
+    
+      for (var i = 0; i < elementos.length; i++) {
+        var textoElemento = elementos[i].textContent || elementos[i].innerText;
+        if (textoElemento.toUpperCase().indexOf(filtro) > -1) {
+          elementos[i].style.display = "";
+        } else {
+          elementos[i].style.display = "none";
+        }
+      }
+    });
+}
+
+</script>
 
 
 
