@@ -120,5 +120,14 @@ a{
     overflow-y: auto;
 }
 
+/* imprimiendo hoja */
+@media print {
+    @page {
+      size: A2; /* Puedes cambiar esto a otros tamaños de papel como 'letter', 'legal', etc. */
+      /* También puedes especificar el ancho y alto directamente:
+         width: 21cm;
+         height: 29.7cm; */
+    }
+  }
 
 

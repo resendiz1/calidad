@@ -3,7 +3,7 @@
 @include('assets.nav')  
 @section('title', $fmp->folio)  
  
-<br>
+<br><br>
 
 <div class="container bg-white  p-5 sombra .area-a-imprimir"> <!--Contenedor de todo -->
 
@@ -927,7 +927,45 @@
 
 
 
+  <div class="row justify-content-center mt-5">
+    <div class="col-3 text-center">
+      <button class="btn btn-secondary d-print-none" id="print">
+        print
+      </button>
+    </div>
+  </div>
+
 
 </div><!--Cierra contenedor de todo-->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script>
+ const $print = document.getElementById('print');
+
+ $print.addEventListener('click', function(){
+
+
+    var doc = new jsPDF({
+        orientation: 'portrait', // 'portrait' o 'landscape'
+        unit: 'cm', // 'mm', 'cm', 'in', o 'px'
+        format: 'a2' // 'a3', 'a4' (por defecto), 'a5', 'letter', 'legal'
+    });
+    
+    // Agrega contenido al documento PDF
+    doc.text("Contenido de tu página", 1, 1);
+    
+    // Imprime el documento
+    doc.autoPrint();
+    doc.output('print');
+
+
+
+
+})
+
+
+
+</script>
 
 @endsection

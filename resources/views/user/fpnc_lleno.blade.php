@@ -125,9 +125,9 @@
 <div class="container mt-4">
     <div class="row border p-4 d-flex justify-content-center">
 
-        <div class="col-sm-12 col-md-12 col-lg-3 mt-2">
+        <div class="col-sm-12 col-md-12 col-lg-6 mt-2">
             <div class="row">
-                <div class="col-4">
+                <div class="col-auto">
                     <span class="fw-bold">Proveedor: </span>
                 </div>
                 <div class="col-6">
@@ -136,9 +136,9 @@
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-12 col-lg-3 mt-2">
+        <div class="col-sm-12 col-md-12 col-lg-6 mt-2">
             <div class="row">
-                <div class="col-3">
+                <div class="col-auto">
                     <span class="fw-bold">Producto: </span>
                 </div>
                 <div class="col-6">
@@ -147,9 +147,9 @@
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-12 col-lg-4 mt-2">
+        <div class="col-sm-12 col-md-12 col-lg-6 mt-2">
             <div class="row">
-                <div class="col-4">
+                <div class="col-auto">
                     <span class="fw-bold">Presentación: </span>
                 </div>
                 <div class="col-6">
@@ -158,9 +158,9 @@
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-12 col-lg-2 mt-2">
+        <div class="col-sm-12 col-md-12 col-lg-6 mt-2">
             <div class="row">
-                <div class="col-4">
+                <div class="col-auto">
                     <span class="fw-bold">Planta: </span>
                 </div>
                 <div class="col-6">
@@ -235,7 +235,7 @@
         <div class="col-12 text-center fondo">
             <span class="fw-bold">Desviación:</span>
         </div>
-        <div class="col-12 mt-2 p-0">
+        <div class="col-12 mt-2 px-5 py-2 border">
             <p>{{$fpnc->desviacion}}</p>            
         </div>
     </div>
@@ -261,6 +261,7 @@
         <div class="col-sm-6 col-md-4 col-lg-4 p-4">
             <div class="row">
                 <div class="col-12 border text-center" id="imagen1">
+                
                     @if ($fpnc->foto1 != '')
                         <img src="{{Storage::url($fpnc->foto1)}}" class="img-fluid"  alt="" data-bs-toggle="modal" data-bs-target="#b{{$fpnc->lote}}">
 

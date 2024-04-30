@@ -4,8 +4,9 @@
 @section('title', 'Datos')
 
 
-
-<div class="container mt-3">
+<br><br>
+<br><br>
+<div class="container-fluid mt-3">
 
     <div class="row justify-content-center mb-5">
         <div class="col-3 text-center">
@@ -22,7 +23,7 @@
 
 {{-- TABLA Y MODAL DE LOS DATOS DE PROVEEDORES --}}
 
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 border m-3 bg-white sombra p-4 ">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 border m-3 bg-white sombra p-4 ">
             <div class="row justify-content-center">
                 <div class="col-2 text-center"></div>
 
@@ -36,15 +37,15 @@
                     </a>
                 </div>
 
+                <div class="col-12 my-4">
+                    <input type="text" class="form-control w-100 form-control-sm position-sticky p-2" id="buscador_proveedores" placeholder="Buscar . . ." autofocus>
+                </div>
+            
+
+
             </div>
 
-            <hr>
-
-        <div class="row scroll-tabla">
-            <div class="col-12 mt-2">
-                <input type="text" class="form-control w-100 form-control-sm" id="buscador_proveedores" placeholder="Buscar . . .">
-            </div>
-        
+        <div class="row scroll-tabla">       
             <table class="table  table-striped mt-3 " id="lista_proveedores">
                 <thead>
                   <tr>
@@ -147,7 +148,7 @@
 
 
 
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 border m-3 bg-white sombra p-4">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 border m-3 bg-white sombra p-4">
 
             <div class="row justify-content-center">
                 <div class="col-2 text-center"></div>
@@ -162,14 +163,15 @@
                     </a>
                 </div>
 
+                <div class="col-12 my-4">
+                    <input type="text" class="form-control w-100 form-control-sm p-2" id="buscador_transportistas" placeholder="Buscar . . .">
+                </div>
+
             </div>
-            <hr>
+
 
 
         <div class="row scroll-tabla">
-            <div class="col-12 mt-2">
-                <input type="text" class="form-control w-100 form-control-sm" id="buscador_transportistas" placeholder="Buscar . . .">
-            </div>
         
             <table class="table table-coqueta table-striped mt-3" id="lista_transportistas">
                 <thead>
@@ -277,7 +279,7 @@
 
 
 
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 border m-3 bg-white sombra p-4">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 border m-3 bg-white sombra p-4">
 
             <div class="row justify-content-center">
 
@@ -295,13 +297,18 @@
                     </a>
                 </div>
 
+                <div class="col-12 my-4">
+                    <input type="text" class="form-control form-control-sm w-100 my-2 p-2" id="buscador_productos" placeholder="Buscar ...">
+                </div>
+
+
+
+
             </div>
-            <hr>
+
 
             <div class="row scroll-tabla">
-                <div class="col-12">
-                    <input type="text" class="form-control form-control-sm w-100 my-2" id="buscador_productos" placeholder="Buscar ...">
-                </div>
+
                 <table class="table table-coqueta table-striped" id="lista_productos">
                     <thead>
                     <tr>

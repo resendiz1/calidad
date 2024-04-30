@@ -73,29 +73,41 @@
                             <option selected value="{{$usuario->area}}">{{$usuario->area}}</option>
                             <option value="PRODUCCION">PRODUCCIÓN</option>
                             <option value="BASCULA">BASCULA</option>
-                            <option value="ALMACEN">ALMACEN</option>
+                            <option value="ALMACEN PT">ALMACEN PT</option>
+                            <option value="ALMACEN MP">ALMACEN MP</option> 
                         @endif
 
                         @if ($usuario->area == 'PRODUCCION')
                             <option selected value="{{$usuario->area}}">{{$usuario->area}}</option>
                             <option value="CALIDAD">CALIDAD</option>
                             <option value="BASCULA">BASCULA</option>
-                            <option value="ALMACEN">ALMACEN</option>
+                            <option value="ALMACEN PT">ALMACEN PT</option>
+                            <option value="ALMACEN MP">ALMACEN MP</option> 
                         @endif
 
                         @if ($usuario->area == 'BASCULA')
                             <option selected value="{{$usuario->area}}">{{$usuario->area}}</option>
                             <option value="CALIDAD">CALIDAD</option>
                             <option value="PRODUCCION">PRODUCCIÓN</option>
-                            <option value="ALMACEN">ALMACEN</option>
+                            <option value="ALMACEN PT">ALMACEN PT</option>
+                            <option value="ALMACEN MP">ALMACEN MP</option> 
                         @endif
 
                         
-                        @if ($usuario->area == 'ALMACEN')
-                        <option selected value="{{$usuario->area}}">{{$usuario->area}}</option>
-                        <option value="CALIDAD">CALIDAD</option>
-                        <option value="PRODUCCION">PRODUCCIÓN</option>
-                        <option value="BASCULA">BASCULA</option>
+                        @if ($usuario->area == 'ALMACEN MP')
+                            <option selected value="{{$usuario->area}}">{{$usuario->area}}</option>
+                            <option value="ALMACEN PT">ALMACEN PT</option>                        
+                            <option value="CALIDAD">CALIDAD</option>
+                            <option value="PRODUCCION">PRODUCCIÓN</option>
+                            <option value="BASCULA">BASCULA</option>
+                        @endif
+
+                        @if ($usuario->area == 'ALMACEN PT')
+                            <option selected value="{{$usuario->area}}">{{$usuario->area}}</option>
+                            <option value="ALMACEN MP">ALMACEN MP</option>                        
+                            <option value="CALIDAD">CALIDAD</option>
+                            <option value="PRODUCCION">PRODUCCIÓN</option>
+                            <option value="BASCULA">BASCULA</option>
                         @endif
 
 

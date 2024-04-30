@@ -446,7 +446,7 @@
                 <div class="col-sm-12 col-md-4 col-lg-4 border text-center shadow shadow-sm">
                     <div class="row">
                         <div class="col-12 fotos" id="imagenPrevia">
-                            @if ($fvu->evidencia != null)
+                            @if ($fvu->evidencia1 != null)
                                 <img src="{{Storage::url($fvu->evidencia1)}}" class="img-fluid" alt="Evidencia 1" data-bs-toggle="modal" data-bs-target="#b{{$fvu->folio}}">
                                 
                             @else

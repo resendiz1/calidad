@@ -690,6 +690,10 @@ class Controlador extends Controller
 
     public function fvu_rellenar(){
 
+        //saco los datos de la persona que esta logeada para saber de que planta y de que area es, aunque el area ahuevo tendria que ser calidad pero igual losdejo por si hay alguna opcion de update
+        $planta = Auth::user()->planta;
+        $area = Auth::user()->area;
+
         //Obteniendo la fecha
         Carbon::setLocale(config('app.locale'));
         $fecha = Carbon::now()->isoFormat('LL');
@@ -704,11 +708,13 @@ class Controlador extends Controller
         $proveedores = DB::select("SELECT*FROM proveedores");
         //DATOS DEL PROVEEDOR / CLIENTE
 
+        $usuarios = DB::select("SELECT*FROM users WHERE planta LIKE $planta AND area LIKE '$area'");
 
 
 
 
-        return view('user.fvu_rellenar', compact('fecha', 'transportes', 'proveedores'));
+
+        return view('user.fvu_rellenar', compact('fecha', 'transportes', 'proveedores', 'usuarios'));
     }
 
 

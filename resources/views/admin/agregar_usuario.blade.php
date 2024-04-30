@@ -71,7 +71,8 @@
                         <option value="CALIDAD">CALIDAD</option>
                         <option value="PRODUCCION">PRODUCCIÓN</option>
                         <option value="BASCULA">BASCULA</option>
-                        <option value="ALMACEN">ALMACEN</option>
+                        <option value="ALMACEN MP">ALMACEN MP</option>
+                        <option value="ALMACEN PT">ALMACEN PT</option>
                     </select>
                 </div>
 

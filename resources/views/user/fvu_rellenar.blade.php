@@ -72,7 +72,6 @@
                     <div class=" col-auto bg-white mt-1">
                         <h6 class="mt-2">No. {{Auth::user()->planta}}</h6>
                         <input type="hidden" name="planta" value="{{Auth::user()->planta}}">
-                        <input type="hidden" name="usuario_logeado" value="{{Auth::user()->nombre_completo}}">
                     </div>
                     </div>
                     
@@ -453,10 +452,10 @@
                                 <h6>EL OPERADOR SE ATRIBUYE EL GARANTIZAR LA INTEGRIDAD DE LA CARGA</h6>
                             </div>
                             <div class="col-12 p-2 border border border-2" id="firma_preview">
-                            <img src="https://cdn-icons-png.flaticon.com/512/104/104645.png" class="img-fluid w-50" alt="">
+                                 <img src="https://cdn-icons-png.flaticon.com/512/104/104645.png" class="img-fluid w-50" alt="">
                             </div>
                             <div class="col-12 p-2 border border border-2">
-                            <input type="file" class="form-control" name="firma" id="firma">
+                                  <input type="file" class="form-control" name="firma" id="firma">
                             </div>
                         </div>
                     </div>
@@ -480,16 +479,29 @@
             
             
                 <div class="row mt-3">
-                    <div class="col-sm-12 col-md-12 col-lg-2">
-                    <label for="" class="fw-bold">DICTAMEN FINAL: <mark> {{Auth::user()->nombre_completo}} </mark></label>
-            
-                    <select class="form-select form-control-lg" name="dictamen_final" aria-label="Default select example">
-                        <option value="LIBERADO">LIBERADO</option>
-                        <option value="RECHAZADO">RECHAZADO</option>
-                    </select>
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                    
+                        <b>LIBERO:</b> 
+                        <select class="form-select form-control-sm" name="usuario_logeado" aria-label="Default select example">
+                           @forelse ($usuarios as $usuario)
+                            <option value="{{$usuario->nombre_completo}}">{{$usuario->nombre_completo}}</option>
+                           @empty
+                            <li> No hay datos para mostrar</li>
+                           @endforelse
+                        </select>
+              
+                            <br>
+    
+                        <b>DICTAMEN FINAL:</b>
+                        <select class="form-select form-control-lg" name="dictamen_final" aria-label="Default select example">
+                            <option value="LIBERADO">LIBERADO</option>
+                            <option value="RECHAZADO">RECHAZADO</option>
+                        </select>
+
+
                     </div>
             
-                    <div class="col-sm-12 col-md-12 col-lg-10 mt-2">
+                    <div class="col-sm-12 col-md-12 col-lg-8 mt-2">
                         <label for="" class="fw-bold">OBSERVACIONES </label>
                             <textarea class="form-control w-100" name="observaciones">{{old('observaciones')}}</textarea>
                     </div>
@@ -652,7 +664,7 @@
 
             reader.onload = function(e){
                 var preview = document.getElementById('firma_preview');
-                preview.innerHTML = '<img src="' + e.target.result + '" alt="Vista previa de imagen" class="img-fluid" >';
+                preview.innerHTML = '<img src="' + e.target.result + '" alt="Vista previa de imagen" class="img-fluid w-50" >';
             }
 
             reader.readAsDataURL(file);
