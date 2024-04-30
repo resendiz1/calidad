@@ -167,7 +167,11 @@
 
 
         <div class="row scroll-tabla">
-            <table class="table table-coqueta table-striped mt-3">
+            <div class="col-12 mt-2">
+                <input type="text" class="form-control w-100 form-control-sm" id="buscador_transportistas" placeholder="Buscar . . .">
+            </div>
+        
+            <table class="table table-coqueta table-striped mt-3" id="lista_transportistas">
                 <thead>
                     <tr>
                         <th scope="col">Creado</th>
@@ -295,7 +299,10 @@
             <hr>
 
             <div class="row scroll-tabla">
-                <table class="table table-coqueta table-striped">
+                <div class="col-12">
+                    <input type="text" class="form-control form-control-sm w-100 my-2" id="buscador_productos" placeholder="Buscar ...">
+                </div>
+                <table class="table table-coqueta table-striped" id="lista_productos">
                     <thead>
                     <tr>
                         <th scope="col">Creado</th>
@@ -586,6 +593,45 @@
         }
       }
     });
+}
+
+
+{
+
+document.getElementById("buscador_transportistas").addEventListener("input", function() {
+  var filtro = this.value.toUpperCase();
+  var lista = document.getElementById("lista_transportistas");
+  var elementos = lista.getElementsByTagName("tr");
+
+  for (var i = 0; i < elementos.length; i++) {
+    var textoElemento = elementos[i].textContent || elementos[i].innerText;
+    if (textoElemento.toUpperCase().indexOf(filtro) > -1) {
+      elementos[i].style.display = "";
+    } else {
+      elementos[i].style.display = "none";
+    }
+  }
+});
+}
+
+
+
+{
+
+document.getElementById("buscador_productos").addEventListener("input", function() {
+  var filtro = this.value.toUpperCase();
+  var lista = document.getElementById("lista_productos");
+  var elementos = lista.getElementsByTagName("tr");
+
+  for (var i = 0; i < elementos.length; i++) {
+    var textoElemento = elementos[i].textContent || elementos[i].innerText;
+    if (textoElemento.toUpperCase().indexOf(filtro) > -1) {
+      elementos[i].style.display = "";
+    } else {
+      elementos[i].style.display = "none";
+    }
+  }
+});
 }
 
 </script>
