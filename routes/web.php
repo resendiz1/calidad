@@ -85,6 +85,14 @@ Route::delete('/admin/datos/{producto}/delete_producto', [ Controlador::class, '
 //Rutas de los productos, proveedores y linea transportista
 
 
+//Admin  exportando a excel fmp
+Route::get('/admin/busqueda/excelExport',[Controlador::class, 'fmp_excel'])->name('fmp.excel');
+
+
+
+
+
+
 
 
 

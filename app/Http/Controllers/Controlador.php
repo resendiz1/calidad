@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\Request;
+use App\Exports\FmpExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class Controlador extends Controller
 {
@@ -891,6 +894,13 @@ class Controlador extends Controller
 
 
 
+    }
+
+
+    //Exportando a excel
+
+    public function fmp_excel(){
+        return Excel::download(new FmpExport, 'fmp.xlsx');
     }
 
 

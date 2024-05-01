@@ -11,6 +11,12 @@
                 Regresar
             </a>
         </div>
+        <div class="col-12 text-center">
+            <a href="{{route('fmp.excel')}}" class="btn btn-secondary btn-sm">
+                <i class="fa-regular fa-file-excel  mx-2"></i>
+                Exportar (beta)
+            </a>
+        </div>
     </div>
 </div>
 
