@@ -3,6 +3,34 @@
 @include('assets.nav')
 @section('title', 'FO/GP/CC/070/05')
     
+{{-- boton de regresar --}}
+<div class="container my-4">
+    <div class="row justify-content-center">
+
+        @if (request()->url() == 'http://calidad.test/admin/busqueda/fvu/1/lleno')
+        <div class="col-2 text-center">
+          <a href="{{route('busqueda.fvu')}}" class="btn btn-success btn-sm w-100 d-print-none">
+            Regresar
+          </a>
+        </div>
+        @endif
+
+        @if (request()->url() == 'http://calidad.test/user/fvu/1/fvu_lleno')
+        <div class="col-2 text-center">
+            <a href="{{route('fvu.tabla')}}" class="btn btn-success btn-sm w-100 d-print-none">
+              Regresar
+            </a>
+        </div>     
+        @endif
+
+
+
+
+
+
+    </div>
+  </div>
+  {{-- boton de regresar --}}
 
 
         <!-- contenedor de todo -->

@@ -14,15 +14,21 @@
             <div class="row justify-content-center">
                 <div class="col-12 text-center mb-0">
                     <h6>
-                        @if (isset(Auth::user()->nombre_completo))
-                        {{  Auth::user()->nombre_completo}}
+                        @if (isset(Auth::user()->nombre_completo) && Auth::guard('adminis')->user() == null )
+
+                             @if (isset(Auth::guard()->user))
+                                 {{  Auth::user()->nombre_completo}}
+                             @else
+                                 {{  Auth::user()->nombre_completo}}    
+                             @endif
+
+                        @else
+                            {{Auth::guard('adminis')->user()->nombre_completo}}
                         @endif
 
                       
 
-                        @if (isset(Auth::guard()->user))
-                            {{  Auth::user()->nombre_completo}}
-                        @endif
+
                     </h6>
                 </div>
                 <div class="col-12 text-center mt-0">
@@ -37,6 +43,6 @@
     </div>
 </div>
 <!-- BARRA DE NAVEGACIÓN -->
-<br>
-<br>
-<br>
+<br class="d-print-none">
+<br class="d-print-none">
+<br class="d-print-none">

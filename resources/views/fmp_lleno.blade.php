@@ -3,7 +3,37 @@
 @include('assets.nav')  
 @section('title', $fmp->folio)  
  
-<br><br>
+<br class="d-print-none">
+<br>
+
+{{-- boton de regresar --}}
+<div class="container mb-4">
+  <div class="row justify-content-center">
+
+    @if (Auth::guard('adminis')->user() == null &&  isset(Auth::user()->nombre_completo))
+    
+        <div class="col-2 text-center">
+          <a href="{{route('fmp.generados')}}" class="btn btn-success btn-sm w-100 d-print-none">
+            Regresar
+          </a>
+        </div>
+    @else
+
+      <div class="col-2 text-center">
+        <a href="{{route('busqueda.fmp')}}" class="btn btn-success btn-sm w-100 d-print-none">
+          Regresar
+        </a>
+      </div>
+        
+    @endif
+   
+    
+
+
+  </div>
+</div>
+{{-- boton de regresar --}}
+
 
 <div class="container bg-white  p-5 sombra .area-a-imprimir"> <!--Contenedor de todo -->
 
