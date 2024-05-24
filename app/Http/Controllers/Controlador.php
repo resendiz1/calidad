@@ -324,7 +324,6 @@ class Controlador extends Controller
         //validando los datos obligatorios
         request()->validate([
             'hora_recepcion' => 'required',
-            'lote' => 'required',
             'operador' => 'required',
             'placas_transporte' => 'required',
             'placas_caja' => 'required',
@@ -789,7 +788,9 @@ class Controlador extends Controller
 
 
         if($planta == 3){
+    
             $mas_alto = DB::select("SELECT MAX(folio_p3) as id  FROM fvu");
+
             $folio = "PL3-0".$mas_alto[0]->id + 1;
             
             $folio_planta = 'folio_p3'; //igualo la variable al nombre de la columna que se va a utilizar
@@ -901,6 +902,17 @@ class Controlador extends Controller
 
     public function fmp_excel(){
         return Excel::download(new FmpExport, 'fmp.xlsx');
+    }
+
+
+    public function add_lote($id){
+
+        $usuario = Fmp::findOrFail($id);
+        $usuario->lote = request('lote');
+        $usuario->save();
+
+        return back();
+
     }
 
 

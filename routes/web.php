@@ -99,13 +99,13 @@ Route::get('/admin/busqueda/excelExport',[Controlador::class, 'fmp_excel'])->nam
 
 
 //Rutas del usuario
-Route::view('/user', 'user.perfil')->name('user.perfil');
+Route::view('/user', 'user.perfil')->name('user.perfil')->middleware('auth');
 
 
 //Rutas del formato de materia prima
 Route::view('/user/fmp', 'user.fmp_rellenar')->middleware('auth');
 Route::get('/user/fmp', [Controlador::class, 'fmp_rellenar'])->name('fmp.rellenar')->middleware('auth');
-Route::post('/user/fmp/agregar', [Controlador::class, 'fmp_agregar'])->name('fmp.agregar');
+Route::post('/user/fmp/agregar', [Controlador::class, 'fmp_agregar'])->name('fmp.agregar')->middleware('auth');
 Route::get('/user/fmp/generados', [Controlador::class, 'fmp_generados'])->name('fmp.generados')->middleware('auth');
 Route::get('/fmp/generados/{fmp}/llenos', [Controlador::class, 'fmp_lleno'])->name('fmp.lleno');
 Route::get('/user/fmp_pendientes_revisar', [Controlador::class, 'pendientes_revisar'])->name('pendientes.revisar')->middleware('auth');
@@ -143,6 +143,9 @@ Route::post('/user/fvu/almacen/verificado/post',[Controlador::class, 'almacen_fv
 //Rutas del formato de verificacion de vehiculos
 
 
+
+//Agregando el lote un formato que quedo pendiente
+Route::post('/fmp/generados/{id}/llenos/lote', [Controlador::class, 'add_lote'])->name('add.lote');
 
 
 

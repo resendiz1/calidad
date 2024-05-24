@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('hora_recepcion');
             $table->string('producto');
             $table->string('proveedor');
-            $table->string('lote');
+            $table->string('lote')->default('pendiente')->nullable();
             $table->string('linea_transportista');
             $table->string('nombre_operador');
             $table->string('placas_transporte');

@@ -170,7 +170,6 @@
 
               <div class="col-10 p-0">
                 <input type="text" class="form-control mt-1" name="lote" value="{{old('lote')}}" >
-                {!! $errors->first('lote', '<small class="text-danger fw-bold">:message </small>' ) !!}
               </div>
 
             </div>

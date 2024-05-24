@@ -171,8 +171,19 @@
             <h6 class="mt-1">LOTE</h6>
         </div>
 
-        <div class="col-10 p-0">
+        <div class="col-10 p-0 ">
+          @if ($fmp->lote == 'pendiente' and isset(Auth::user()->nombre_completo))
+            <h6 class="m-2 text-danger fw-bold">{{$fmp->lote}}</h6>
+            
+            @if ($fmp->usuario_logeado === Auth::user()->nombre_completo)
+                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#lote">Llenar LOTE</button>
+            @else
+              <button class="btn btn-success btn-sm" disabled>Llenar LOTE</button>
+            @endif
+
+          @else
             <h6 class="m-2">{{$fmp->lote}}</h6>
+          @endif
         </div>
 
       </div>
@@ -668,7 +679,7 @@
         </div>
 
         @if ($fmp->dwg)
-        <div class="col-6">
+        <div class="col-6 border">
             <h6 class="m-2">{{$fmp->dwg}}%</h6>
         </div>  
 
@@ -688,7 +699,7 @@
           <h6 class="mt-2">M10 (%)</h6>
         </div>
           @if ($fmp->m10)
-          <div class="col-6">
+          <div class="col-6 border">
               <h6 class="m-2">{{$fmp->m10}}%</h6>
           </div>  
 
@@ -710,7 +721,7 @@
           <h6 class="mt-2">M16 (%)</h6>
         </div>
           @if ($fmp->m16)
-          <div class="col-6">
+          <div class="col-6 border">
               <h6 class="m-2">{{$fmp->m16}}%</h6>
           </div>  
 
@@ -731,7 +742,7 @@
           <h6 class="mt-2">M18 (%)</h6>
         </div>
             @if ($fmp->m18)
-            <div class="col-6">
+            <div class="col-6 border">
                 <h6 class="m-2">{{$fmp->m18}}%</h6>
             </div>  
 
@@ -754,7 +765,7 @@
           <h6 class="mt-2">F(%)</h6>
         </div>
           @if ($fmp->f)
-          <div class="col-6">
+          <div class="col-6 border">
               <h6 class="m-2">{{$fmp->f}}%</h6>
           </div>  
 
@@ -960,6 +971,7 @@
   <div class="row justify-content-center mt-5">
     <div class="col-3 text-center">
       <button class="btn btn-secondary d-print-none" id="print">
+        <i class="fa fa-print mx-2"></i>
         print
       </button>
     </div>
@@ -969,33 +981,53 @@
 </div><!--Cierra contenedor de todo-->
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-<script>
- const $print = document.getElementById('print');
-
- $print.addEventListener('click', function(){
-
-
-    var doc = new jsPDF({
-        orientation: 'portrait', // 'portrait' o 'landscape'
-        unit: 'cm', // 'mm', 'cm', 'in', o 'px'
-        format: 'a2' // 'a3', 'a4' (por defecto), 'a5', 'letter', 'legal'
-    });
-    
-    // Agrega contenido al documento PDF
-    doc.text("Contenido de tu página", 1, 1);
-    
-    // Imprime el documento
-    doc.autoPrint();
-    doc.output('print');
 
 
 
+{{-- MODAL DEL LOTE PENDIENTE --}}
 
-})
+@if ($fmp->lote == 'pendiente' and isset(Auth::user()->nombre_completo))
+
+                {{-- modal de ADD PROVEDORES --}}
+                <div class="modal fade" id="lote" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-sm">
+                      <div class="modal-content ">
+                          <div class="modal-body">
+                              <h4 class="text-center">Agregando el LOTE</h4>
+                              <form action="{{route('add.lote', $fmp->id)}}" method="POST" class="mt-4">
+                                  @csrf
+                                  <div class="form-group">
+                                      <input type="text" name="lote" class="form-control w-100 text-uppercase" placeholder="LOTE" required>
+                                  </div>
+                                  <div class="form-group mt-3 text-center">
+                                      <button class="btn btn-success btn-sm w-50">
+                                        Guardar 
+                                      </button>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+                      {{-- modal de ADD PROVEDORES --}}
+      
+
+
+@endif
 
 
 
-</script>
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/vfs_fonts.js"></script>
 
 @endsection
