@@ -146,6 +146,7 @@ Route::post('/user/fvu/almacen/verificado/post',[Controlador::class, 'almacen_fv
 
 //Agregando el lote un formato que quedo pendiente
 Route::post('/fmp/generados/{id}/llenos/lote', [Controlador::class, 'add_lote'])->name('add.lote');
+Route::post('/user/fvu/{id}/fvu_lleno/asignar_embarque', [Controlador::class, 'add_embarque'])->name('add.embarque');
 
 
 

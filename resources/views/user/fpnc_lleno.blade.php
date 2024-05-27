@@ -10,13 +10,13 @@
 
         @if (request()->route()->getName() == 'fpnc.lleno.admin')
             <div class="col-2 text-center">
-                <a href="{{route('busqueda.fpnc')}}" class="btn btn-success btn-sm w-100">Regresar</a>
+                <a href="{{route('busqueda.fpnc')}}" class="btn btn-success btn-sm w-100 d-print-none">Regresar</a>
             </div>    
         @endif 
 
         @if (request()->route()->getName() == 'fpnc.lleno')
             <div class="col-2 text-center">
-                <a href="{{route('fpnc.generados')}}" class="btn btn-success btn-sm w-100">Regresar</a>
+                <a href="{{route('fpnc.generados')}}" class="btn btn-success btn-sm w-100 d-print-none">Regresar</a>
             </div>    
         @endif
 

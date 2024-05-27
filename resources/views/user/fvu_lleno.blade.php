@@ -176,7 +176,22 @@
                     </div>
             
                     <div class="col-10 p-2">
-                        <h6>{{$fvu->numero_embarque}}</h6>
+                        @if ($fvu->numero_embarque == 'pendiente' && isset(Auth::user()->nombre_completo))
+                            
+                            @if (Auth::user()->nombre_completo == $fvu->usuario_logeado)
+                                <button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#embarque">Agregar No. Embarque</button>
+                            @else
+                                <button class="btn btn-danger w-100" disabled>Agregar No. Embarque</button>
+                            @endif
+                        
+                        @else
+                            <h6>{{$fvu->numero_embarque}}</h6>
+
+                        @endif
+
+
+
+
                     </div>
             
                     </div>
@@ -595,14 +610,39 @@
         </div>
             <!-- contenedor de todo -->
 
-<script>
-    
 
- 
+    {{-- MODALES DE EL EMBARQUE --}}
+
+    @if ($fvu->numero_embarque == 'pendiente' and isset(Auth::user()->nombre_completo))
+
+    {{-- modal de ADD PROVEDORES --}}
+    <div class="modal fade" id="embarque" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+          <div class="modal-content ">
+              <div class="modal-body">
+                  <h4 class="text-center">Agregando el LOTE</h4>
+                  <form action="{{route('add.embarque', $fvu->id)}}" method="POST" class="mt-4">
+                      @csrf
+                      <div class="form-group">
+                          <input type="text" name="embarque" class="form-control w-100 text-uppercase" placeholder="EMBARQUE" required>
+                      </div>
+                      <div class="form-group mt-3 text-center">
+                          <button class="btn btn-success btn-sm w-50">
+                            Guardar 
+                          </button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+          {{-- modal de ADD PROVEDORES --}}
 
 
 
-</script>
+@endif
+
+
 
 
 @endsection

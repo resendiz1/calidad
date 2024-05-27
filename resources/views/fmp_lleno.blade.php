@@ -72,7 +72,7 @@
       </div>
       <div class="row">
         <div class="col-sm-6 col-md-4 col-lg-4 border fw-bold text-center">Pagina</div>
-        <div class="col-sm-6 col-md-8 col-lg-8 border p-0 text-center" >1 de 4</div>
+        <div class="col-sm-6 col-md-8 col-lg-8 border p-0 text-center" >1 de 1</div>
       </div>
 
     </div>
@@ -176,9 +176,13 @@
             <h6 class="m-2 text-danger fw-bold">{{$fmp->lote}}</h6>
             
             @if ($fmp->usuario_logeado === Auth::user()->nombre_completo)
-                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#lote">Llenar LOTE</button>
+                <button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#lote">
+                <i class="fa fa-pen"></i>  RELLENAR LOTE
+                </button>
             @else
-              <button class="btn btn-success btn-sm" disabled>Llenar LOTE</button>
+              <button class="btn btn-danger  w-100" disabled>
+              <i class="fa fa-pen"></i>  RELLENAR LOTE
+              </button>
             @endif
 
           @else

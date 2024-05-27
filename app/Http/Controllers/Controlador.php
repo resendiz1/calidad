@@ -332,7 +332,10 @@ class Controlador extends Controller
             'superviso_muestreo' => 'required'
         ]);
         
-
+        $lote = 'pendiente';
+        if(request('lote') !=null){
+            $lote = request('lote');
+        }
 
         $fmp = new Fmp();
         $fmp->$folio_planta = $consecutivo;
@@ -342,7 +345,7 @@ class Controlador extends Controller
         $fmp->hora_recepcion = request('hora_recepcion');
         $fmp->producto = request('producto');
         $fmp->proveedor = request('proveedor');
-        $fmp->lote = request('lote');
+        $fmp->lote = $lote;
         $fmp->linea_transportista = request('linea_transportista');
         $fmp->nombre_operador = request('operador');
         $fmp->placas_transporte = request('placas_transporte');
@@ -592,7 +595,7 @@ class Controlador extends Controller
 
     public function fpnc_agregar(){
 
-
+ 
 
         request()->validate([
             'presentacion' => 'required',
@@ -627,6 +630,7 @@ class Controlador extends Controller
         if(request('notificacion') == 'Otra' ){
             $otra_notificacion = request('otra_notificacion');
         }
+
 
 
 
@@ -735,7 +739,6 @@ class Controlador extends Controller
 
         request()->validate([
             'hora' => 'required',
-            'embarque' => 'required',
             'operador' => 'required',
             'placas_transporte' => 'required',
             'placas_caja' => 'required'
@@ -803,6 +806,12 @@ class Controlador extends Controller
 
 
 
+        $embarque = 'pendiente';
+
+        if(request('embarque') !=''){
+            $embarque = request('embarque');
+        }
+
 
 
 
@@ -816,7 +825,7 @@ class Controlador extends Controller
         $fvu->hora = request('hora');
         $fvu->propietario = request('propietario');
         $fvu->linea_transportista = request('linea_transportista');
-        $fvu->numero_embarque = request('embarque');
+        $fvu->numero_embarque = $embarque;
         $fvu->operador = request('operador');
         $fvu->placas_unidad = request('placas_transporte');
         $fvu->placas_caja = request('placas_caja');
@@ -907,9 +916,19 @@ class Controlador extends Controller
 
     public function add_lote($id){
 
-        $usuario = Fmp::findOrFail($id);
-        $usuario->lote = request('lote');
-        $usuario->save();
+        $fmp = Fmp::findOrFail($id);
+        $fmp->lote = request('lote');
+        $fmp->save();
+
+        return back();
+
+    }
+
+    public function add_embarque($id){
+
+        $fvu = Fvu::findOrFail($id);
+        $fvu->numero_embarque = request('embarque');
+        $fvu -> save();
 
         return back();
 

@@ -172,7 +172,6 @@
             
                     <div class="col-10 p-0">
                         <input type="text" class="form-control mt-1" name="embarque" value="{{old('embarque')}}">
-                        {!!$errors->first('embarque', '<small class="text-danger fw-bold badge badge-danger">:message</small>  ')!!}
                     </div>
             
                     </div>
