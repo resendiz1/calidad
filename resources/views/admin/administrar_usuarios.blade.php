@@ -39,7 +39,7 @@
                             </div>
                             <div class=" col-sm-12 col-md-12 col-lg-7"></div>
                             <div class=" col-sm-12 col-md-8 col-lg-1 mt-3 text-center">
-                                <a href="{{route('admin.add_usuario')}}" class="btn btn-success w-100" id="add_users"  data-toggle="tooltip" data-placement="top" title="Agregar usuarios">
+                                <a href="{{route('admin.add_usuario')}}" class="btn btn-success " id="add_users"  data-toggle="tooltip" data-placement="top" title="Agregar usuarios">
                                     <i class="fa fa-user-plus"></i>
                                 </a>
                             </div>

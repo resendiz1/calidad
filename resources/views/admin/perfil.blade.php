@@ -6,7 +6,8 @@
 
 
 <!-- MENU DE OPCIONES -->
-<br><br>
+
+
 <div class="container-fluid  menu">
     <div class="row  justify-content-around">
 
@@ -34,7 +35,7 @@
                         <h6 class="mx-auto mt-3">MATERIA PRIMA</h6>
                     </div>
                     <div class="col-12">
-                        <i class="fa-solid fa-magnifying-glass fa-2x mt-1"></i>
+                        <i class="fa fa-file fa-2x mt-1"></i>
                     </div>
                 </div>
             </a>
@@ -52,7 +53,7 @@
                         <h6 class="mx-auto">PRODUCTO NO CONFORME</h6>
                     </div>
                     <div class="col-12">
-                        <i class="fa-solid fa-magnifying-glass fa-2x mt-1"></i>
+                        <i class="fa-solid fa-file fa-2x mt-1"></i>
                     </div>
                 </div>
             </a>
@@ -69,7 +70,7 @@
                         <h6 class="mx-auto">LIBERACIÓN DE UNIDADES</h6>
                     </div>
                     <div class="col-12">
-                        <i class="fa-solid fa-magnifying-glass fa-2x mt-1"></i>
+                        <i class="fa-solid fa-file fa-2x mt-1"></i>
                     </div>
                 </div>
             </a>
@@ -178,4 +179,10 @@
 </div>
 
 <!-- MENU DE OPCIONES -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 @endsection

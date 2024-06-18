@@ -25,7 +25,7 @@
                             <div class="input-group-icon">
                                 <span class="input-group-text"> <i class="fa fa-user p-1"></i> </span>
                             </div>
-                            <input type="text" name="email" class="form-control login" value="{{old('email')}}" aria-describedby="input-group-icon" placeholder="Usuario" autofocus >
+                            <input type="email" name="email" class="form-control login" value="{{old('email')}}" aria-describedby="input-group-icon" placeholder="Usuario" autofocus >
                         </div>
                     </div>
                 </div>
@@ -59,6 +59,37 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>   
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>   
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>   
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>   
+
 @endsection
 
      

@@ -47,20 +47,20 @@
 
         @forelse ($formatos as $formato)
         <a href="{{route('fvu.lleno.admin', $formato->id)}}">
-            <div class="row p-3 resizeable-table mt-1 justify-content-around"> 
-                <div class="col-lg-2">
+            <div class="row p-3 resizeable-table mt-1 justify-content-around border border-3"> 
+                <div class="col-sm-12 col-md-6 col-lg-2">
                     <b>Folio: </b>
                     <h6 class="text-danger">{{$formato->folio}}</h6>
                 </div>
-                <div class="col-lg-2 p-2">
+                <div class="col-sm-12 col-md-6 col-lg-2 p-2">
                     <b>Fecha:</b>
                     <h6> {{$formato->fecha}} </h6>
                 </div>
-                <div class="col-lg-2 p-2">
+                <div class="col-sm-12 col-md-6 col-lg-2 p-2">
                     <b>Linea Transportista:</b>
                     <h6> {{$formato->linea_transportista}} </h6>
                 </div>
-                <div class="col-lg-2 p-2">
+                <div class="col-sm-12 col-md-6 col-lg-2 p-2">
                     <b>Embarque:</b>
                     <h6>{{$formato->numero_embarque}}</h6>
                 </div>

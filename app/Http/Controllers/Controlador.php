@@ -58,10 +58,11 @@ class Controlador extends Controller
 
 
             if(Auth::attempt($credenciales)){
+                
                 return redirect()->route('user.perfil');
             }
             else{
-                return back()->withErrors(['email' => 'El email no esta registrado como usuario ' ]);
+                return back()->withErrors(['email' => 'El email no esta registrado como usuario ']);
             }
 
 

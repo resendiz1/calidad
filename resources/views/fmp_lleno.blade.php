@@ -12,14 +12,14 @@
 
     @if (Auth::guard('adminis')->user() == null &&  isset(Auth::user()->nombre_completo))
     
-        <div class="col-2 text-center">
+        <div class="col-sm-12 col-md-6 col-lg-2 text-center">
           <a href="{{route('fmp.generados')}}" class="btn btn-success btn-sm w-100 d-print-none">
             Regresar
           </a>
         </div>
     @else
 
-      <div class="col-2 text-center">
+      <div class="col-sm-12 col-md-6 col-lg-2 text-center">
         <a href="{{route('busqueda.fmp')}}" class="btn btn-success btn-sm w-100 d-print-none">
           Regresar
         </a>
@@ -971,15 +971,6 @@
   <!-- CONTENEDOR DE LAS FIRMAS -->
 
 
-
-  <div class="row justify-content-center mt-5">
-    <div class="col-3 text-center">
-      <button class="btn btn-secondary d-print-none" id="print">
-        <i class="fa fa-print mx-2"></i>
-        print
-      </button>
-    </div>
-  </div>
 
 
 </div><!--Cierra contenedor de todo-->

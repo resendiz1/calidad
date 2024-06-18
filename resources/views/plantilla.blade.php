@@ -42,6 +42,22 @@
      });
 
 
+
+     //codigo que me regresa a la pagina anterior en FVU LLENO
+
+     document.getElementById('back').addEventListener('click', function(){
+
+      if(document.referrer){
+        window.location.href = document.referrer;
+      }
+      else{
+
+      }
+
+     });
+
+
+
     </script>
 
 

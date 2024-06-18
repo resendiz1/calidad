@@ -4,7 +4,7 @@
 @section('title', 'Datos')
 
 
-<br><br>
+
 <br><br>
 <div class="container-fluid mt-3">
 
@@ -23,7 +23,7 @@
 
 {{-- TABLA Y MODAL DE LOS DATOS DE PROVEEDORES --}}
 
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 border m-3 bg-white sombra p-4 ">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-3 border m-3 bg-white sombra p-4 ">
             <div class="row justify-content-center">
                 <div class="col-2 text-center"></div>
 
@@ -148,7 +148,7 @@
 
 
 
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 border m-3 bg-white sombra p-4">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-3 border m-3 bg-white sombra p-4">
 
             <div class="row justify-content-center">
                 <div class="col-2 text-center"></div>
@@ -279,7 +279,7 @@
 
 
 
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 border m-3 bg-white sombra p-4">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-3 border m-3 bg-white sombra p-4">
 
             <div class="row justify-content-center">
 
