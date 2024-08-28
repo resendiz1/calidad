@@ -2,7 +2,16 @@
 @section('contenido')
 @include('assets.nav')  
 @section('title', 'FO/GP/CC/001/001')  
-<br>
+
+
+
+<div class="container my-4 d-print">
+    <div class="row justify-content-center">
+        <div class="col-2">
+            <a href="{{route('tabla.fpnc')}}" class="btn btn-success">Regresar</a>
+        </div>
+    </div>
+</div>
 
 
 <form action="{{route('fpnc.agregar')}}" enctype="multipart/form-data" method="POST">
@@ -121,7 +130,7 @@
 
 <!-- materia prima, material de empaque -->
 <div class="container mt-3 p-3">
-    <div class="row d-flex justify-content-around border">
+    <div class="row d-flex justify-content-around">
 
         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
             <input type="radio" class="btn-check" value="Materia Prima" name="material" id="btnradio1" autocomplete="off" checked>
@@ -155,6 +164,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-sm-12 col-md-12 col-lg-4 mt-2">
             <div class="row">
                 <div class="col-auto px-0 mx-0">
@@ -166,6 +176,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-sm-12 col-md-12 col-lg-4 mt-2">
             <div class="row">
                 <div class="col-auto px-0 mx-0">
@@ -214,8 +225,8 @@
                     <span class="fw-bold">Cantidad: </span>
                 </div>
 
-                <div class="col-sm-4 col-md-4 col-lg-auto p-0">  
-                    <input type="text" class="form-control form-control-sm" name="cantidad" value="{{old('cantidad')}}">
+                <div class="col-sm-4 col-md-4 col-lg-2 p-0">  
+                    <input type="number" min="0" class="form-control form-control-sm" name="cantidad" value="{{old('cantidad')}}">
                     {!!$errors->first('cantidad', '<li class="text-danger text-justify fw-bold">:message</li>')!!}
                 </div>
 
@@ -273,6 +284,7 @@
                 </div>
                 <div class="col-12">
                     <input type="file" id="foto1" name="imagen1" value="{{old('imagen1')}}" class="form-control form-control-sm">
+                    {!!$errors->first('imagen1', '<li class="text-danger text-justify fw-bold">:message</li>')!!}
                 </div>
             </div>
         </div>
@@ -284,6 +296,7 @@
                 </div>
                 <div class="col-12">
                     <input type="file" id="foto2" name="imagen2" value="{{old('imagen2')}}" class="form-control form-control-sm">
+                    {!!$errors->first('imagen2', '<li class="text-danger text-justify fw-bold">:message</li>')!!}
                 </div>
             </div>
         </div>
@@ -295,6 +308,7 @@
                 </div>
                 <div class="col-12">
                     <input type="file" id="foto3" name="imagen3" value="{{old('imagen3')}}" class="form-control form-control-sm">
+                    {!!$errors->first('imagen3', '<li class="text-danger text-justify fw-bold">:message</li>')!!}
                 </div>
             </div>
         </div>
