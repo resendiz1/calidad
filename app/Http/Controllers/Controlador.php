@@ -270,7 +270,6 @@ class Controlador extends Controller
         $proveedores = DB::select("SELECT*FROM proveedores");
         //Datos del proveedor//
 
-
         //Datos del producto
         $productos = DB::select("SELECT*FROM productos");
         //Datos del producto
@@ -419,11 +418,11 @@ class Controlador extends Controller
     
 
 
-    public function fmp_lleno(Fmp $fmp){
+    // public function fmp_lleno(Fmp $fmp){
 
-        return view('fmp_lleno', compact('fmp'));
+    //     return view('fmp_lleno', compact('fmp'));
 
-    }
+    // }
 
 
 
@@ -606,7 +605,10 @@ class Controlador extends Controller
             'recibe_notificacion' => 'required',
             'emite_notificacion' => 'required',
             'notificacion' => 'required',
-            'folio_fmp' => 'required|unique:fpnc'
+            'folio_fmp' => 'required|unique:fpnc',
+            'imagen1' => 'image|max:2048',
+            'imagen2' => 'image|max:2048',
+            'imagen3' => 'image|max:2048'
         ]);
 
 

@@ -146,10 +146,10 @@
     <div class="row border p-4 d-flex justify-content-center">
         <div class="col-sm-12 col-md-12 col-lg-4 mt-2">
             <div class="row">
-                <div class="col-4">
+                <div class="col-auto px-0 mx-0">
                     <span class="fw-bold">Proveedor: </span>
                 </div>
-                <div class="col-6">
+                <div class="col-auto ">
                     <span>{{$fmp->proveedor}}</span>
                     <input type="hidden" name="proveedor" value="{{$fmp->proveedor}}">
                 </div>
@@ -157,10 +157,10 @@
         </div>
         <div class="col-sm-12 col-md-12 col-lg-4 mt-2">
             <div class="row">
-                <div class="col-3">
+                <div class="col-auto px-0 mx-0">
                     <span class="fw-bold">Producto: </span>
                 </div>
-                <div class="col-6">
+                <div class="col-auto">
                     <span>{{$fmp->producto}}</span>
                     <input type="hidden" name="producto" value="{{$fmp->producto}}">
                 </div>
@@ -168,7 +168,7 @@
         </div>
         <div class="col-sm-12 col-md-12 col-lg-4 mt-2">
             <div class="row">
-                <div class="col-4">
+                <div class="col-auto px-0 mx-0">
                     <span class="fw-bold">Presentación: </span>
                 </div>
                 <div class="col-6">

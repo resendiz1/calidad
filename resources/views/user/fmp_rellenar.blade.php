@@ -3,10 +3,18 @@
 @include('assets.nav')
 @section('title', 'FO/GP/CC/070/01')
 
-
-<br>
+{{-- contenedor de el boton regresar --}}
+<div class="container">
+  <div class="row justify-content-center m-3">
+    <div class="col-2 text-center">
+      <a href="{{route('user.perfil')}}" class="btn btn-success btn-sm" >Regresar</a>
+    </div>
+  </div>
+</div>
+{{-- contenedor de el boton regresar --}}
 
 <div class="container bg-white  p-5 sombra"> <!--Contenedor de todo -->
+
 
 
 <!-- encabezado -->
@@ -596,7 +604,7 @@
           <div class="col-sm-12 col-md-12  col-lg-3 mt-3">
 
             <div class="row">
-              <div class="col-6 text-center border">
+              <div class="col-6 py-2  px-0 text-center border">
                 <h6 class="mt-2">DWG (micrones)</h6>
               </div>
               <div class="col-6 py-2  px-0 border">
@@ -677,7 +685,7 @@
                 <h5 class="mt-3">DICTAMEN FINAL</h5>
               </div>
               <div class="col-6 text-center mt-4 fondo-titulos">
-                <select class="text-center form-select mt-1 form-control p-0" name="dictamen">
+                <select class="text-center form-select mt-1 form-control p-0" value="{{old('dictamen')}}" name="dictamen">
                   <option value="ACEPTADO">ACEPTADO</option>
                   <option value="RECHAZADO">RECHAZADO</option>
                 </select>

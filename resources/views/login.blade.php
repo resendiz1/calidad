@@ -9,7 +9,7 @@
             <div class="col-sm-12 col-md-9 col-lg-5 mt-5 bg-white p-5 border border-5 sombra">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <img src="img/logo.png" class="img-fluid" alt="">
+                        <img src="img/user.png" class="img-fluid w-25" alt="">
                         <h3 class="mt-2">Inicio de sesión</h3>
                         <span class="text-danger">{{$errors->first()}}</span> 
                     </div>
@@ -49,7 +49,9 @@
                         <label for="administrador">Ingresar como administrador</label>
                     </div>
                     <div class="col-sm-12 col-md-9 col-lg-9 mt-3">
-                        <button  class="btn btn-success w-100">  Ingresar </button>
+                        <button  class="btn btn-secondary w-100">
+                            Entrar
+                        </button>
                     </div>
                 </div>
 </form>

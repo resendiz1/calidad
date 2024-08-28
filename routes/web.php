@@ -103,7 +103,7 @@ Route::view('/user', 'user.perfil')->name('user.perfil')->middleware('auth');
 
 
 //Rutas del formato de materia prima
-Route::view('/user/fmp', 'user.fmp_rellenar')->middleware('auth');
+// Route::view('/user/fmp', 'user.fmp_rellenar')->middleware('auth');
 Route::get('/user/fmp', [Controlador::class, 'fmp_rellenar'])->name('fmp.rellenar')->middleware('auth');
 Route::post('/user/fmp/agregar', [Controlador::class, 'fmp_agregar'])->name('fmp.agregar')->middleware('auth');
 Route::get('/user/fmp/generados', [Controlador::class, 'fmp_generados'])->name('fmp.generados')->middleware('auth');
