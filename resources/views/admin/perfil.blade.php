@@ -6,7 +6,7 @@
 
 
 <!-- MENU DE OPCIONES -->
-
+<br>
 
 <div class="container">
     <div class="row  justify-content-around">
@@ -21,7 +21,10 @@
     
     <div class="row">
         <div class="col-12 text-center">
-            <h5 class="fw-bold">BUSCAR DOCUMENTOS</h5>
+            <h3 class="fw-bold">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                BUSCAR DOCUMENTOS
+            </h3>
         </div>
     </div>
 
@@ -29,7 +32,7 @@
     <div class="row d-flex justify-content-center">
 
         {{-- card rellenar  formatos materia prima --}}
-        <div class="col-sm-12 col-lg-5 sombra btn resizeable-div   border border-5 m-2">
+        <div class="col-sm-12 col-md-6 col-lg-3 sombra btn resizeable-div   border border-5 m-2">
             <a href="{{route('busqueda.fmp')}}">
                 <div class="row">
                     <div class="col-12">
@@ -44,7 +47,7 @@
 
 
         {{-- card documentos generados formato materia prima --}}
-        <div class="col-sm-12 col-lg-5 sombra btn resizeable-div  border border-5 m-2">
+        <div class="col-sm-12 col-md-6 col-lg-3 sombra btn resizeable-div  border border-5 m-2">
             <a href="{{route('busqueda.fpnc')}}">
                 <div class="row">
                     <div class="col-12 mt-3">
@@ -58,11 +61,13 @@
 
 
         {{-- card documentos generados formato materia prima --}}
-        <div class="col-sm-12 col-lg-5 sombra btn resizeable-div  border border-5 m-2">
+        <div class="col-sm-12 col-md-6 col-lg-3 sombra btn resizeable-div  border border-5 m-2">
             <a href="{{route('busqueda.fvu')}}">
                 <div class="row">
                     <div class="col-12 mt-3">
-                        <h6 class="mx-auto">LIBERACIÓN DE UNIDADES</h6>
+                        <h6 class="mx-auto">
+                            LIBERACIÓN DE UNIDADES
+                        </h6>
                     </div>
                 </div>
             </a>
@@ -96,7 +101,10 @@
 <div class="col-sm-12 col-md-6 col-lg-12 m-3 border border-5 fondo p-3 mt-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h5 class="fw-bold">GESTIONAR DATOS</h5>
+            <h3 class="fw-bold">
+                <i class="fa fa-table"></i>
+                GESTIONAR DATOS
+            </h3>
         </div>
     </div>
 
@@ -104,7 +112,7 @@
     <div class="row d-flex justify-content-center">
 
         {{-- card rellenar  formatos materia prima --}}
-        <div class="col-sm-12 col-lg-6 sombra btn resizeable-div   border border-5 m-2">
+        <div class="col-sm-12 col-lg-3 sombra btn resizeable-div   border border-5 m-2">
             <a href="{{route('lista.usuarios')}}">
                 <div class="row">
                     <div class="col-12">
@@ -118,7 +126,7 @@
 
 
         {{-- card rellenar  formatos materia prima --}}
-        <div class="col-sm-12 col-lg-6 sombra btn resizeable-div   border border-5 m-2">
+        <div class="col-sm-12 col-lg-3 sombra btn resizeable-div   border border-5 m-2">
             <a href="{{route('datos.admin')}}">
                 <div class="row">
                     <div class="col-12">
@@ -130,7 +138,7 @@
         {{-- card rellenar  formatos materia prima --}}
 
                 {{-- card rellenar  formatos materia prima --}}
-        <div class="col-sm-12 col-lg-6 sombra btn resizeable-div   border border-5 m-2">
+        <div class="col-sm-12 col-lg-3 sombra btn resizeable-div   border border-5 m-2">
             <a href="{{route('estadisticas.proveedores')}}">
                 <div class="row">
                     <div class="col-12">

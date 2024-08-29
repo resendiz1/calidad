@@ -4,17 +4,19 @@
     
 
 
-
 <div class="container  mt-5">
-    <div class="row mt-4 justify-content-center">
-        <div class="col-6 bg-white">
-            <h2>Carros con plaga</h2>
-
+    <div class="row mt-4 justify-content-around">
+        <div class="col-4 bg-white shadow shadow-sm p-3">
+            <h5  class="text-center" >Proveedores con mas entregas a PABSA</h5>
             <hr>
-
-            <canvas id="plaga"></canvas>
-
+            <canvas id="mas_pedidos"></canvas>
         </div>
+
+        <div class="col-4 bg-white shadow shadow-sm p-3">
+          <h5 class="text-center" >Proveedores mas rechazos</h5>
+          <hr>
+          <canvas id="mas_rechazados"></canvas>
+      </div>
         
     </div>
 </div>
@@ -31,27 +33,74 @@
 
 <script>
  
-  const ctx = document.getElementById('plaga');
+  const ctx = document.getElementById('mas_pedidos');
   new Chart(ctx, {
     type: 'pie',
+    
     data: {
-      labels: ['Redes', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: [
+        '{{$proveedores[0]->proveedor}}', 
+        '{{$proveedores[1]->proveedor}}', 
+        '{{$proveedores[2]->proveedor}}', 
+        '{{$proveedores[3]->proveedor}}', 
+        '{{$proveedores[4]->proveedor}}'
+      ],
+
       datasets: [{
-        label: 'Ganadores',
+        label: 'Más entregas de Materia Prima',
         data: [
-            12, 19, 3, 5, 2, 3
+
+            {{$proveedores[0]->repeticiones}}, {{$proveedores[1]->repeticiones}}, {{$proveedores[2]->repeticiones}}, {{$proveedores[3]->repeticiones}}, {{$proveedores[4]->repeticiones}}
+
         ],
+
+
         borderWidth: 1
+
+
       }]
     },
     options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
+
     }
   });
+
+
+
+
+  const ctx2 = document.getElementById('mas_rechazados');
+  new Chart(ctx2, {
+    type: 'pie',
+    
+    data: {
+      labels: [
+        '{{$rechazados[0]->proveedor}}', 
+        '{{$rechazados[1]->proveedor}}', 
+        '{{$rechazados[2]->proveedor}}', 
+      ],
+
+      datasets: [{
+        label: 'Más entregas de Materia Prima',
+        data: [
+
+          {{$rechazados[0]->repeticiones}}, 
+          {{$rechazados[1]->repeticiones}}, 
+          {{$rechazados[2]->repeticiones}}
+
+        ],
+
+
+        borderWidth: 1
+
+
+      }]
+    },
+    options: {
+
+    }
+  });
+
+
 </script>
 
 
