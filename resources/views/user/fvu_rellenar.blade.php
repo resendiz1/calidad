@@ -5,8 +5,17 @@
 
 
 
+<div class="container my-2 d-print-none">
+    <div class="row justify-content-center">
+        <div class="col-2 text-center">
+            <a href="{{route('user.perfil')}}" class="btn btn-success w-100  d-print-none">Regresar</a>
+        </div>
+    </div>
+</div>
 
-<form action="{{route('fvu.agregar')}}" enctype="multipart/form-data" method="POST">
+
+
+<form action="{{route('fvu.agregar')}}" id="form" enctype="multipart/form-data" method="POST">
     @csrf
         <!-- contenedor de todo -->
         <div class="container bg-white p-5 sombra mt-2">
@@ -315,33 +324,33 @@
             
                 <div class="row mt-4">  <!--row de los criterios de verificacion interna -->
             
-                    <div class="col-sm-12 col-md-4 col-lg-3 mt-4">
+                    <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >PISO</label>
-                        <select class="form-select form-control-lg" name="piso" aria-label="Default select example">
+                        <select class="form-select form-control-sm" name="piso" aria-label="Default select example">
                             <option value="SI">SI CUMPLE</option>
                             <option value="NO">NO CUMPLE</option>
                         </select>
                     </div>
             
-                    <div class="col-sm-12 col-md-4 col-lg-3 mt-4">
+                    <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >PUERTAS</label>
-                        <select class="form-select form-control-lg" name="puertas" aria-label="Default select example">
+                        <select class="form-select form-control-sm" name="puertas" aria-label="Default select example">
                             <option value="SI">SI CUMPLE</option>
                             <option value="NO">NO CUMPLE</option>
                         </select>
                     </div>
             
-                    <div class="col-sm-12 col-md-4 col-lg-3 mt-4">
+                    <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >PAREDES</label>
-                        <select class="form-select form-control-lg" name="paredes" aria-label="Default select example">
+                        <select class="form-select form-control-sm" name="paredes" aria-label="Default select example">
                             <option value="SI">SI CUMPLE</option>
                             <option value="NO">NO CUMPLE</option>
                         </select>
                     </div>
             
-                    <div class="col-sm-12 col-md-4 col-lg-3 mt-4">
+                    <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >TECHO</label>
-                        <select class="form-select form-control-lg" name="techo" aria-label="Default select example">
+                        <select class="form-select form-control-sm" name="techo" aria-label="Default select example">
                             <option value="SI">SI CUMPLE</option>
                             <option value="NO">NO CUMPLE</option>
                         </select>
@@ -350,7 +359,7 @@
             
                     <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >MATERIA EXTRAÑA</label>
-                        <select class="form-select form-control-lg" name="materia_desconocida" aria-label="Default select example">
+                        <select class="form-select form-control-sm" name="materia_desconocida" aria-label="Default select example">
                             <option value="SI">SI CUMPLE</option>
                             <option value="NO">NO CUMPLE</option>
                         </select>
@@ -358,24 +367,24 @@
             
                     <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >PLAGA</label>
-                        <select class="form-select form-control-lg" name="plaga" aria-label="Default select example">
+                        <select class="form-select form-control-sm" name="plaga" aria-label="Default select example">
                             <option value="SI">SI</option>
                             <option value="NO">NO</option>
                         </select>
                     </div>
             
-                    <div class="col-sm-12 col-md-4 col-lg-3 mt-4">
+                    <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >LIMPIEZA</label>
-                        <select class="form-select form-control-lg" name="limpieza" aria-label="Default select example">
+                        <select class="form-select form-control-sm" name="limpieza" aria-label="Default select example">
                             <option value="SI">SI CUMPLE</option>
                             <option value="NO">NO CUMPLE</option>
                         </select>
                     </div>
             
             
-                    <div class="col-sm-12 col-md-4 col-lg-3 mt-4">
+                    <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >OLORES EXTRAÑOS</label>
-                        <select class="form-select form-control-lg" name="olores_raros" aria-label="Default select example">
+                        <select class="form-select form-control-sm" name="olores_raros" aria-label="Default select example">
                             <option value="SI">SI</option>
                             <option value="NO">NO</option>
                         </select>
@@ -383,7 +392,7 @@
             
                     <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >FILTRACIONES</label>
-                        <select class="form-select form-control-lg" name="filtraciones" aria-label="Default select example">
+                        <select class="form-select form-control-sm" name="filtraciones" aria-label="Default select example">
                             <option value="SI">SI</option>
                             <option value="NO">NO</option>
                         </select>
@@ -452,6 +461,8 @@
                             </div>
                             <div class="col-12 p-2 border border border-2" id="firma_preview">
                                  <img src="https://cdn-icons-png.flaticon.com/512/104/104645.png" class="img-fluid w-50" alt="">
+                                 {!!$errors->first('firma', '<small class="text-danger fw-bold badge badge-danger">:message</small>')!!}
+
                             </div>
                             <div class="col-12 p-2 border border border-2">
                                   <input type="file" class="form-control" name="firma" id="firma">
@@ -530,6 +541,8 @@
 
                     <div class="col-12" id="imagenPrevia">
                     <img src="{{asset('img/images.png')}}" alt="">
+                    {!!$errors->first('evidencia1', '<small class="text-danger fw-bold badge badge-danger">:message</small>  ')!!}
+
                     </div>
 
                     <div class="col-12">
@@ -543,6 +556,8 @@
                 <div class="row">
                     <div class="col-12" id="imagenPrevia2">
                     <img src="{{asset('img/images.png')}}" alt="">
+                    {!!$errors->first('evidencia2', '<small class="text-danger fw-bold badge badge-danger">:message</small>  ')!!}
+
                     </div>
                     <div class="col-12">
                     <input type="file" name="evidencia2" id="evidencia2" class="form-control">
@@ -554,6 +569,8 @@
                 <div class="row">
                     <div class="col-12" id="imagenPrevia3">
                     <img src="{{asset('img/images.png')}}" alt="">
+                    {!!$errors->first('evidencia3', '<small class="text-danger fw-bold badge badge-danger">:message</small>  ')!!}
+
                     </div>
                     <div class="col-12">
                     <input type="file" name="evidencia3" id="evidencia3" class="form-control">
@@ -568,7 +585,17 @@
             
             </div> <!-- EVIDENCIAS DEL LUGRA DONDE SE ENCONTRO LA INCONFORMIDAD -->
             
-            
+
+
+            <!-- Loader, inicialmente oculto -->
+            <div id="formLoader" class="d-none text-center">
+                <div class="spinner-border " role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+            <!-- Loader, inicialmente oculto -->
+
+
             
             <div class="container bg-white p-4">
             <div class="row">
@@ -581,18 +608,10 @@
             
         </div>
             <!-- contenedor de todo -->
-
-
-
-
-
-
-
-
-
-
-
 </form>
+
+
+
 
 
 
@@ -669,6 +688,9 @@
             reader.readAsDataURL(file);
         }
     });
+
+
+
 
 
 

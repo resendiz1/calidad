@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controlador;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\estadisticasController;
 
 
 
@@ -85,10 +86,12 @@ Route::delete('/admin/datos/{producto}/delete_producto', [ Controlador::class, '
 //Rutas de los productos, proveedores y linea transportista
 
 
-//Admin  exportando a excel fmp
-Route::get('/admin/busqueda/excelExport',[Controlador::class, 'fmp_excel'])->name('fmp.excel');
+// //Admin  exportando a excel fmp
+// Route::get('/admin/busqueda/excelExport',[Controlador::class, 'fmp_excel'])->name('fmp.excel');
 
 
+//ritas de los datos recopiolados de los proveedores
+Route::get('/admin/datos/proveedores-estadisticas',[ estadisticasController::class, 'proveedores'])->name('estadisticas.proveedores')->middleware('auth:adminis');
 
 
 
@@ -147,7 +150,6 @@ Route::post('/user/fvu/almacen/verificado/post',[Controlador::class, 'almacen_fv
 //Agregando el lote un formato que quedo pendiente
 Route::post('/fmp/generados/{id}/llenos/lote', [Controlador::class, 'add_lote'])->name('add.lote');
 Route::post('/user/fvu/{id}/fvu_lleno/asignar_embarque', [Controlador::class, 'add_embarque'])->name('add.embarque');
-
 
 
 

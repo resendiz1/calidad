@@ -1,4 +1,4 @@
-/* el boton de regresar con el color de pabsa */
+ /* el boton de regresar con el color de pabsa */
 .pabsa-btn{
     background-color: #FF5733;
     color: white;
@@ -130,6 +130,17 @@ a{
         background: none !important;
     }
 
+  }
+
+
+  #formloader{
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .form-sending{
+    opacity: 0.9;
+    pointer-events: none;
   }
 
 

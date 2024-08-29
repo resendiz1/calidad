@@ -7,8 +7,8 @@
 
 <div class="container my-4 d-print">
     <div class="row justify-content-center">
-        <div class="col-2">
-            <a href="{{route('tabla.fpnc')}}" class="btn btn-success">Regresar</a>
+        <div class="col-2 text-center">
+            <a href="{{route('tabla.fpnc')}}" class="btn btn-success w-100">Regresar</a>
         </div>
     </div>
 </div>

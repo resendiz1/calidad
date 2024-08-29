@@ -64,7 +64,7 @@
 
 
 
-<form action="{{route('fmp.agregar')}}" method="POST">
+<form action="{{route('fmp.agregar')}}" id="form" method="POST">
   @csrf
 
       <!-- datos del formato -->
@@ -718,6 +718,14 @@
 
 
 
+            <!-- Loader, inicialmente oculto -->
+            <div id="formLoader" class="d-none text-center">
+                <div class="spinner-border " role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+            <!-- Loader, inicialmente oculto -->
+
 
       <!-- BOTON PARA ENVIAR A REVISIÓN -->
       <div class="container mt-5">
@@ -734,15 +742,6 @@
 
 
 </form>
-
-
-
-
-
-
-
-
-
 
 
 </div><!--Cierra contenedor de todo-->

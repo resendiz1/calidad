@@ -43,8 +43,17 @@
     </div>
 </div>
 <!-- BARRA DE NAVEGACIÓN -->
-<br class="d-print-none">
-<br class="d-print-none">
+<br>
+<br>
 
 <br>
-<br>
+<div class="d-block d-md-none"><!-- Salto de línea en pantallas pequeñas -->
+    <br class="d-print-none">
+    <br class="d-print-none">
+    <br class="d-print-none">
+    <br class="d-print-none">
+    <br class="d-print-none">
+    <br class="d-print-none">
+    <br class="d-print-none">
+
+</div>

@@ -66,12 +66,6 @@ class Controlador extends Controller
             }
 
 
-
-
-    
-
-
-
     }
 
 
@@ -418,11 +412,11 @@ class Controlador extends Controller
     
 
 
-    // public function fmp_lleno(Fmp $fmp){
+    public function fmp_lleno(Fmp $fmp){
 
-    //     return view('fmp_lleno', compact('fmp'));
+        return view('fmp_lleno', compact('fmp'));
 
-    // }
+    }
 
 
 
@@ -499,7 +493,7 @@ class Controlador extends Controller
 
     public function fmp_revisado(Fmp $fmp){
 
-    //   return  request('observaciones_area');
+
 
 
         $fmp->update([
@@ -540,10 +534,6 @@ class Controlador extends Controller
         $formatos = DB::select("SELECT*FROM fpnc WHERE proveedor LIKE '%$query%'  OR producto LIKE '%$query%' OR fecha LIKE '%$query%' ");
         return view('admin.buscador_fpnc', compact('formatos'));
     }
-
-
-
-
 
     public function busqueda_fvu(){
         $formatos = Fvu::all();
@@ -744,7 +734,11 @@ class Controlador extends Controller
             'hora' => 'required',
             'operador' => 'required',
             'placas_transporte' => 'required',
-            'placas_caja' => 'required'
+            'placas_caja' => 'required',
+            'evidencia1' => 'max:2048',
+            'evidencia2' => 'max:2048',
+            'evidencia3' => 'max:2048',
+            'firma' => 'max:2048'
         ]);
 
 

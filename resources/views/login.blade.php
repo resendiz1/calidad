@@ -43,13 +43,13 @@
 
 
 
-                <div class="row mt-3 justify-content-center">
+                <div class="row mt-4 justify-content-center">
                      <div class="col-9 text-center">
                         <input type="checkbox" class="form-check-input" value="admin" name="admin" id="administrador">
-                        <label for="administrador">Ingresar como administrador</label>
+                        <label for="administrador" class="text-secondary fw-bold">Ingresar como administrador</label>
                     </div>
                     <div class="col-sm-12 col-md-9 col-lg-9 mt-3">
-                        <button  class="btn btn-secondary w-100">
+                        <button  class="btn btn-secondary w-100 mt-2">
                             Entrar
                         </button>
                     </div>
