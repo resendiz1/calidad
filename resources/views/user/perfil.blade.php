@@ -9,24 +9,16 @@
 
 
 <!-- MENU DE OPCIONES -->
-<div class="container">
+<div class="container-fluid">
 
-
-    <div class="row d-flex justify-content-around">
+<div class="row d-flex justify-content-center">
         
 
 
 @if (Auth::user()->area == 'CALIDAD')
 
 {{-- SECCION DEL FORMATO DE MATERIA PRIMA --}}   
-    <div class="col-sm-12 col-md-6 col-lg-4 m-3 border border-5 fondo p-3 mt-5">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h6>FORMATO DE RECEPCIÓN DE MATERIA PRIMA</h6>
-            </div>
-        </div>
-
-
+    <div class="col-sm-12 col-md-6 col-lg-3 m-3  p-3 mt-5">
         <div class="row d-flex justify-content-center">
     
             {{-- card rellenar  formatos materia prima --}}
@@ -76,12 +68,7 @@
 
 
 {{-- SECCION DEL FORMATO DE PRODUCTO NO CONFORME --}}   
-    <div class="col-sm-12 col-md-6 col-lg-4 m-3 border border-5 fondo p-3 mt-5">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h6>FORMATO DE PRODUCTO NO CONFORME</h6>
-            </div>
-        </div>
+    <div class="col-sm-12 col-md-6 col-lg-3 m-3 p-3 mt-5">
         <div class="row d-flex justify-content-center">
              {{-- card rellenar  formatos producto no conforme --}}
             <div class="col-sm-12 col-lg-6 sombra btn resizeable-div   border border-5 m-2">
@@ -123,14 +110,7 @@
 
 
 {{-- SECCION DEL FORMATO DE VERIFICACION DE UNIDADES --}} 
-<div class="col-sm-12 col-md-6 col-lg-4 m-3 border border-5 fondo p-3 mt-5 ">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h6>FORMATO DE VERIFICACIÓN DE UNIDADES </h6>
-        </div>
-    </div>
-
-
+<div class="col-sm-12 col-md-6 col-lg-3 m-3  p-3 mt-5 ">
     <div class="row d-flex justify-content-center">
         
         {{-- card RELLENAR  formatos VERIFICACION UNIDADES --}}

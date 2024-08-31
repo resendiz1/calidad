@@ -155,7 +155,7 @@
                         <h5>{{$fvu->linea_transportista}}</h5>
                     </div>
             
-                    <div class="col-10 fondo-titulos mt-3">
+                    <div class="col-10 fondo-titulos mt-3 border">
                         <h6 class="mt-1">NÚMERO DE EMBARQUE</h6>
                     </div>
             
@@ -197,15 +197,15 @@
                     </div>
             
                     <div class="col-10 p-2">
-                        <h5>{{$fvu->operador}}</h5>
+                        <h6>{{$fvu->operador}}</h6>
                     </div>
-                    <div class="col-10 p-0 fondo-titulos mt-3">        
+                    <div class="col-10 p-0 fondo-titulos mt-3 border">        
                         <h6 class="mt-2">PLACAS DEL TRACTO O TORTON :</h6>
                     </div>
                     <div class="col-10 p-2 mt-1">
                         <h6>{{$fvu->placas_unidad}}</h6>
                     </div>
-                    <div class="col-10 p-0 fondo-titulos mt-3">        
+                    <div class="col-10 p-0 fondo-titulos mt-3 border">        
                         <h6 class="mt-2">PLACAS CAJA :</h6>
                     </div>
                     <div class="col-10 p-2 mt-1">

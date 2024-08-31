@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controlador;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\encabezadosController;
 use App\Http\Controllers\estadisticasController;
 
 
@@ -94,6 +95,11 @@ Route::delete('/admin/datos/{producto}/delete_producto', [ Controlador::class, '
 Route::get('/admin/datos/proveedores-estadisticas',[ estadisticasController::class, 'proveedores'])->name('estadisticas.proveedores')->middleware('auth:adminis');
 
 
+
+//Rutas de la actualizacion de los  encabezados 
+
+Route::get('/admin/datos/actulizar-encabezados', [encabezadosController::class, 'inicio'])->name('actualizar.encabezados');
+//Rutas de la actualizacion de los  encabezados 
 
 
 

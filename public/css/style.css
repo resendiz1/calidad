@@ -24,9 +24,9 @@
 .fondo{
     background-color: rgb(204, 218, 224);
 }
-.fondo-titulos{
+/* .fondo-titulos{
     background-color: rgba(229, 229, 229);
-}
+} */
 small{
     font-size: 0.8em;
 }
@@ -35,10 +35,10 @@ small{
     box-shadow: 10px 10px 10px 10px rgba(0.3, 0.3, 0.3, 0.3);
 }
 body{
-    background-image: url(../img/fondo.webp) ;
+    background-image: url(../img/fondo.jpg) ;
     transition: 20s;
-    background-size: cover;
-    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-repeat: repeat;
     padding: 0;
 }
 

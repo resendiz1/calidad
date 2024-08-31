@@ -1,22 +1,30 @@
 @extends('plantilla')
 @section('contenido')
 @section('title', 'Estadisticas Proveedores')
+@include('assets.nav')
     
 
 
 <div class="container  mt-5">
+
+  <div class="row">
+    <div class="col-12 text-center">
+      <a href="{{route('admin.view')}}" class="btn btn-success">Regresar</a>
+    </div>
+  </div>
+
     <div class="row mt-4 justify-content-around">
         <div class="col-4 bg-white shadow shadow-sm p-3">
-            <h5  class="text-center" >Proveedores con mas entregas a PABSA</h5>
+            <h5  class="text-center" >Proveedores con más entregas a PABSA</h5>
             <hr>
             <canvas id="mas_pedidos"></canvas>
         </div>
 
         <div class="col-4 bg-white shadow shadow-sm p-3">
-          <h5 class="text-center" >Proveedores mas rechazos</h5>
+          <h5 class="text-center" >Proveedores con más rechazos en FMP</h5>
           <hr>
           <canvas id="mas_rechazados"></canvas>
-      </div>
+        </div>
         
     </div>
 </div>
@@ -35,22 +43,28 @@
  
   const ctx = document.getElementById('mas_pedidos');
   new Chart(ctx, {
-    type: 'pie',
+    type: 'polarArea',
     
     data: {
       labels: [
-        '{{$proveedores[0]->proveedor}}', 
-        '{{$proveedores[1]->proveedor}}', 
-        '{{$proveedores[2]->proveedor}}', 
-        '{{$proveedores[3]->proveedor}}', 
-        '{{$proveedores[4]->proveedor}}'
+        @forelse($proveedores as $proveedor)
+         '{{$proveedor->proveedor}}', 
+        @empty
+          <li> No hay datos </li>
+        @endforelse
+
       ],
 
       datasets: [{
         label: 'Más entregas de Materia Prima',
         data: [
 
-            {{$proveedores[0]->repeticiones}}, {{$proveedores[1]->repeticiones}}, {{$proveedores[2]->repeticiones}}, {{$proveedores[3]->repeticiones}}, {{$proveedores[4]->repeticiones}}
+          @forelse($proveedores as $proveedor)
+            {{$proveedor->repeticiones}}, 
+          @empty
+            <li>No hay datos</li>
+          @endforelse
+
 
         ],
 
@@ -60,9 +74,19 @@
 
       }]
     },
-    options: {
 
+    options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Más Entregas'
+      }
     }
+  },
   });
 
 
@@ -72,20 +96,32 @@
   new Chart(ctx2, {
     type: 'pie',
     
+
+
     data: {
       labels: [
-        '{{$rechazados[0]->proveedor}}', 
-        '{{$rechazados[1]->proveedor}}', 
-        '{{$rechazados[2]->proveedor}}', 
+        
+        @forelse ($rechazados as $rechazado) //Esta parte es de blade, la puse a ver si jalaba y jalo XDDD
+          '{{$rechazado->proveedor}}', 
+        @empty//Esta parte es de blade, la puse a ver si jalaba y jalo XDDD
+
+        <li>Sin resultados</li>
+        @endforelse//Esta parte es de blade, la puse a ver si jalaba y jalo XDDD
+
       ],
 
       datasets: [{
         label: 'Más entregas de Materia Prima',
         data: [
 
-          {{$rechazados[0]->repeticiones}}, 
-          {{$rechazados[1]->repeticiones}}, 
-          {{$rechazados[2]->repeticiones}}
+        //la estructura del forelse es 
+          @forelse($rechazados as $rechazado)
+
+           '{{$rechazado->repeticiones}}',
+
+          @empty
+          <li>No hay resultados</li>
+          @endforelse
 
         ],
 
@@ -95,9 +131,21 @@
 
       }]
     },
-    options: {
 
+    options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Más rechazados'
+      }
     }
+  },
+
+
   });
 
 

@@ -10,9 +10,9 @@ class estadisticasController extends Controller
     public function proveedores(){
 
         
-        $proveedores = DB::select("SELECT proveedor, COUNT(*) AS repeticiones FROM fmp GROUP BY proveedor ORDER BY repeticiones DESC LIMIT 5 ");
+        $proveedores = DB::select("SELECT proveedor, COUNT(*) AS repeticiones FROM fmp GROUP BY proveedor ORDER BY repeticiones DESC LIMIT 10 ");
 
-        $rechazados = DB::select("SELECT proveedor, COUNT(*) AS repeticiones FROM fmp WHERE dictamen_final LIKE 'RECHAZADO' GROUP BY proveedor ORDER BY repeticiones DESC LIMIT 5 ");
+        $rechazados = DB::select("SELECT proveedor, COUNT(*) AS repeticiones FROM fmp WHERE dictamen_final LIKE 'RECHAZADO' GROUP BY proveedor ORDER BY repeticiones DESC LIMIT 10 ");
 
         
  

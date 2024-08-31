@@ -17,7 +17,7 @@
 
 
 {{-- SECCION DE BUSQUEDA DE DOCUMENTOS --}}   
-<div class="col-sm-12 col-md-6 col-lg-12 m-3 border border-5 fondo p-3 mt-5">
+<div class="col-sm-12 col-md-6 col-lg-12 m-3 border border-5 bg-white p-3 mt-5">
     
     <div class="row">
         <div class="col-12 text-center">
@@ -32,7 +32,7 @@
     <div class="row d-flex justify-content-center">
 
         {{-- card rellenar  formatos materia prima --}}
-        <div class="col-sm-12 col-md-6 col-lg-3 sombra btn resizeable-div   border border-5 m-2">
+        <div class="col-sm-12 col-md-6 col-lg-3 sombra btn  resizeable-div   border border-5 m-2">
             <a href="{{route('busqueda.fmp')}}">
                 <div class="row">
                     <div class="col-12">
@@ -98,7 +98,7 @@
 
 
 {{-- SECCION DE GESTIONAR USUARIOS --}}   
-<div class="col-sm-12 col-md-6 col-lg-12 m-3 border border-5 fondo p-3 mt-5">
+<div class="col-sm-12 col-md-6 col-lg-12 m-3 border border-5 bg-white p-3 mt-5">
     <div class="row">
         <div class="col-12 text-center">
             <h3 class="fw-bold">
@@ -137,7 +137,8 @@
         </div>
         {{-- card rellenar  formatos materia prima --}}
 
-                {{-- card rellenar  formatos materia prima --}}
+
+
         <div class="col-sm-12 col-lg-3 sombra btn resizeable-div   border border-5 m-2">
             <a href="{{route('estadisticas.proveedores')}}">
                 <div class="row">
@@ -147,7 +148,17 @@
                 </div>
             </a>
         </div>
-        {{-- card rellenar  formatos materia prima --}}
+
+
+        <div class="col-sm-12 col-lg-4 sombra btn resizeable-div   border border-5 m-2">
+            <a href="{{route('actualizar.encabezados')}}">
+                <div class="row">
+                    <div class="col-12">
+                        <h6 class="mx-auto mt-3">ACTUALIZAR DATOS DE LOS ENCABEZADOS</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
 
 
 
