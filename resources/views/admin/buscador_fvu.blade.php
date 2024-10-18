@@ -47,7 +47,7 @@
 
         @forelse ($formatos as $formato)
         <a href="{{route('fvu.lleno.admin', $formato->id)}}">
-            <div class="row p-3 resizeable-table mt-1 justify-content-around border border-3"> 
+            <div class="row p-3 resizeable-table mt-1 justify-content-around"> 
                 <div class="col-sm-12 col-md-6 col-lg-2">
                     <b>Folio: </b>
                     <h6 class="text-danger">{{$formato->folio}}</h6>

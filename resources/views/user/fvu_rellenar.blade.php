@@ -327,32 +327,32 @@
                     <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >PISO</label>
                         <select class="form-select form-control-sm" name="piso" aria-label="Default select example">
-                            <option value="SI">SI CUMPLE</option>
-                            <option value="NO">NO CUMPLE</option>
+                            <option value="SI CUMPLE">SI CUMPLE</option>
+                            <option value="NO CUMPLE">NO CUMPLE</option>
                         </select>
                     </div>
             
                     <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >PUERTAS</label>
                         <select class="form-select form-control-sm" name="puertas" aria-label="Default select example">
-                            <option value="SI">SI CUMPLE</option>
-                            <option value="NO">NO CUMPLE</option>
+                            <option value="SI CUMPLE">SI CUMPLE</option>
+                            <option value="NO CUMPLE">NO CUMPLE</option>
                         </select>
                     </div>
             
                     <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >PAREDES</label>
                         <select class="form-select form-control-sm" name="paredes" aria-label="Default select example">
-                            <option value="SI">SI CUMPLE</option>
-                            <option value="NO">NO CUMPLE</option>
+                            <option value="SI CUMPLE">SI CUMPLE</option>
+                            <option value="NO CUMPLE">NO CUMPLE</option>
                         </select>
                     </div>
             
                     <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >TECHO</label>
                         <select class="form-select form-control-sm" name="techo" aria-label="Default select example">
-                            <option value="SI">SI CUMPLE</option>
-                            <option value="NO">NO CUMPLE</option>
+                            <option value="SI CUMPLE">SI CUMPLE</option>
+                            <option value="NO CUMPLE">NO CUMPLE</option>
                         </select>
                     </div>
             
@@ -360,24 +360,24 @@
                     <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >MATERIA EXTRAÑA</label>
                         <select class="form-select form-control-sm" name="materia_desconocida" aria-label="Default select example">
-                            <option value="SI">SI CUMPLE</option>
-                            <option value="NO">NO CUMPLE</option>
+                            <option value="SI CUMPLE">SI CUMPLE</option>
+                            <option value="NO CUMPLE">NO CUMPLE</option>
                         </select>
                     </div>
             
                     <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >PLAGA</label>
                         <select class="form-select form-control-sm" name="plaga" aria-label="Default select example">
-                            <option value="SI">SI</option>
-                            <option value="NO">NO</option>
+                            <option value="SI CUMPLE">SI CUMPLE</option>
+                            <option value="NO CUMPLE">NO CUMPLE</option>
                         </select>
                     </div>
             
                     <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >LIMPIEZA</label>
                         <select class="form-select form-control-sm" name="limpieza" aria-label="Default select example">
-                            <option value="SI">SI CUMPLE</option>
-                            <option value="NO">NO CUMPLE</option>
+                            <option value="SI CUMPLE">SI CUMPLE</option>
+                            <option value="NO CUMPLE">NO CUMPLE</option>
                         </select>
                     </div>
             
@@ -385,16 +385,16 @@
                     <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >OLORES EXTRAÑOS</label>
                         <select class="form-select form-control-sm" name="olores_raros" aria-label="Default select example">
-                            <option value="SI">SI</option>
-                            <option value="NO">NO</option>
+                            <option value="SI CUMPLE">SI CUMPLE</option>
+                            <option value="NO CUMPLE">NO CUMPLE</option>
                         </select>
                     </div>
             
                     <div class="col-sm-12 col-md-4 col-lg-2 mt-4">
                         <label for="" class="fw-bold" >FILTRACIONES</label>
                         <select class="form-select form-control-sm" name="filtraciones" aria-label="Default select example">
-                            <option value="SI">SI</option>
-                            <option value="NO">NO</option>
+                            <option value="SI CUMPLE">SI CUMPLE</option>
+                            <option value="NO CUMPLE">NO CUMPLE</option>
                         </select>
                     </div>
             
@@ -419,24 +419,24 @@
                         <div class="col-sm-12 col-md-12 col-lg-12 mt-4">
                             <label for="" class="fw-bold" >CERTIFICADOS DE FUMIGACIÓN Y SANITIZACIÓN</label>
                             <select class="form-select form-control-lg" name="fumigacion" aria-label="Default select example">
-                                <option value="SI">SI CUMPLE</option>
-                                <option value="NO">NO CUMPLE</option>
+                                <option value="SI CUMPLE">SI CUMPLE</option>
+                                <option value="NO CUMPLE">NO CUMPLE</option>
                             </select>
                         </div>
                 
                         <div class="col-sm-12 col-md-12 col-lg-12 mt-4">
                             <label for="" class="fw-bold" >LIBRE DE BASURA, QUIMICOS U OTROS</label>
                             <select class="form-select form-control-lg" name="libre_basura" aria-label="Default select example">
-                                <option value="SI">SI CUMPLE</option>
-                                <option value="NO">NO CUMPLE</option>
+                                <option value="SI CUMPLE">SI CUMPLE</option>
+                                <option value="NO CUMPLE">NO CUMPLE</option>
                             </select>
                         </div>  
                         
                         <div class="col-sm-12 col-md-12 col-lg-12 mt-4">
                             <label for="" class="fw-bold" >VIDRIOS ESTRELLADOS</label>
                             <select class="form-select form-control-lg" name="vidrios_estrellados" aria-label="Default select example">
-                                <option value="SI">SI</option>
-                                <option value="NO">NO</option>
+                                <option value="SI CUMPLE">SI CUMPLE</option>
+                                <option value="NO CUMPLE">NO CUMPLE</option>
                             </select>
                         </div>  
                 

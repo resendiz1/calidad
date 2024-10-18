@@ -46,7 +46,7 @@
 
 @forelse ($formatos as $formato)
         <a href="{{route('fmp.lleno', $formato->id)}}">
-            <div class="row p-3 resizeable-table mt-1 border border-3"> 
+            <div class="row p-3 resizeable-table mt-1"> 
                 <div class="col-sm-12 col-md-6 col-lg-2 p-2">
                     <h6> {{$formato->fecha}} </h6>
                 </div>

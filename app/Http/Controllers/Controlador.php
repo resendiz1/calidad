@@ -505,9 +505,11 @@ class Controlador extends Controller
     }
 
 
+
+
     public function busqueda_fmp(){
 
-        $formatos = Fmp::all();
+        $formatos = Fmp::orderBy('updated_at', 'desc')->get();
 
         return view('admin.buscador_fmp', compact('formatos'));
     }
@@ -523,7 +525,7 @@ class Controlador extends Controller
 
 
     public function busqueda_fpnc(){
-        $formatos = Fpnc::all();
+        $formatos = Fpnc::orderBy('updated_at', 'desc')->get();
 
         return view('admin.buscador_fpnc', compact('formatos'));
     }
@@ -535,15 +537,24 @@ class Controlador extends Controller
         return view('admin.buscador_fpnc', compact('formatos'));
     }
 
+
+
     public function busqueda_fvu(){
-        $formatos = Fvu::all();
+    
+        $formatos = Fvu::orderBy('updated_at', 'desc')->get();
         return view('admin.buscador_fvu', compact('formatos'));
+    
     }
 
+
+
     public function buscados_fvu(){
+
         $query = request('busqueda');
         $formatos = DB::select("SELECT*FROM fvu WHERE folio LIKE '%$query%'  OR propietario LIKE '%$query%' OR numero_embarque LIKE '%$query%' ");
+        
         return view('admin.buscador_fvu', compact('formatos'));
+
     }
 
 

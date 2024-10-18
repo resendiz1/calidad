@@ -352,7 +352,7 @@
             </div>
         </div>
 
-        <div class="modal fade" id="k{{$fpnc->folio}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="k{{$fpnc->lote}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
             <div class="modal-content ">
                     <img src="{{Storage::url($fpnc->foto3)}}" class="img-fluid"  alt="" data-bs-toggle="modal" data-bs-target="#exampleModal">
