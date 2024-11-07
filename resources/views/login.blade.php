@@ -9,7 +9,7 @@
             <div class="col-sm-12 col-md-9 col-lg-5 mt-5 bg-white p-5 border border-5 sombra">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <img src="img/user.png" class="img-fluid w-25" alt="">
+                        <img src="img/user.gif" class="img-fluid w-50" alt="">
                         <h3 class="mt-2">Inicio de sesión</h3>
                         <span class="text-danger">{{$errors->first()}}</span> 
                     </div>

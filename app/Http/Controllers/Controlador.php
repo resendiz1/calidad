@@ -403,6 +403,7 @@ class Controlador extends Controller
         $planta = Auth::user()->planta;
         //Me selecciona todos los formatos generados por es planta 
         $formatos = DB::select("SELECT*FROM fmp WHERE planta LIKE $planta ORDER BY created_at DESC");
+        
 
         return view('user.tabla_fmp_enviados_revision', compact('formatos'));
     }
@@ -821,9 +822,6 @@ class Controlador extends Controller
         }
 
 
-
-
-
         //Guardando los datos del FVU
         $fvu = new  Fvu();
         $fvu->planta = request('planta');
@@ -902,6 +900,9 @@ class Controlador extends Controller
         return view('user.fvu_verificar_almacen', compact('fvu'));
     }
 
+
+
+
     public function almacen_fvu_verificar(){
         
         $fvu = Fvu::findOrFail(request('id'));
@@ -922,6 +923,8 @@ class Controlador extends Controller
     }
 
 
+
+
     public function add_lote($id){
 
         $fmp = Fmp::findOrFail($id);
@@ -932,6 +935,9 @@ class Controlador extends Controller
 
     }
 
+
+
+
     public function add_embarque($id){
 
         $fvu = Fvu::findOrFail($id);
@@ -939,7 +945,6 @@ class Controlador extends Controller
         $fvu -> save();
 
         return back();
-
     }
 
 

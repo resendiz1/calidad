@@ -101,9 +101,8 @@
         <li>Sin resultados</li>
 @endforelse
 
+</div>
 
-
-        </div>
     </div>
 </div>
 <!-- PANEL PARA MOSTRAR LA TABLA CON LOS RESULTADOS DE LA BUSQUEDA -->
