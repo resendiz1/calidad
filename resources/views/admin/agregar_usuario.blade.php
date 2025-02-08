@@ -73,6 +73,7 @@
                         <option value="BASCULA">BASCULA</option>
                         <option value="ALMACEN MP">ALMACEN MP</option>
                         <option value="ALMACEN PT">ALMACEN PT</option>
+                        <option value="RECEPCIONES">RECEPCIONES</option>
                     </select>
                 </div>
 

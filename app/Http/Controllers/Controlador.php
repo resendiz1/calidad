@@ -888,7 +888,7 @@ class Controlador extends Controller
 
 
     public function fvu_pendientes(){
-        $fvu = DB::select("SELECT*FROM fvu WHERE verifico_almacen LIKE 'no_verificado' ");
+        $fvu = DB::select("SELECT*FROM fvu WHERE verifico_almacen LIKE 'no_verificado' ORDER BY  updated_at DESC");
 
         return view('user.tabla_fvu_pendientes', compact('fvu'));
     }

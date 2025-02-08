@@ -78,6 +78,7 @@
                             <option value="BASCULA">BASCULA</option>
                             <option value="ALMACEN PT">ALMACEN PT</option>
                             <option value="ALMACEN MP">ALMACEN MP</option> 
+                            <option value="RECEPCIONES">RECEPCIONES</option>  
                         @endif
 
                         @if ($usuario->area == 'PRODUCCION')
@@ -86,6 +87,7 @@
                             <option value="BASCULA">BASCULA</option>
                             <option value="ALMACEN PT">ALMACEN PT</option>
                             <option value="ALMACEN MP">ALMACEN MP</option> 
+                            <option value="RECEPCIONES">RECEPCIONES</option>  
                         @endif
 
                         @if ($usuario->area == 'BASCULA')
@@ -93,7 +95,8 @@
                             <option value="CALIDAD">CALIDAD</option>
                             <option value="PRODUCCION">PRODUCCIÓN</option>
                             <option value="ALMACEN PT">ALMACEN PT</option>
-                            <option value="ALMACEN MP">ALMACEN MP</option> 
+                            <option value="ALMACEN MP">ALMACEN MP</option>
+                            <option value="RECEPCIONES">RECEPCIONES</option>   
                         @endif
 
                         
@@ -103,6 +106,7 @@
                             <option value="CALIDAD">CALIDAD</option>
                             <option value="PRODUCCION">PRODUCCIÓN</option>
                             <option value="BASCULA">BASCULA</option>
+                            <option value="RECEPCIONES">RECEPCIONES</option>  
                         @endif
 
                         @if ($usuario->area == 'ALMACEN PT')
@@ -111,7 +115,20 @@
                             <option value="CALIDAD">CALIDAD</option>
                             <option value="PRODUCCION">PRODUCCIÓN</option>
                             <option value="BASCULA">BASCULA</option>
+                            <option value="RECEPCIONES">RECEPCIONES</option>   
                         @endif
+
+
+                        @if ($usuario->area == 'RECEPCIONES')
+                            <option selected value="{{$usuario->area}}">{{$usuario->area}}</option>
+                            <option value="ALMACEN MP">ALMACEN MP</option>    
+                            <option value="ALMACEN PT">ALMACEN PT</option>                        
+                            <option value="CALIDAD">CALIDAD</option>
+                            <option value="PRODUCCION">PRODUCCIÓN</option>
+                            <option value="BASCULA">BASCULA</option>
+                        @endif
+
+
 
 
 

@@ -556,7 +556,7 @@
         <div class="container">
             <div class="row justify-content-center mt-5">
                 <div class="col-5">
-                    <form action="{{route('almacen.fvu.verificar')}}" method="POST">
+                    <form id="formularioConfirmacion" action="{{route('almacen.fvu.verificar')}}" method="POST">
                         @csrf
                         <button class="btn btn-success w-100">
                             <input type="hidden" name="id" value="{{$fvu->id}}">
@@ -580,5 +580,14 @@
             <!-- contenedor de todo -->
 
 
-
+            <script>
+                // Agregar el evento al formulario para confirmar el envío
+                document.getElementById('formularioConfirmacion').addEventListener('submit', function(event) {
+                    const confirmar = confirm("¿Estás seguro de que deseas marcar este formato como revisado?");
+                    if (!confirmar) {
+                        // Detener el envío si el usuario cancela
+                        event.preventDefault();
+                    }
+                });
+            </script>
 @endsection

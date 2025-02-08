@@ -35,7 +35,8 @@
         <div class=" col-sm-6 col-md-6 col-lg-3 p-2 border-start">
             <b>Fecha: </b> <br>
             <span>{{$formato->fecha}} <br>
-                <b> {{substr($formato->created_at, -8)}} </b> 
+                <b>Hora:</b> <br>
+                 {{substr($formato->created_at, -8, -3)}}
             </span>
         </div>
         <div class=" col-sm-6 col-md-6 col-lg-3 p-2 border-start">
