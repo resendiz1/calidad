@@ -402,7 +402,7 @@ class Controlador extends Controller
 
         $planta = Auth::user()->planta;
         //Me selecciona todos los formatos generados por es planta 
-        $formatos = DB::select("SELECT*FROM fmp WHERE planta LIKE $planta ORDER BY created_at DESC");
+        $formatos = DB::select("SELECT*FROM fmp WHERE planta LIKE $planta ORDER BY created_at DESC ");
         
 
         return view('user.tabla_fmp_enviados_revision', compact('formatos'));
@@ -510,7 +510,7 @@ class Controlador extends Controller
 
     public function busqueda_fmp(){
 
-        $formatos = Fmp::orderBy('updated_at', 'desc')->get();
+        $formatos = Fmp::orderBy('created_at', 'desc')->get();
 
         return view('admin.buscador_fmp', compact('formatos'));
     }

@@ -1,4 +1,28 @@
- /* el boton de regresar con el color de pabsa */
+.boton_flotante{
+    position: fixed; 
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 30px 30px;
+    border-radius: 50px;
+    font-size: 40px;
+    font-weight:bold;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animación */
+        
+}
+.boton_flotante:hover{
+    transform: scale(1.1); /* Hace el botón un poco más grande */
+    background-color: white;
+    color: black;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+/* el boton de regresar con el color de pabsa */
 .pabsa-btn{
     background-color: #FF5733;
     color: white;
