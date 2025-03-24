@@ -2,6 +2,7 @@
 @section('contenido')
 @include('assets.nav')
 @section('title', 'FO/GP/CC/070/01')
+@include('assets.nav_admin')
 
 <div class="container bg-white mt-4 mb-3 sombra border border-5">
     <div class="row">

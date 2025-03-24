@@ -2,6 +2,7 @@
 @section('contenido')
 @include('assets.nav')
 @section('title', 'Datos')
+@include('assets.nav_admin')
 
 
 

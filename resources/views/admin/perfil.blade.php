@@ -2,6 +2,9 @@
 @section('contenido')
 @include('assets.nav')
 @section('title', Auth::user()->nombre_completo)
+@include('assets.nav_admin')
+
+
 
 
 
@@ -10,91 +13,6 @@
 
 <div class="container">
     <div class="row  justify-content-around">
-
-
-
-
-
-
-{{-- SECCION DE BUSQUEDA DE DOCUMENTOS --}}   
-<div class="col-sm-12 col-md-6 col-lg-12 m-3 border border-5 bg-white p-5 mt-5">
-    
-    <div class="row">
-        <div class="col-12 text-center">
-            <h3 class="fw-bold">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                BUSCAR DOCUMENTOS
-            </h3>
-        </div>
-    </div>
-
-
-    <div class="row d-flex justify-content-center">
-
-        {{-- card rellenar  formatos materia prima --}}
-        <div class="col-sm-12 col-lg-3 sombra btn  resizeable-div   border border-5 m-2">
-            <a href="{{route('busqueda.fmp')}}">
-                <div class="row">
-                    <div class="col-12 p-4">
-                        <h6 class="mx-auto mt-3">MATERIA PRIMA</h6>
-                        <i class="fa-solid fa-wheat-awn fa-2x text-secondary mt-3"></i>
-                    </div>
-                </div>
-            </a>
-        </div>
-        {{-- card rellenar  formatos materia prima --}}
-
-
-
-
-        {{-- card documentos generados formato materia prima --}}
-        <div class="col-sm-12 col-lg-3 sombra btn resizeable-div  border border-5 m-2">
-            <a href="{{route('busqueda.fpnc')}}">
-                <div class="row">
-                    <div class="col-12 p-4 mt-3">
-                        <h6 class="mx-auto">PRODUCTO NO CONFORME</h6>
-                        <i class="fa-solid fa-ban fa-2x text-secondary mt-3"></i>
-                    </div>
-                </div>
-            </a>
-        </div>
-        {{-- card documentos generados formato materia prima --}}      
-        
-
-
-        {{-- card documentos generados formato materia prima --}}
-        <div class="col-sm-12  col-lg-3 sombra btn resizeable-div  border border-5 m-2">
-            <a href="{{route('busqueda.fvu')}}">
-                <div class="row">
-                    <div class="col-12 p-4 mt-3">
-                        <h6 class="mx-auto">LIBERACIÓN DE UNIDADES</h6>
-                        <i class="fa-solid fa-truck fa-2x text-secondary mt-3"></i>
-                    </div>
-                </div>
-            </a>
-        </div>
-        {{-- card documentos generados formato materia prima --}}      
-
-
-
-
-
-
-    </div>
-</div>
-{{-- SECCION DE BUSQUEDA DE DOCUMENTOS --}}   
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -112,35 +30,9 @@
 
     <div class="row d-flex justify-content-center">
 
-        {{-- card rellenar  formatos materia prima --}}
-        <div class="col-sm-12 col-lg-3 sombra btn resizeable-div   border border-5 m-2">
-            <a href="{{route('lista.usuarios')}}">
-                <div class="row">
-                    <div class="col-12 p-4">
-                        <h6 class="mx-auto mt-3">GESTIONAR USUARIOS</h6>
-                        <i class="fa-solid fa-users fa-2x text-secondary mt-3"></i>
-
-                    </div>
-                </div>
-            </a>
-        </div>
-        {{-- card rellenar  formatos materia prima --}}
 
 
 
-        {{-- card rellenar  formatos materia prima --}}
-        <div class="col-sm-12 col-lg-3 sombra btn resizeable-div   border border-5 m-2">
-            <a href="{{route('datos.admin')}}">
-                <div class="row">
-                    <div class="col-12 p-4">
-                        <h6 class="mx-auto mt-3">GESTIONAR DATOS</h6>
-                        <i class="fa-solid fa-database fa-2x text-secondary mt-3"></i>
-
-                    </div>
-                </div>
-            </a>
-        </div>
-        {{-- card rellenar  formatos materia prima --}}
 
 
 
