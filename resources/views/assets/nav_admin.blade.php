@@ -11,6 +11,16 @@
     </div>
     <div class="offcanvas-body">
         <ul class="nav flex-column">
+            <h5>Inicio</h5>
+            <li class="nav-item">
+                <a class="nav-link h4 text-dark fw-bold" href="{{route('admin.view')}}">
+                    <i class="fa-solid fa-home"></i>
+                    Inicio
+                </a>
+            </li>
+        </ul>
+        
+        <ul class="nav flex-column">
             <h5>Recuperar Documentos</h5>
 
             <li class="nav-item">

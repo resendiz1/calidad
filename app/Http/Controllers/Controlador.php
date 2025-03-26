@@ -71,7 +71,16 @@ class Controlador extends Controller
 
 
     public function showAdmin(){
-        return view('admin.perfil');
+
+                
+        $proveedores = DB::select("SELECT proveedor, COUNT(*) AS repeticiones FROM fmp GROUP BY proveedor ORDER BY repeticiones DESC LIMIT 10 ");
+
+        $rechazados = DB::select("SELECT proveedor, COUNT(*) AS repeticiones FROM fmp WHERE dictamen_final LIKE 'RECHAZADO' GROUP BY proveedor ORDER BY repeticiones DESC LIMIT 10 ");
+
+        
+
+
+        return view('admin.perfil', compact('proveedores', 'rechazados'));
     }
 
 
@@ -534,8 +543,10 @@ class Controlador extends Controller
 
     public function buscados_fpnc(){
         $query = request('busqueda');
-        $formatos = DB::select("SELECT*FROM fpnc WHERE proveedor LIKE '%$query%'  OR producto LIKE '%$query%' OR fecha LIKE '%$query%' ");
+        $formatos = DB::select("SELECT*FROM fpnc WHERE proveedor LIKE '%$query%'  OR producto LIKE '%$query%' OR fecha LIKE '%$query%' OR lote LIKE '%$query%' OR folio LIKE '%$query%' ");
+        
         return view('admin.buscador_fpnc', compact('formatos'));
+    
     }
 
 
@@ -552,7 +563,7 @@ class Controlador extends Controller
     public function buscados_fvu(){
 
         $query = request('busqueda');
-        $formatos = DB::select("SELECT*FROM fvu WHERE folio LIKE '%$query%'  OR propietario LIKE '%$query%' OR numero_embarque LIKE '%$query%' ");
+        $formatos = DB::select("SELECT*FROM fvu WHERE folio LIKE '%$query%' OR linea_transportista LIKE '%$query%' OR   OR propietario LIKE '%$query%' OR numero_embarque LIKE '%$query%' ");
         
         return view('admin.buscador_fvu', compact('formatos'));
 

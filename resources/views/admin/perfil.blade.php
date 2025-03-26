@@ -1,103 +1,144 @@
 @extends('plantilla')
 @section('contenido')
+@section('title', 'Estadisticas Proveedores')
 @include('assets.nav')
-@section('title', Auth::user()->nombre_completo)
 @include('assets.nav_admin')
+    
 
-
-
-
-
-<!-- MENU DE OPCIONES -->
-<br>
 
 <div class="container">
+
     <div class="row  justify-content-around">
-
-
-
-{{-- SECCION DE GESTIONAR USUARIOS --}}   
-<div class="col-sm-12 col-md-6 col-lg-12 m-3 border border-5 bg-white p-5 mt-5">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h3 class="fw-bold">
-                <i class="fa fa-table"></i>
-                GESTIONAR DATOS
-            </h3>
+        <div class="col-sm-12 col-md-10 col-lg-7 bg-white shadow shadow-sm p-3">
+            <h4  class="text-center" >Proveedores con más entregas</h4>
+            <hr>
+            <canvas id="mas_pedidos"></canvas>
         </div>
-    </div>
-
-
-    <div class="row d-flex justify-content-center">
-
-
-
-
-
-
-
-        <div class="col-sm-12 col-lg-3 sombra btn resizeable-div   border border-5 m-2">
-            <a href="{{route('estadisticas.proveedores')}}">
-                <div class="row">
-                    <div class="col-12 p-4">
-                        <h6 class="mx-auto mt-3">DATOS RECOPILADOS</h6>
-                        <i class="fa-solid fa-chart-line fa-2x text-secondary mt-3"></i>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-
-        {{-- <div class="col-sm-12 col-lg-4 sombra btn resizeable-div   border border-5 m-2">
-            <a href="{{route('actualizar.encabezados')}}">
-                <div class="row">
-                    <div class="col-12 p-4">
-                        <h6 class="mx-auto mt-3">ACTUALIZAR DATOS DE LOS ENCABEZADOS</h6>
-                    </div>
-                </div>
-            </a>
-        </div> --}}
-
-
-
-
-        {{-- card documentos generados formato materia prima --}}
-        {{-- <div class="col-sm-12 col-lg-6 sombra btn resizeable-div  border border-5  mt-3">
-            <a href="{{route('admin.add_usuario')}}">
-                <div class="row">
-                    <div class="col-12 mt-3">
-                        <h6 class="mx-auto">AGREGAR USUARIOS</h6>
-                    </div>
-                    <div class="col-12">
-                        <i class="fa fa-pencil fa-2x mt-2"></i>
-                    </div>
-                </div>
-            </a>
-        </div> --}}
-          {{-- card documentos generados formato materia prima --}}            
-
-
-    </div>
-</div>
-{{-- SECCION DE GESTIONAR USUARIOS --}}   
-
-
-
-
-
-
         
-
-
-
     </div>
 </div>
 
-<!-- MENU DE OPCIONES -->
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+
+
+
+
+
+
+
+{{-- aqui esta el codigo para generar los graficos --}}
+
+<script>
+ 
+  const ctx = document.getElementById('mas_pedidos');
+  new Chart(ctx, {
+    type: 'polarArea',
+    
+    data: {
+      labels: [
+        @forelse($proveedores as $proveedor)
+         '{{$proveedor->proveedor}}', 
+        @empty
+          <li> No hay datos </li>
+        @endforelse
+
+      ],
+
+      datasets: [{
+        label: 'Más entregas de Materia Prima',
+        data: [
+
+          @forelse($proveedores as $proveedor)
+            {{$proveedor->repeticiones}}, 
+          @empty
+            <li>No hay datos</li>
+          @endforelse
+
+
+        ],
+
+
+        borderWidth: 1
+
+
+      }]
+    },
+
+    options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Más Entregas'
+      }
+    }
+  },
+  });
+
+
+
+
+  const ctx2 = document.getElementById('mas_rechazados');
+  new Chart(ctx2, {
+    type: 'pie',
+    
+
+
+    data: {
+      labels: [
+        
+        @forelse ($rechazados as $rechazado) //Esta parte es de blade, la puse a ver si jalaba y jalo XDDD
+          '{{$rechazado->proveedor}}', 
+        @empty//Esta parte es de blade, la puse a ver si jalaba y jalo XDDD
+
+        <li>Sin resultados</li>
+        @endforelse//Esta parte es de blade, la puse a ver si jalaba y jalo XDDD
+
+      ],
+
+      datasets: [{
+        label: 'Más entregas de Materia Prima',
+        data: [
+
+        //la estructura del forelse es 
+          @forelse($rechazados as $rechazado)
+
+           '{{$rechazado->repeticiones}}',
+
+          @empty
+          <li>No hay resultados</li>
+          @endforelse
+
+        ],
+
+
+        borderWidth: 1
+
+
+      }]
+    },
+
+    options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Más rechazados'
+      }
+    }
+  },
+
+
+  });
+
+
+</script>
+
+
 @endsection

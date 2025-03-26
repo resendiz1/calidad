@@ -8,9 +8,6 @@
     <div class="row">
         <div class="col-12 text-center p-3">
             <h3 class="fw-bold">FORMATOS DE VERIFICACIÓN DE UNIDADES</h3>
-            <a href="{{route('admin.view')}}" class="btn btn-success btn-sm">
-                Regresar
-            </a>
         </div>
     </div>
 </div>
@@ -23,12 +20,13 @@
     <div class="container mt-2 bg-white p-4 border border-5 sombra">
         <div class="row">
             <div class="col-12">
-                <div class="row">
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <input type="text" name="busqueda" class="form-control" placeholder="propietario, embarque, folio" autofocus >
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 col-md-4 col-lg-11 font-weight-bold">
+                        <label for="" class="my-2  h5"> <b> Busca por:</b> Proveedor, Folio, Producto o Lote </label>
+                        <input type="text" name="busqueda" class="form-control p-3 " placeholder="Busca por : Proveedor, Folio, Producto o Lote" autofocus >
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-2 d-flex align-items-center">
-                        <button class="btn btn-primary w-100"> <i class="fa fa-search"></i> Buscar</button>
+                    <div class="col-sm-6 col-md-4 col-lg-11 d-flex align-items-center mt-2">
+                        <button class="btn btn-primary w-100  "> <i class="fa fa-search mx-3"></i> Buscar</button>
                     </div>
                 </div>
             </div>
