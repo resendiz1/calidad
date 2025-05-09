@@ -115,14 +115,31 @@
     </script>
 
 
-    <script>
+  <script>
       //aqui va el codigo del select 2
       $(document).ready(function(){
         $('.select_busqueda').select2();
       })
-    </script>
+  </script>
+
+
+
 
   <script>
+
+    $(window).on('resize', function () {
+        $('.select_busqueda').each(function () {
+            $(this).select2('destroy').select2({
+                theme: 'bootstrap-5',
+                placeholder: 'Selecciona una opción',
+                width: 'resolve' // esto es clave
+            });
+        });
+    });
+
+
+
+    
 
     $('#selectA, #selectB').select2({
         theme: 'bootstrap-5', // o 'bootstrap-5' si usas Bootstrap 5
@@ -131,6 +148,11 @@
     });
 
   </script>
+
+
+
+
+
 
   </body>
 </html>

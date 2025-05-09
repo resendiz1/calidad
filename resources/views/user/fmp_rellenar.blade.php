@@ -135,7 +135,7 @@
         <div class="row justify-content-around shadow shadow-sm py-3 border">
 
       <!-- COLUMNA DE LOS "DATOS DE LA MATERIA PRIMA" -->
-          <div class="col-sm-12 col-md-6  col-lg-6 border p-3">
+          <div class="col-sm-12 col-md-6  col-lg-6 border">
             <div class="row justify-content-around">
 
               <div class="col-lg-8 mx-1 text-center fondo border border-dark mb-4">
@@ -146,8 +146,8 @@
                 <h6 class="mt-1">PRODUCTO:</h6>
               </div>
 
-              <div class="col-10 text-left">
-                <select class="text-left form-select form-control select_busqueda mt-1" name="producto">
+              <div class="col-10 text-left p-0">
+                <select class="text-left form-select form-control select_busqueda p-0 mt-1" name="producto">
                   @forelse ($productos as $producto)
                     <option value="{{$producto->nombre_producto}}">{{$producto->nombre_producto}}</option>  
                   @empty
@@ -210,7 +210,7 @@
 
 
       <!-- COLUMNA DE LOS "DATOS DEL TRANSPORTE" -->
-          <div class="col-sm-12 col-md-6 col-lg-6 border p-3">
+          <div class="col-sm-12 col-md-6 col-lg-6 border ">
             <div class="row justify-content-around">
               <!-- Titulo datos del transporte -->
               <div class="col-lg-8 mx-1 text-center fondo border border-dark mb-4">
