@@ -1,5 +1,5 @@
 <!-- Botón para mostrar la barra lateral -->
-<button class="btn btn-light btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+<button class="btn btn-dark btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
     ☰ Menú
 </button>
 

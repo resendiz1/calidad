@@ -135,19 +135,19 @@
         <div class="row justify-content-around shadow shadow-sm py-3 border">
 
       <!-- COLUMNA DE LOS "DATOS DE LA MATERIA PRIMA" -->
-          <div class="col-sm-12 col-md-6  col-lg-6">
+          <div class="col-sm-12 col-md-6  col-lg-6 border p-3">
             <div class="row justify-content-around">
 
-              <div class="col-lg-8 mx-1 text-center fondo border border-dark">
+              <div class="col-lg-8 mx-1 text-center fondo border border-dark mb-4">
                 <span class="mt-1 h6 h6-sm">DATOS DE MATERIA PRIMA</span>
               </div>
 
-              <div class="col-10 mt-3 border fondo-titulos border border-gray">
+              <div class="col-10 mt-3 fondo-titulos p-0">
                 <h6 class="mt-1">PRODUCTO:</h6>
               </div>
 
-              <div class="col-10 text-left p-0">
-                <select class="text-left form-select form-control mt-1" name="producto">
+              <div class="col-10 text-left">
+                <select class="text-left form-select form-control select_busqueda mt-1" name="producto">
                   @forelse ($productos as $producto)
                     <option value="{{$producto->nombre_producto}}">{{$producto->nombre_producto}}</option>  
                   @empty
@@ -156,12 +156,12 @@
                 </select>
               </div>
 
-              <div class="col-10 mt-3 border border-gray border-2 fondo-titulos">
+              <div class="col-10 mt-3 fondo-titulos p-0">
                 <h6 class="mt-1">PROVEEDOR</h6>
               </div>
 
               <div class="col-10 p-0">
-                <select class="text-left form-select form-control mt-1" name="proveedor">
+                <select class="text-left form-select form-control select_busqueda mt-1"  name="proveedor">
                   @forelse ($proveedores as $proveedor)
                     <option value="{{$proveedor->nombre_proveedor}}">{{$proveedor->nombre_proveedor}}</option>      
                   @empty
@@ -172,13 +172,36 @@
                 </select>
               </div>
 
-              <div class="col-10 fondo-titulos mt-3">
+              <div class="col-5 fondo-titulos p-0 mt-3">
                 <h6 class="mt-1">LOTE</h6>
+                <input types="text" class="form-control mt-1" name="lote" value="{{old('lote')}}" >
               </div>
 
-              <div class="col-10 p-0">
-                <input type="text" class="form-control mt-1" name="lote" value="{{old('lote')}}" >
+              <div class="col-5 p-0 mt-3">
+                <h6 class="mt-1">FLEJE</h6>
+                <input types="text" class="form-control mt-1" name="fleje" value="{{old('lote')}}" >
               </div>
+
+              <div class="col-5 p-0 mt-4">
+                  <h6 >CADUCIDAD</h6>
+                  <input type="date" class="form-control" name="caducidad" value="{{old('caducidad')}}">
+              </div>
+
+              <div class="col-5 p-0 mt-4">
+                <h6 >CANTIDAD RECEPCIONADA</h6>
+                <div class="row">
+                  <div class="col-7 p-0">
+                      <input type="number" min="1" class="form-control" name="cantidad_recepcionada" value="{{old('cantidad_recepcionada')}}">
+                      {!!$errors->first('cantidad_recepcionada', "<small class='text-danger fw-bold'> :message </small>")!!}
+                  </div>
+                  <div class="col-4 p-0">
+                    <select name="unidad_medida" class="form-control text-white bg-dark" id="selectA">
+                      <option value="Kg">Kg</option>
+                      <option value="Pieza">Piezas</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
 
             </div>
           </div>
@@ -187,19 +210,19 @@
 
 
       <!-- COLUMNA DE LOS "DATOS DEL TRANSPORTE" -->
-          <div class="col-sm-12 col-md-6 col-lg-6">
+          <div class="col-sm-12 col-md-6 col-lg-6 border p-3">
             <div class="row justify-content-around">
               <!-- Titulo datos del transporte -->
-              <div class="col-lg-8 mx-1 text-center fondo border border-dark">
+              <div class="col-lg-8 mx-1 text-center fondo border border-dark mb-4">
                 <span class="mt-1 h6 ">DATOS DEL TRANSPORTE</span>
               </div>
               
-              <div class="col-10 mt-3 border fondo-titulos border border-gray">
+              <div class="col-10 mt-3 fondo-titulos p-0">
                 <h6 class="mt-1">LINEA TRANSPORTISTA</h6>
               </div>
               
               <div class="col-10 text-left p-0">
-                <select class="text-left form-select form-control mt-2" name="linea_transportista">
+                <select class="text-left form-select form-control mt-1 select_busqueda" name="linea_transportista">
                   @forelse ($transportes as $transporte)
                     <option value="{{$transporte->nombre_transportista}}">{{$transporte->nombre_transportista}}</option>  
                   @empty
@@ -210,7 +233,7 @@
                 </select>
               </div>
 
-              <div class="col-10 mt-3 fondo-titulos border border-gray p-0">
+              <div class="col-10 mt-3 fondo-titulos p-0">
                 <h6 class="mt-1">OPERADOR</h6>
               </div>
 
@@ -390,7 +413,17 @@
                 <small class="fw-bold">CANT. MUESTRA</small>
               </div>
               <div class="col-6">
-                <input type="number" step="any" class="form-control" placeholder="(Kg)" name="cantidad_muestra" value="{{old('cantidad_muestra')}}">
+                <div class="row">
+                  <div class="col-7 p-0">
+                    <input type="number" step="any" class="form-control" name="cantidad_muestra" placeholder="Cantidad" value="{{old('cantidad_muestra')}}">
+                  </div>
+                  <div class="col-5 p-0">
+                    <select name="unidad_medida" class="form-control text-white bg-dark" id="selectB">
+                      <option value="Kg">Kg</option>
+                      <option value="Pieza">Piezas</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -439,7 +472,7 @@
         <!-- FILA DE CERTIFICADO DE CALIDAD, BX Y ASEGURADO -->
         <div class="row justify-content-between">
           
-          <div class="col-sm-12 col-md-12 col-lg-4 my-2">
+          <div class="col-sm-12 col-md-12 col-lg-6 my-2">
             <div class="row justify-content-center border">
               <div class="col-5 mt-2">
                 <small class="fw-bold">CERTIF. DE CALIDAD</small>
@@ -454,7 +487,7 @@
           </div>
 
           
-          <div class="col-sm-12 col-md-12 col-lg-4 my-2">
+          {{-- <div class="col-sm-12 col-md-12 col-lg-4 my-2">
             <div class="row justify-content-center border">
               <div class="col-5 mt-2">
                 <small class="fw-bold">FLUORECENCIA</small>
@@ -463,10 +496,10 @@
                 <input type="text" class="form-control form-control" name="fluorecencia" value="{{old('fluorecencia')}}" >
               </div>   
             </div>
-          </div>
+          </div> --}}
 
 
-          <div class="col-sm-12 col-md-12 col-lg-4 my-2">
+          <div class="col-sm-12 col-md-12 col-lg-6 my-2">
             <div class="row justify-content-center border">
               <div class="col-5 mt-2">
                 <small class="fw-bold">ASEGURADO</small>

@@ -57,7 +57,12 @@ class Fmp extends Model
         'observaciones_bascula',
         'observaciones_produccion',
         'reviso_bascula',
-        'reviso_produccion'
+        'reviso_produccion',
+        'unidad_medida',
+        'caducidad', 
+        'fleje',
+        'cantidad_recepcionada'
+
 
     ];
 }

@@ -28,8 +28,10 @@ use App\Http\Controllers\estadisticasController;
 // Route::view('/admin/eliminar', 'admin.eliminar_usuario');
 // Route::view('/encontrado', 'fmp_lleno');
 
-
-
+//Para mantener viva la session 
+Route::get('/keep-alive', function () {
+    return response()->json(['status' => 'alive']);
+})->middleware('auth');
 
 
 

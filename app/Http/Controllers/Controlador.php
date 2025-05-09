@@ -332,7 +332,8 @@ class Controlador extends Controller
             'placas_caja' => 'required',
             'hora_entrada_laboratorio' => 'required',
             'hora_liberacion' => 'required',
-            'superviso_muestreo' => 'required'
+            'superviso_muestreo' => 'required',
+            'cantidad_recepcionada' => 'required'
         ]);
         
         $lote = 'pendiente';
@@ -349,6 +350,8 @@ class Controlador extends Controller
         $fmp->producto = request('producto');
         $fmp->proveedor = request('proveedor');
         $fmp->lote = $lote;
+        $fmp->fleje = request('fleje');
+        $fmp->caducidad = request('caducidad');
         $fmp->linea_transportista = request('linea_transportista');
         $fmp->nombre_operador = request('operador');
         $fmp->placas_transporte = request('placas_transporte');
@@ -362,10 +365,11 @@ class Controlador extends Controller
         $fmp->grano_quebrado = request('grano_quebrado');
         $fmp->impurezas = request('impurezas');
         $fmp->cantidad_muestra = request('cantidad_muestra');
+        $fmp->unidad_medida = request('unidad_medida');
         $fmp->bx = request('bx');
         $fmp->plagas = request('plagas');
         $fmp->certificado_calidad = request('certificado_calidad');
-        $fmp->fluorecencia = request('fluorecencia');
+        // $fmp->fluorecencia = request('fluorecencia');
         $fmp->asegurado = request("asegurado");
         $fmp->color_olor_caracteristico = request('color_olor');
         $fmp->equipo_muestreo = request('equipo_muestreo');
