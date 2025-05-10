@@ -147,7 +147,7 @@
               </div>
 
               <div class="col-10 text-left p-0">
-                <select class="text-left form-select form-control select_busqueda p-0 mt-1" name="producto">
+                <select class="text-left form-select form-control  select_busqueda p-0 mt-1" name="producto">
                   @forelse ($productos as $producto)
                     <option value="{{$producto->nombre_producto}}">{{$producto->nombre_producto}}</option>  
                   @empty
@@ -161,7 +161,7 @@
               </div>
 
               <div class="col-10 p-0">
-                <select class="text-left form-select form-control select_busqueda mt-1"  name="proveedor">
+                <select class="text-left form-select form-control select_busqueda mt-1 p-5"  name="proveedor">
                   @forelse ($proveedores as $proveedor)
                     <option value="{{$proveedor->nombre_proveedor}}">{{$proveedor->nombre_proveedor}}</option>      
                   @empty
@@ -172,36 +172,42 @@
                 </select>
               </div>
 
-              <div class="col-5 fondo-titulos p-0 mt-3">
-                <h6 class="mt-1">LOTE</h6>
-                <input types="text" class="form-control mt-1" name="lote" value="{{old('lote')}}" >
+              <div class="row justify-content-around">
+                <div class="col-10 col-sm-10 col-md-10 col-lg-4  fondo-titulos p-0 mt-3">
+                  <h6 class="mt-1">LOTE</h6>
+                  <input types="text" class="form-control mt-1" name="lote" value="{{old('lote')}}" >
+                </div>
+  
+                <div class="col-10 col-sm-10 col-md-10 col-lg-4 p-0 mt-3">
+                  <h6 class="mt-1">FLEJE</h6>
+                  <input types="text" class="form-control mt-1" name="fleje" value="{{old('lote')}}" >
+                  {!!$errors->first('fleje', "<small class='text-danger fw-bold'> :message </small>")!!}
+                </div>
               </div>
 
-              <div class="col-5 p-0 mt-3">
-                <h6 class="mt-1">FLEJE</h6>
-                <input types="text" class="form-control mt-1" name="fleje" value="{{old('lote')}}" >
-              </div>
-
-              <div class="col-5 p-0 mt-4">
+              <div class="row justify-content-around">
+                <div class="col-10 col-sm-10 col-md-10 col-lg-4 p-0 mt-4">
                   <h6 >CADUCIDAD</h6>
                   <input type="date" class="form-control" name="caducidad" value="{{old('caducidad')}}">
               </div>
 
-              <div class="col-5 p-0 mt-4">
-                <h6 >CANTIDAD RECEPCIONADA</h6>
-                <div class="row">
-                  <div class="col-7 p-0">
-                      <input type="number" min="1" class="form-control" name="cantidad_recepcionada" value="{{old('cantidad_recepcionada')}}">
-                      {!!$errors->first('cantidad_recepcionada', "<small class='text-danger fw-bold'> :message </small>")!!}
-                  </div>
-                  <div class="col-4 p-0">
-                    <select name="unidad_medida" class="form-control text-white bg-dark" id="selectA">
-                      <option value="Kg">Kg</option>
-                      <option value="Pieza">Piezas</option>
-                    </select>
+                <div class="col-10 col-sm-10 col-md-10 col-lg-4 mt-4 p-0 my-3">
+                  <h6>CANT. RECEPCIONADA</h6>
+                  <div class="row mx-1">
+                    <div class="col-8 p-0">
+                        <input type="number" min="0" class="form-control" name="cantidad_recepcionada" value="{{old('cantidad_recepcionada')}}">
+                        {!!$errors->first('cantidad_recepcionada', "<small class='text-danger fw-bold'> :message </small>")!!}
+                    </div>
+                    <div class="col-4 p-0">
+                      <select name="unidad_medida" id="unidad" class="form-control text-white bg-dark">
+                        <option value="Kg">Kg</option>
+                        <option value="Pieza(s)">Piezas</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
-            </div>
+
+              </div>
 
             </div>
           </div>
@@ -248,10 +254,10 @@
                 <input type="text" class="form-control" name="placas_transporte" value="{{old('placas_transporte')}}">
                 {!! $errors->first('placas_transporte', '<small class="text-danger fw-bold">:message</small> ') !!}
               </div>
-              <div class="col-10 p-0 fondo-titulos mt-3">        
+              <div class="col-10 p-0 fondo-titulos mt-3 ">        
                 <h6 class="mt-2">PLACAS CAJA :</h6>
               </div>
-              <div class="col-10 p-0 mt-1">
+              <div class="col-10 p-0 mt-1 my-3">
                 <input type="text" class="form-control" name="placas_caja" value="{{old('placas_caja')}}" >
                 {!! $errors->first('placas_caja', '<small class="text-danger fw-bold"> :message </small>  ') !!}
               </div>
@@ -417,11 +423,8 @@
                   <div class="col-7 p-0">
                     <input type="number" step="any" class="form-control" name="cantidad_muestra" placeholder="Cantidad" value="{{old('cantidad_muestra')}}">
                   </div>
-                  <div class="col-5 p-0">
-                    <select name="unidad_medida" class="form-control text-white bg-dark" id="selectB">
-                      <option value="Kg">Kg</option>
-                      <option value="Pieza">Piezas</option>
-                    </select>
+                  <div class="col-5 text-center d-flex align-items-center">
+                      <span id="unidad_medida"></span>
                   </div>
                 </div>
               </div>

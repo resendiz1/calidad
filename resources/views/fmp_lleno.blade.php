@@ -147,7 +147,7 @@
     <div class="col-sm-12 col-md-6  col-lg-6">
       <div class="row justify-content-around">
 
-        <div class="col-lg-8 mx-1 text-center fondo border border-dark">
+        <div class="col-lg-8 mx-1 text-center fondo ">
           <span class="mt-1 h6 h6-sm">DATOS DE MATERIA PRIMA</span>
         </div>
 
@@ -159,7 +159,7 @@
             <h6 class="m-2">{{$fmp->producto}}</h6>
         </div>
 
-        <div class="col-10 mt-3 border border-gray border-2 fondo-titulos">
+        <div class="col-10 mt-3 border fondo-titulos">
             <h6 class="mt-1">PROVEEDOR</h6>
         </div>
 
@@ -167,28 +167,55 @@
             <h6 class="m-2">{{$fmp->proveedor}}</h6>
         </div>
 
-        <div class="col-10 fondo-titulos mt-3">
-            <h6 class="mt-1">LOTE</h6>
+        <div class="col-10 col-sm-10 col-md-10 col-lg-12">
+            <div class="row justify-content-around">
+              <div class="col-10 col-sm-6 col-md-12 col-lg-4 fondo-titulos mt-3">
+                  <div class="row">
+                    <div class="col-6 p-0">
+                      <h6 class="mt-1 mx-2 ">CADUCIDAD: </h6>
+                      <span class="mx-2" >{{$fmp->caducidad}}</span>
+                    </div>
+                  </div>
+              </div>
+    
+              <div class="col-10 col-sm-6 col-md-12 col-lg-4 fondo-titulos mt-3">
+                <div class="row">
+                  <div class="col-6 p-0">
+                    <h6 class="mt-1 mx-2 ">CADUCIDAD: </h6>
+                    <span class="mx-2" >{{$fmp->caducidad}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
 
-        <div class="col-10 p-0 ">
-          @if ($fmp->lote == 'pendiente' and isset(Auth::user()->nombre_completo))
-            <h6 class="m-2 text-danger fw-bold">{{$fmp->lote}}</h6>
-            
-            @if ($fmp->usuario_logeado === Auth::user()->nombre_completo)
-                <button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#lote">
-                <i class="fa fa-pen"></i>  RELLENAR LOTE
-                </button>
-            @else
-              <button class="btn btn-danger  w-100" disabled>
-              <i class="fa fa-pen"></i>  RELLENAR LOTE
-              </button>
-            @endif
+        <div class="col-4 fondo-titulos mt-3">
+          <div class="row">
+            <div class="col-6 p-0">
+              <h6 class="mt-1 mx-2">LOTE: </h6>
 
-          @else
-            <h6 class="m-2">{{$fmp->lote}}</h6>
-          @endif
-        </div>
+              @if ($fmp->lote == 'pendiente' and isset(Auth::user()->nombre_completo))
+                <h6 class="m-2 text-danger fw-bold p-0">{{$fmp->lote}}</h6>
+                
+                @if ($fmp->usuario_logeado === Auth::user()->nombre_completo)
+                    <button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#lote">
+                    <i class="fa fa-pen"></i>  RELLENAR LOTE
+                    </button>
+                @else
+                  <button class="btn btn-danger  w-100" disabled>
+                  <i class="fa fa-pen"></i>  RELLENAR LOTE
+                  </button>
+                @endif
+    
+              @else
+                <h6 class="m-2 p-0">{{$fmp->lote}}</h6>
+              @endif
+            </div>
+    
+          </div>
+      </div>
+
+
 
       </div>
     </div>
@@ -200,7 +227,7 @@
     <div class="col-sm-12 col-md-6 col-lg-6">
       <div class="row justify-content-around">
         <!-- Titulo datos del transporte -->
-        <div class="col-lg-8 mx-1 text-center fondo border border-dark">
+        <div class="col-lg-8 mx-1 text-center fondo">
           <span class="mt-1 h6 ">DATOS DEL TRANSPORTE</span>
         </div>
         
@@ -220,7 +247,7 @@
             <h6 class="m-2">{{$fmp->nombre_operador}}</h6>
         </div>
 
-        <div class="col-10  fondo-titulos mt-3">        
+        <div class="col-10  fondo-titulos mt-3 border">        
             <h6 class="mt-2">PLACAS DEL TRACTO O TORTON :</h6>
         </div>
 
@@ -228,7 +255,7 @@
             <h6 class="m-2">{{$fmp->placas_transporte}}</h6>
         </div>
 
-        <div class="col-10  fondo-titulos mt-3">        
+        <div class="col-10  fondo-titulos mt-3 border">        
           <h6 class="mt-2">PLACAS CAJA :</h6>
         </div>
 

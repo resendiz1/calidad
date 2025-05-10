@@ -328,6 +328,7 @@ class Controlador extends Controller
         request()->validate([
             'hora_recepcion' => 'required',
             'operador' => 'required',
+            'fleje' => 'required',
             'placas_transporte' => 'required',
             'placas_caja' => 'required',
             'hora_entrada_laboratorio' => 'required',
@@ -352,6 +353,7 @@ class Controlador extends Controller
         $fmp->lote = $lote;
         $fmp->fleje = request('fleje');
         $fmp->caducidad = request('caducidad');
+        $fmp->cantidad_recepcionada = request('catindad_recepcionada');
         $fmp->linea_transportista = request('linea_transportista');
         $fmp->nombre_operador = request('operador');
         $fmp->placas_transporte = request('placas_transporte');

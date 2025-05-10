@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::table('fmp', function (Blueprint $table) {
             $table->string('fleje')->nullable();
             $table->string('caducidad')->nullable();
+            $table->string('cantidad_recepcionada')->nullable();
             $table->string('unidad_medida')->nullable();
 
         });

@@ -1,10 +1,11 @@
- .select_busqueda{
+ .select_busqueda {
     height: calc(10.5em + .9rem + 8px);
     /* padding: .375rem .75rem; */
     font-size: 1rem;
     line-height: 1.5;
     border: 1px solid #ced4da;
     border-radius: .25rem;
+    text-transform: uppercase;
 }
 
 
