@@ -4,10 +4,10 @@
 @section('title', $fmp->folio)  
  
 <br class="d-print-none">
-<br>
+<br class="d-print-none">
 
 {{-- boton de regresar --}}
-<div class="container mb-4">
+<div class="container mb-4 d-print-none">
   <div class="row justify-content-center">
 
     @if (Auth::guard('adminis')->user() == null &&  isset(Auth::user()->nombre_completo))
@@ -43,7 +43,7 @@
   <div class="row border border-5">
     
     <div class="col-sm-12 col-md-4  col-lg-4 centrar-verticalmente p-2 mt-2">
-      <img src="{{asset('img/logo.png')}}" class="mx-auto img-fluid" alt="">
+      <img src="{{asset('img/logo.jpg')}}" class="mx-auto img-fluid" alt="">
     </div>
     
     <div class="col-sm-12 col-md-4 col-lg-4 border mt-2"> 

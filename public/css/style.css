@@ -1,3 +1,12 @@
+.nav-item a{
+    color: black;
+}
+.nav-item a:hover{
+background-color: rgb(0, 0, 0);
+color: white;
+}
+
+
 .boton_flotante{
     position: fixed; 
     bottom: 20px;

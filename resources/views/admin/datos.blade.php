@@ -9,14 +9,6 @@
 <br><br>
 <div class="container-fluid mt-3">
 
-    <div class="row justify-content-center mb-5">
-        <div class="col-3 text-center">
-            <a href="{{route('admin.view')}}" class="btn btn-success w-100">Regresar</a>
-        </div>
-    </div>
-
-
-
 
     <div class="row justify-content-around mt-5">
 

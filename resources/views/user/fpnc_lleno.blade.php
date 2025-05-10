@@ -35,7 +35,7 @@
   <div class="row border border-5">
     
     <div class="col-sm-12 col-md-3 col-lg-4 d-flex align-items-center p-2 mt-2">
-      <img src="{{asset('img/logo.png')}}" class="mx-auto img-fluid" alt="">
+      <img src="{{asset('img/logo.jpg')}}" class="mx-auto img-fluid" alt="">
     </div>
     
     <div class="col-sm-12 col-md-4 col-lg-4 border mt-2"> 
