@@ -169,28 +169,40 @@
 
         <div class="col-10 col-sm-10 col-md-10 col-lg-12">
             <div class="row justify-content-around">
-              <div class="col-10 col-sm-6 col-md-12 col-lg-4 fondo-titulos mt-3">
+              <div class="col-10 col-sm-6 col-md-12 col-lg-10 fondo-titulos mt-3">
                   <div class="row">
-                    <div class="col-6 p-0">
-                      <h6 class="mt-1 mx-2 ">CADUCIDAD: </h6>
-                      <span class="mx-2" >{{$fmp->caducidad}}</span>
+                    <div class="col-12 border">
+                      <h6 class="mt-1  ">CADUCIDAD: </h6>
+                    </div>
+                    <div class="col-12 p-0 mx-1">
+                      <span class="" >{{$fmp->caducidad}}</span>
                     </div>
                   </div>
               </div>
     
-              <div class="col-10 col-sm-6 col-md-12 col-lg-4 fondo-titulos mt-3">
+              <div class="col-10 col-sm-6 col-md-12 col-lg-10 fondo-titulos mt-3">
                 <div class="row">
-                  <div class="col-6 p-0">
-                    <h6 class="mt-1 mx-2 ">CADUCIDAD: </h6>
-                    <span class="mx-2" >{{$fmp->caducidad}}</span>
+                  <div class="col-12  border">
+                    <h6 class="mt-1  ">FLEJE: </h6>
+                  </div>
+                  <div class="col-12">
+                    <span class="p-0" >{{$fmp->fleje}}</span>
                   </div>
                 </div>
               </div>
+
             </div>
         </div>
 
-        <div class="col-4 fondo-titulos mt-3">
-          <div class="row">
+        <div class="col-10 fondo-titulos mt-3 text-center border">
+          <div class="row justify-content-center">
+
+            <div class="col-6 p-0">
+              <h6 class="mt-1">CANT. RECEPCIONADA: </h6>
+              <span class="" >{{$fmp->cantidad_recepcionada}} - {{$fmp->unidad_medida}}</span>
+            </div>
+
+            
             <div class="col-6 p-0">
               <h6 class="mt-1 mx-2">LOTE: </h6>
 
@@ -211,7 +223,7 @@
                 <h6 class="m-2 p-0">{{$fmp->lote}}</h6>
               @endif
             </div>
-    
+
           </div>
       </div>
 
@@ -243,7 +255,7 @@
             <h6 class="mt-1">OPERADOR</h6>
         </div>
 
-        <div class="col-10 ">
+        <div class="col-10 p-0">
             <h6 class="m-2">{{$fmp->nombre_operador}}</h6>
         </div>
 
@@ -487,7 +499,7 @@
         </div>
           @if ($fmp->cantidad_muestra)
           <div class="col-6">
-              <h6 class="m-2">{{$fmp->cantidad_muestra}}Kg</h6>
+              <h6 class="m-2">{{$fmp->cantidad_muestra}} - {{$fmp->unidad_medida}}</h6>
           </div>  
 
           @else
