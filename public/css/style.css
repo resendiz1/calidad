@@ -185,10 +185,11 @@ a{
   #formloader{
     margin-top: 20px;
     text-align: center;
+    font-size: 300px;
   }
 
   .form-sending{
-    opacity: 0.9;
+    opacity: 1;
     pointer-events: none;
   }
 

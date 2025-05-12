@@ -385,7 +385,7 @@
 
                             <div class="col-12 p-2 border border border-2" id="firma_preview">
 
-                                @if ($fvu->firma_operador != null)
+                                @if ($fvu->firma_operador && Storage::exists($fvu->firma_operador))
                                     <img src="{{Storage::url($fvu->firma_operador)}}" alt="Firma {{$fvu->operador}}" class="img-fluid w-50 fotos" alt="" data-bs-toggle="modal" data-bs-target="#sign{{$fvu->folio}}">
                                     
                                 @else
@@ -470,7 +470,7 @@
                 <div class="col-sm-12 col-md-4 col-lg-4 border text-center shadow shadow-sm">
                     <div class="row">
                         <div class="col-12 fotos" id="imagenPrevia">
-                            @if ($fvu->evidencia1 != null)
+                            @if ($fvu->evidencia1 && Storage::exists($fvu->evidencia1))
                                 <img src="{{Storage::url($fvu->evidencia1)}}" class="img-fluid" alt="Evidencia 1" data-bs-toggle="modal" data-bs-target="#b{{$fvu->folio}}">
                                 
                             @else
@@ -500,7 +500,7 @@
                     <div class="row">
                         <div class="col-12 fotos" id="imagenPrevia2">
 
-                            @if ($fvu->evidencia2 != null)
+                            @if ($fvu->evidencia2 && Storage::exists($fvu->evidencia2))
                                 <img src="{{Storage::url($fvu->evidencia2)}}" class="img-fluid" alt="Evidencia 2" data-bs-toggle="modal" data-bs-target="#a{{$fvu->folio}}">
                                 
                             @else
@@ -532,7 +532,7 @@
                 <div class="col-sm-12 col-md-4 col-lg-4 border text-center shadow shadow-sm">
                      <div class="row">
                         <div class="col-12  fotos" id="imagenPrevia3">
-                            @if ($fvu->evidencia3 != null)
+                            @if ($fvu->evidencia3 && Storage::exists($fvu->evidencia3))
                                 <img src="{{Storage::url($fvu->evidencia3)}}" class="img-fluid" alt="Evidencia 3" data-bs-toggle="modal" data-bs-target="#e{{$fvu->folio}}">
                                 
                             @else
