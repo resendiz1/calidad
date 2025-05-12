@@ -44,7 +44,7 @@
                 <div class="col-12 text-center mt-0">
                     <form action="{{route('cerrar.sesion')}}" method="POST">
                         @csrf
-                        <button class="btn  btn-sm" type="submit">
+                        <button class="btn btn-light btn-sm" type="submit">
                             <i class="fa fa-power-off"></i>
                             Cerrar Sesión
                         </button>

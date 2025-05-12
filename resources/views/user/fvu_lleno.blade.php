@@ -141,11 +141,12 @@
             
             
                     <div class="col-10 mt-3 border border-gray border-2 fondo-titulos">
-                        <h6 class="mt-1">PROVEEDOR / CLIENTE</h6>
+                        <h6 class="mt-1">PROVEEDOR (S) / CLIENTE (S)</h6>
                     </div>
             
                     <div class="col-10 p-2">
                         <h5>{{$fvu->propietario}}</h5>
+                        <h5>{{$fvu->propietario2}}</h5>
                     </div>
                     <div class="col-10 mt-3 border fondo-titulos border border-gray">
                         <h6 class="mt-1">LINEA TRANSPORTISTA</h6>
@@ -169,12 +170,8 @@
                             @endif
                         
                         @else
-                            <h6>{{$fvu->numero_embarque}}</h6>
-
+                            <h6>{{$fvu->numero_embarque}} - {{$fvu->numero_embarque2}}</h6>
                         @endif
-
-
-
 
                     </div>
             
@@ -192,20 +189,20 @@
                         <span class="mt-1 h6 ">DATOS DEL TRANSPORTE</span>
                     </div>
                         
-                    <div class="col-10 mt-3 fondo-titulos border border-gray p-0">
+                    <div class="col-10 mt-3 fondo-titulos border border-gray">
                         <h6 class="mt-1">OPERADOR</h6>
                     </div>
             
                     <div class="col-10 p-2">
                         <h6>{{$fvu->operador}}</h6>
                     </div>
-                    <div class="col-10 p-0 fondo-titulos mt-3 border">        
+                    <div class="col-10 fondo-titulos mt-3 border">        
                         <h6 class="mt-2">PLACAS DEL TRACTO O TORTON :</h6>
                     </div>
                     <div class="col-10 p-2 mt-1">
                         <h6>{{$fvu->placas_unidad}}</h6>
                     </div>
-                    <div class="col-10 p-0 fondo-titulos mt-3 border">        
+                    <div class="col-10 fondo-titulos mt-3 border">        
                         <h6 class="mt-2">PLACAS CAJA :</h6>
                     </div>
                     <div class="col-10 p-2 mt-1">

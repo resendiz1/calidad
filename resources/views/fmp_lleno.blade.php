@@ -141,6 +141,7 @@
 
 <!-- Titulos -->
 <div class="container mt-5">
+
   <div class="row justify-content-around shadow shadow-sm py-3 border">
 
 <!-- COLUMNA DE LOS "DATOS DE LA MATERIA PRIMA" -->
@@ -275,8 +276,9 @@
             <h6 class="m-2">{{$fmp->placas_caja}}</h6>
         </div>
 
-    </div>
+      </div>
 <!-- COLUMNA DE LOS "DATOS DEL TRANSPORTE" -->
+    </div>
 
   </div>
 </div>
@@ -876,7 +878,7 @@
   <div class="row mt-4 d-flex justify-content-around ">
 
 
-        <div class="col-sm-12 col-md-12 col-lg-3">
+        {{-- <div class="col-sm-12 col-md-12 col-lg-3">
 
           <div class="row">
             <div class="col-12">
@@ -910,9 +912,9 @@
                </i>
             </div>
           </div>
-        </div>
+        </div> --}}
 
-        <div class="col-sm-12 col-md-12 col-lg-3">
+        <div class="col-sm-12 col-md-12 col-lg-10 text-center">
           <div class="row">
             <div class="col-12">
               <h6>OBSERVACIONES CALIDAD:</h6>
@@ -989,6 +991,8 @@
 
         </div>
       </div>
+
+
       <div class="col-sm-12 col-md-12 col-lg-3">
 
         <div class="row">

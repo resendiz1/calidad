@@ -13,7 +13,7 @@
         <ul class="nav flex-column">
             <h5>Inicio</h5>
             <li class="nav-item">
-                <a class="nav-link h4 text-dark fw-bold" href="{{route('admin.view')}}">
+                <a class="nav-link h4  fw-bold" href="{{route('admin.view')}}">
                     <i class="fa-solid fa-home"></i>
                     Inicio
                 </a>
@@ -24,20 +24,20 @@
             <h5>Recuperar Documentos</h5>
 
             <li class="nav-item">
-                <a class="nav-link h4 text-dark fw-bold" href="{{route('busqueda.fpnc')}}">
+                <a class="nav-link h4  fw-bold" href="{{route('busqueda.fpnc')}}">
                     <i class="fa-solid fa-circle-xmark"></i>
                     Formatos de Producto No Conforme
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link h4 text-dark fw-bold" href="{{route('busqueda.fmp')}}">
+                <a class="nav-link h4  fw-bold" href="{{route('busqueda.fmp')}}">
                     <i class="fa-solid fa-seedling"></i>
                     Formatos de MP
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link h4 text-dark fw-bold" href="{{route('busqueda.fvu')}}">
+                <a class="nav-link h4  fw-bold" href="{{route('busqueda.fvu')}}">
                     <i class="fa-solid fa-truck"></i>
                     Formatos de Liberación de Unidades
                 </a>
@@ -48,13 +48,13 @@
         <ul class="nav flex-column mt-5">
             <h5>Gestios de Datos</h5>
             <li class="nav-item">
-                <a class="nav-link h4 text-dark fw-bold" href="{{route('datos.admin')}}">
+                <a class="nav-link h4  fw-bold" href="{{route('datos.admin')}}">
                     <i class="fa-solid fa-truck-fast"></i>
                     Agregar o Eliminar Proveedores
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link h4 text-dark fw-bold" href="{{route('lista.usuarios')}}">
+                <a class="nav-link h4  fw-bold" href="{{route('lista.usuarios')}}">
                     <i class="fa-solid fa-user"></i>
                     Gestionar Usuarios
                 </a>

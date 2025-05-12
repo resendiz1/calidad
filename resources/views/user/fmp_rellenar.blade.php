@@ -200,6 +200,7 @@
                     </div>
                     <div class="col-4 p-0">
                       <select name="unidad_medida" id="unidad" class="form-control text-white bg-dark">
+                        <option value="">- - </option>
                         <option value="Kg">Kg</option>
                         <option value="Pieza(s)">Piezas</option>
                       </select>
@@ -424,7 +425,7 @@
                     <input type="number" step="any" class="form-control" name="cantidad_muestra" placeholder="Cantidad" value="{{old('cantidad_muestra')}}">
                   </div>
                   <div class="col-5 text-center d-flex align-items-center">
-                      <span id="unidad_medida"></span>
+                      <span id="unidad_medida">--</span>
                   </div>
                 </div>
               </div>

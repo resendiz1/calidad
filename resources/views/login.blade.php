@@ -16,7 +16,7 @@
                 </div>
 
 
-<form action="{{route('login.intro')}}" method="POST">
+<form action="{{route('login.intro')}}" method="POST" id="login_form">
     @csrf
 
                 <div class="row justify-content-center mt-3">
@@ -49,7 +49,7 @@
                         <label for="administrador" class="text-secondary fw-bold">Ingresar como administrador</label>
                     </div>
                     <div class="col-sm-12 col-md-9 col-lg-9 mt-3">
-                        <button  class="btn btn-secondary w-100 mt-2">
+                        <button  class="btn btn-secondary w-100 mt-2" id="btn_login">
                             Entrar
                         </button>
                     </div>

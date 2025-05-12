@@ -18,7 +18,7 @@
 @if (Auth::user()->area == 'CALIDAD')
 
 {{-- SECCION DEL FORMATO DE MATERIA PRIMA --}}   
-    <div class="col-sm-12 col-md-6 col-lg-3 m-3  p-3 mt-5">
+    <div class="col-sm-12 col-md-6 col-lg-4 my-3  p-3 mt-5">
         <div class="row d-flex justify-content-center">
     
             {{-- card rellenar  formatos materia prima --}}
@@ -68,7 +68,7 @@
 
 
 {{-- SECCION DEL FORMATO DE PRODUCTO NO CONFORME --}}   
-    <div class="col-sm-12 col-md-6 col-lg-3 m-3 p-3 mt-5">
+    <div class="col-sm-12 col-md-6 col-lg-4 my-3 p-3 mt-5">
         <div class="row d-flex justify-content-center">
              {{-- card rellenar  formatos producto no conforme --}}
             <div class="col-sm-12 col-lg-6 sombra btn resizeable-div   border border-5 m-2">
@@ -110,7 +110,7 @@
 
 
 {{-- SECCION DEL FORMATO DE VERIFICACION DE UNIDADES --}} 
-<div class="col-sm-12 col-md-6 col-lg-3 m-3  p-3 mt-5 ">
+<div class="col-sm-12 col-md-6 col-lg-4 my-3  p-3 mt-5 ">
     <div class="row d-flex justify-content-center">
         
         {{-- card RELLENAR  formatos VERIFICACION UNIDADES --}}

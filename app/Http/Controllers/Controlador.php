@@ -838,6 +838,10 @@ class Controlador extends Controller
             $embarque = request('embarque');
         }
 
+        if(request('embarque2') !=''){
+            $embarque2 = request('embarque2');
+        }
+
 
         //Guardando los datos del FVU
         $fvu = new  Fvu();
@@ -847,8 +851,10 @@ class Controlador extends Controller
         $fvu->fecha = request('fecha');
         $fvu->hora = request('hora');
         $fvu->propietario = request('propietario');
+        $fvu->propietario2 = request('propietario2');
         $fvu->linea_transportista = request('linea_transportista');
         $fvu->numero_embarque = $embarque;
+        $fvu->numero_embarque2 = $embarque2;
         $fvu->operador = request('operador');
         $fvu->placas_unidad = request('placas_transporte');
         $fvu->placas_caja = request('placas_caja');

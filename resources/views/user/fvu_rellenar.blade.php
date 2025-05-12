@@ -133,13 +133,14 @@
             
             
             
+
             
             <!-- Titulos -->
             <div class="container  bg-white">
                 <div class="row justify-content-around shadow shadow-sm py-3 border">
             
             <!-- COLUMNA DE LOS "DATOS DE LA MATERIA PRIMA" -->
-                <div class="col-sm-12 col-md-6  col-lg-6 border">
+                <div class="col-sm-12 col-md-6  col-lg-6 ">
                     <div class="row justify-content-around">
             
                     <div class="col-lg-8 mx-1 text-center fondo border border-dark">
@@ -147,26 +148,42 @@
                     </div>
             
             
-                    <div class="col-10 mt-3 border border-gray border-2 fondo-titulos">
-                        <h6 class="mt-1">PROVEEDOR / CLIENTE</h6>
+                    <div class="col-10 mt-3 fondo-titulos">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 my-2 ">
+                                <h6 class="mt-1">PROVEEDOR / CLIENTE</h6>
+                                <select class="text-left form-select form-control mt-1 select_busqueda" name="propietario">
+                                    @forelse ($proveedores as $proveedor)
+                                        <option value="{{$proveedor->nombre_proveedor}}">{{$proveedor->nombre_proveedor}}</option>
+                                    @empty
+                                        <option value="No hay proveedores registrados">No hay proveedores registrados</option>
+                                        
+                                    @endforelse
+                                </select>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 my-2 ">
+                                <h6 class="mt-1">PROVEEDOR / CLIENTE 2</h6>
+                                <select class="text-left form-select form-control mt-1 select_busqueda" name="propietario2">
+                                    <option value="" selected>NINGUNO</option>
+                                    @forelse ($proveedores as $proveedor)
+                                        <option value="{{$proveedor->nombre_proveedor}}">{{$proveedor->nombre_proveedor}}</option>
+                                    @empty
+                                        <option value="No hay proveedores registrados">No hay proveedores registrados</option>
+                                        
+                                    @endforelse
+                                </select>
+                            </div>
+                        </div>
                     </div>
-            
-                    <div class="col-10 p-0">
-                        <select class="text-left form-select form-control mt-1" name="propietario">
-                            @forelse ($proveedores as $proveedor)
-                                <option value="{{$proveedor->nombre_proveedor}}">{{$proveedor->nombre_proveedor}}</option>
-                            @empty
-                                <option value="No hay proveedores registrados">No hay proveedores registrados</option>
-                                
-                            @endforelse
-                        </select>
-                    </div>
-                    <div class="col-10 mt-3 border fondo-titulos border border-gray">
+
+
+
+                    <div class="col-10 mt-3 fondo-titulos">
                         <h6 class="mt-1">LINEA TRANSPORTISTA</h6>
                     </div>
                     
-                    <div class="col-10 text-left p-0">
-                        <select class="text-left form-select form-control mt-2" name="linea_transportista">
+                    <div class="col-10 text-left  mt-1">
+                        <select class="text-left form-select form-control mt-2 select_busqueda" name="linea_transportista">
                         @forelse ($transportes as $transporte)
                             <option value="{{$transporte->nombre_transportista}}">{{$transporte->nombre_transportista}}</option>  
                         @empty
@@ -175,12 +192,17 @@
                         </select>
                     </div>
             
-                    <div class="col-10 fondo-titulos mt-3">
-                        <h6 class="mt-1">NÚMERO DE EMBARQUE</h6>
-                    </div>
-            
-                    <div class="col-10 p-0">
-                        <input type="text" class="form-control mt-1" name="embarque" value="{{old('embarque')}}">
+                    <div class="col-10 fondo-titulos mt-3 mb-3">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                                <h6 class="mt-1">NÚMERO DE EMBARQUE</h6>
+                                <input type="text" class="form-control mt-1" name="embarque" value="{{old('embarque')}}">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                                <h6 class="mt-1">NÚMERO DE EMBARQUE 2</h6>
+                                <input type="text" class="form-control mt-1" name="embarque2" value="{{old('embarque2')}}">
+                            </div>
+                        </div>
                     </div>
             
                     </div>
@@ -190,14 +212,14 @@
             
             
             <!-- COLUMNA DE LOS "DATOS DEL TRANSPORTE" -->
-                <div class="col-sm-12 col-md-6 col-lg-6 border">
+                <div class="col-sm-12 col-md-6 col-lg-6 ">
                     <div class="row justify-content-around">
                     <!-- Titulo datos del transporte -->
                     <div class="col-lg-8 mx-1 text-center fondo border border-dark">
                         <span class="mt-1 h6 ">DATOS DEL TRANSPORTE</span>
                     </div>
                         
-                    <div class="col-10 mt-3 fondo-titulos border border-gray p-0">
+                    <div class="col-10 mt-3 fondo-titulos  p-0">
                         <h6 class="mt-1">OPERADOR</h6>
                     </div>
             
@@ -205,14 +227,14 @@
                         <input type="text" class="form-control mt-1" autocomplete="on" name="operador" value="{{old('operador')}}">
                         {!!$errors->first('operador', '<small class="text-danger fw-bold badge badge-danger">:message</small>  ')!!}
                     </div>
-                    <div class="col-10 p-0 fondo-titulos mt-3">        
+                    <div class="col-10 p-0 fondo-titulos mt-1">        
                         <h6 class="mt-2">PLACAS DEL TRACTO O TORTON :</h6>
                     </div>
                     <div class="col-10 p-0 mt-1">
                         <input type="text" class="form-control" name="placas_transporte" value="{{old('placas_transporte')}}">
                         {!!$errors->first('placas_transporte', '<small class="text-danger fw-bold badge badge-danger">:message</small>  ')!!}
                     </div>
-                    <div class="col-10 p-0 fondo-titulos mt-3">        
+                    <div class="col-10 p-0 fondo-titulos mt-1">        
                         <h6 class="mt-2">PLACAS CAJA :</h6>
                     </div>
                     <div class="col-10 p-0 mt-1">
@@ -297,6 +319,11 @@
                             <div class="col-auto m-2 ">
                                 <input type="radio" class="btn-check" value="Plataforma" name="estructura_contenedor" id="plataforma" autocomplete="off">
                                 <label class="btn btn-outline-secondary" for="plataforma">Plataforma</label>    
+                            </div>
+
+                            <div class="col-auto m-2 ">
+                                <input type="radio" class="btn-check" value="Unidad Refresquera" name="estructura_contenedor" id="refresquera" autocomplete="off">
+                                <label class="btn btn-outline-secondary" for="refresquera">UNIDAD REFRESQUERA</label>    
                             </div>
 
                         </div>

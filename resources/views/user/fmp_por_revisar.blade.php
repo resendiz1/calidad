@@ -116,13 +116,14 @@
 
 <!-- Titulos -->
 <div class="container mt-5">
+
   <div class="row justify-content-around shadow shadow-sm py-3 border">
 
 <!-- COLUMNA DE LOS "DATOS DE LA MATERIA PRIMA" -->
     <div class="col-sm-12 col-md-6  col-lg-6">
       <div class="row justify-content-around">
 
-        <div class="col-lg-8 mx-1 text-center fondo border border-dark">
+        <div class="col-lg-8 mx-1 text-center fondo ">
           <span class="mt-1 h6 h6-sm">DATOS DE MATERIA PRIMA</span>
         </div>
 
@@ -134,7 +135,7 @@
             <h6 class="m-2">{{$fmp->producto}}</h6>
         </div>
 
-        <div class="col-10 mt-3 border border-gray border-2 fondo-titulos">
+        <div class="col-10 mt-3 border fondo-titulos">
             <h6 class="mt-1">PROVEEDOR</h6>
         </div>
 
@@ -142,13 +143,67 @@
             <h6 class="m-2">{{$fmp->proveedor}}</h6>
         </div>
 
-        <div class="col-10 fondo-titulos mt-3">
-            <h6 class="mt-1">LOTE</h6>
+        <div class="col-10 col-sm-10 col-md-10 col-lg-12">
+            <div class="row justify-content-around">
+              <div class="col-10 col-sm-6 col-md-12 col-lg-10 fondo-titulos mt-3">
+                  <div class="row">
+                    <div class="col-12 border">
+                      <h6 class="mt-1  ">CADUCIDAD: </h6>
+                    </div>
+                    <div class="col-12 p-0 mx-1">
+                      <span class="" >{{$fmp->caducidad}}</span>
+                    </div>
+                  </div>
+              </div>
+    
+              <div class="col-10 col-sm-6 col-md-12 col-lg-10 fondo-titulos mt-3">
+                <div class="row">
+                  <div class="col-12  border">
+                    <h6 class="mt-1  ">FLEJE: </h6>
+                  </div>
+                  <div class="col-12">
+                    <span class="p-0" >{{$fmp->fleje}}</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
         </div>
 
-        <div class="col-10 p-0">
-            <h6 class="m-2">{{$fmp->lote}}</h6>
-        </div>
+        <div class="col-10 fondo-titulos mt-3 text-center border">
+          <div class="row justify-content-center">
+
+            <div class="col-6 p-0">
+              <h6 class="mt-1">CANT. RECEPCIONADA: </h6>
+              <span class="" >{{$fmp->cantidad_recepcionada}} - {{$fmp->unidad_medida}}</span>
+            </div>
+
+            
+            <div class="col-6 p-0">
+              <h6 class="mt-1 mx-2">LOTE: </h6>
+
+              @if ($fmp->lote == 'pendiente' and isset(Auth::user()->nombre_completo))
+                <h6 class="m-2 text-danger fw-bold p-0">{{$fmp->lote}}</h6>
+                
+                @if ($fmp->usuario_logeado === Auth::user()->nombre_completo)
+                    <button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#lote">
+                    <i class="fa fa-pen"></i>  RELLENAR LOTE
+                    </button>
+                @else
+                  <button class="btn btn-danger  w-100" disabled>
+                  <i class="fa fa-pen"></i>  RELLENAR LOTE
+                  </button>
+                @endif
+    
+              @else
+                <h6 class="m-2 p-0">{{$fmp->lote}}</h6>
+              @endif
+            </div>
+
+          </div>
+      </div>
+
+
 
       </div>
     </div>
@@ -160,7 +215,7 @@
     <div class="col-sm-12 col-md-6 col-lg-6">
       <div class="row justify-content-around">
         <!-- Titulo datos del transporte -->
-        <div class="col-lg-8 mx-1 text-center fondo border border-dark">
+        <div class="col-lg-8 mx-1 text-center fondo">
           <span class="mt-1 h6 ">DATOS DEL TRANSPORTE</span>
         </div>
         
@@ -172,7 +227,7 @@
             <h6 class="m-2">{{$fmp->linea_transportista}}</h6>
         </div>
 
-        <div class="col-10 mt-3 fondo-titulos border border-gray p-0">
+        <div class="col-10 mt-3 fondo-titulos border border-gray ">
             <h6 class="mt-1">OPERADOR</h6>
         </div>
 
@@ -180,7 +235,7 @@
             <h6 class="m-2">{{$fmp->nombre_operador}}</h6>
         </div>
 
-        <div class="col-10 p-0 fondo-titulos mt-3">        
+        <div class="col-10  fondo-titulos mt-3 border">        
             <h6 class="mt-2">PLACAS DEL TRACTO O TORTON :</h6>
         </div>
 
@@ -188,7 +243,7 @@
             <h6 class="m-2">{{$fmp->placas_transporte}}</h6>
         </div>
 
-        <div class="col-10 p-0 fondo-titulos mt-3">        
+        <div class="col-10  fondo-titulos mt-3 border">        
           <h6 class="mt-2">PLACAS CAJA :</h6>
         </div>
 
@@ -196,8 +251,9 @@
             <h6 class="m-2">{{$fmp->placas_caja}}</h6>
         </div>
 
-    </div>
+      </div>
 <!-- COLUMNA DE LOS "DATOS DEL TRANSPORTE" -->
+    </div>
 
   </div>
 </div>
@@ -402,25 +458,26 @@
 
 
 
+
   <!-- FILA DE CANTIDAD DE MUESTRA, DW Y PLAGAS -->
-<div class="row justify-content-between">
+  <div class="row justify-content-between">
     
     <div class="col-sm-12 col-md-12 col-lg-4 my-2">
       <div class="row justify-content-center border">
         <div class="col-5 mt-2">
           <small class="fw-bold">CANT. MUESTRA</small>
         </div>
-        @if ($fmp->cantidad_muestra)
-        <div class="col-6">
-            <h6 class="m-2">{{$fmp->cantidad_muestra}}Kg</h6>
-        </div>  
-
-        @else
-          <div class="col-6 fondo">
-            <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-            <small class="text-info-emphasis mt-2" >No rellenado</small>
+          @if ($fmp->cantidad_muestra)
+          <div class="col-6">
+              <h6 class="m-2">{{$fmp->cantidad_muestra}} - {{$fmp->unidad_medida}}</h6>
           </div>  
-        @endif
+
+          @else
+            <div class="col-6 fondo">
+              <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
+              <small class="text-info-emphasis mt-2" >No rellenado</small>
+            </div>  
+          @endif
       </div>
     </div>
     
@@ -431,17 +488,17 @@
         <div class="col-5 mt-2">
           <small class="fw-bold">*BX</small>
         </div>
-        @if ($fmp->bx)
-        <div class="col-6">
-            <h6 class="m-2">{{$fmp->bx}} %</h6>
-        </div>  
-
-        @else
-          <div class="col-6 fondo">
-            <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-            <small class="text-info-emphasis mt-2" >No rellenado</small>
+          @if ($fmp->bx)
+          <div class="col-6">
+              <h6 class="m-2">{{$fmp->bx}}</h6>
           </div>  
-        @endif  
+
+          @else
+            <div class="col-6 fondo">
+              <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
+              <small class="text-info-emphasis mt-2" >No rellenado</small>
+            </div>  
+          @endif 
       </div>
     </div>
    
@@ -452,17 +509,9 @@
         <div class="col-5 mt-2">
           <small class="fw-bold">PLAGAS</small>
         </div>
-        @if ($fmp->plagas)
         <div class="col-6">
-            <h6 class="m-2">{{$fmp->plagas}} </h6>
-        </div>  
-
-        @else
-          <div class="col-6 fondo">
-            <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-            <small class="text-info-emphasis mt-2" >No rellenado</small>
-          </div>  
-        @endif 
+            <h6 class="m-2">{{$fmp->plagas}}</h6>
+        </div>   
       </div>
     </div>
 
@@ -782,20 +831,21 @@
 
 <form action="{{route('fmp.revisado', $fmp->id)}}" method="POST">
   @csrf @method('PATCH')
+
   <!-- CONTENEDOR DE OBSERVACIONES -->
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h4>OBSERVACIONES:</h4>
+    {{-- <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h4>OBSERVACIONES:</h4>
+        </div>
+        <div class="col-12">
+          <textarea name="observaciones" id="miTextarea" class="form-control w-100 h-100" autofocus ></textarea>
+          <input type="hidden" name="usuario" value="{{Auth::user()->nombre_completo}}" >
+          <input type="hidden" name="reviso" value="{{$reviso}}">
+          <input type="hidden" name="observaciones_area" value="{{$observaciones}}">
+        </div>
       </div>
-      <div class="col-12">
-        <textarea name="observaciones" id="miTextarea" class="form-control w-100 h-100" autofocus ></textarea>
-        <input type="hidden" name="usuario" value="{{Auth::user()->nombre_completo}}" >
-        <input type="hidden" name="reviso" value="{{$reviso}}">
-        <input type="hidden" name="observaciones_area" value="{{$observaciones}}">
-      </div>
-    </div>
-  </div>
+    </div> --}}
   <!-- CONTENEDOR DE OBSERVACIONES -->
 
 
@@ -804,7 +854,7 @@
     <div class="container mt-5">
       <div class="row justify-content-around">
         <div class="col-12">
-          <button class="btn btn-success w-100">
+          <button class="btn btn-success  w-100">
             <i class="fa fa-check"></i> ENVIAR CONFIRMACIÓN DE ENTERADO
           </button>
         </div>

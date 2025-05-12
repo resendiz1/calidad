@@ -58,15 +58,17 @@
 
     <script>
 
+      if(document.getElementById('form')){
         // aqui esta el codigo que hace funcionar al loader
-        document.getElementById('form').addEventListener('submit', function(){
+          document.getElementById('form').addEventListener('submit', function(){
 
           //moistrando el loader
           document.getElementById('formLoader').classList.remove('d-none');
           //ponemos la clase al formulario para que se ponga opaquito
           this.classList.add('form-sending');
-  
       })
+
+    }
   // aqui esta el codigo que hace funcionar al loader
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -92,16 +94,19 @@
 
      //codigo que me regresa a la pagina anterior en FVU LLENO
 
-     document.getElementById('back').addEventListener('click', function(){
-
-      if(document.referrer){
-        window.location.href = document.referrer;
-      }
-      else{
-
-      }
-
-     });
+     if(document.getElementById('back')){
+       
+       document.getElementById('back').addEventListener('click', function(){
+  
+        if(document.referrer){
+          window.location.href = document.referrer;
+        }
+        else{
+  
+        }
+  
+       });
+     }
 
     </script>
 
@@ -132,7 +137,8 @@
             $(this).select2('destroy').select2({
                 theme: 'bootstrap-5',
                 placeholder: 'Selecciona una opción',
-                width: 'resolve' // esto es clave
+                width: 'resolve', // esto es clave
+                language: "es"
             });
         });
     });
@@ -142,23 +148,45 @@
 
 
   <script>
-    const unidad = document.getElementById('unidad');
-    const unidad_medida = document.getElementById('unidad_medida');
 
+    if(document.getElementById('unidad')){
 
-    unidad.addEventListener('change', function(){
-
-
-      unidad_medida.innerHTML = unidad.value;
-
-
-    })
-
-
-
-
+      const unidad = document.getElementById('unidad');
+      const unidad_medida = document.getElementById('unidad_medida');
+      
+      
+      unidad.addEventListener('change', function(){
+        
+        
+        unidad_medida.innerHTML = unidad.value;
+        
+        
+      })
+    }
+      
 
   </script>
+
+<script>
+  if(document.getElementById('btn_login')){
+
+  const login_form = document.getElementById('login_form');
+  const btn_login = document.getElementById('btn_login');
+
+  btn_login.addEventListener('click', function(){
+
+    btn_login.disabled = true;
+    btn_login.innerHTML = "<img src='https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif' class='img-fluid' style='width:20px' >"
+    login_form.submit();
+
+    setTimeout(() => {
+      btn_login.disabled = false;
+    }, 3000);
+
+
+  });
+}
+</script>
 
 
 
