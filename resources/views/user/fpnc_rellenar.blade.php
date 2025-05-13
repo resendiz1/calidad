@@ -14,7 +14,7 @@
 </div>
 
 
-<form action="{{route('fpnc.agregar')}}" enctype="multipart/form-data" method="POST">
+<form action="{{route('fpnc.agregar')}}" id="form" enctype="multipart/form-data" method="POST">
 @csrf
 
 
@@ -227,8 +227,8 @@
 
                 <div class="col-sm-4 col-md-4 col-lg-2 p-0">  
                     <input type="number" min="0" class="form-control form-control-sm" name="cantidad" value="{{old('cantidad')}}">
-                    {!!$errors->first('cantidad', '<li class="text-danger text-justify fw-bold">:message</li>')!!}
                 </div>
+                {!!$errors->first('cantidad', '<li class="text-danger text-justify fw-bold">:message</li>')!!}
 
             </div>
         </div>        
@@ -258,7 +258,7 @@
         <div class="col-12 mt-2 p-0">
             <textarea name="desviacion" class="form-control" class="w-100 border">{{old('desviacion')}}</textarea>
             {!!$errors->first('desviacion', '<li class="text-danger text-justify fw-bold">:message</li>')!!}
-            
+
         </div>
     </div>
 </div>
@@ -393,14 +393,14 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
 
-        <div class="col-9">
+        <div class="col-12">
 
             
             <div class="row justify-content-center mt-3">
-                <div class="col-3 mt-2">
+                <div class="col-3  mt-2">
                     <span>Quien recibe la notificación</span>
                 </div>
-                <div class="col-4">
+                <div class="col-4 ">
                     <input type="text" name="recibe_notificacion" value="{{old('recibe_notificacion')}}" class="form-control" placeholder="Nombre / Puesto">
                     {!!$errors->first('recibe_notificacion', '<small class="text-danger text-justify fw-bold">:message</small>')!!}
                 </div>
@@ -409,10 +409,10 @@
 
 
             <div class="row justify-content-center mt-3">
-                <div class="col-3 mt-2">
+                <div class="col-3  mt-2">
                     <span>Quien emite la notificación</span>
                 </div>
-                <div class="col-4">
+                <div class="col-4 ">
                     <input type="text" name="emite_notificacion" value="{{old('emite_notificacion')}}" class="form-control" placeholder="Nombre / Puesto">
                     <input type="hidden" value="{{Auth::user()->nombre_completo}}" name="usuario_logeado">
                     {!!$errors->first('emite_notificacion', '<small class="text-danger text-justify fw-bold">:message</small>')!!}
@@ -428,6 +428,14 @@
 <!-- quien recibe notificación -->
 
 
+
+<!-- Loader, inicialmente oculto -->
+<div id="formLoader" class="d-none text-center">
+    <div class="spinner-border " role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<!-- Loader, inicialmente oculto -->
 
 
 <!-- boton de guardar todo alv -->

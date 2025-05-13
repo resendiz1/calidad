@@ -12,13 +12,19 @@
             Regresar
           </a>
         </div>
+        <div class="col-sm-12 col-md-6 col-lg-2 text-center">
+            <button onclick="descargarPDF()" class="btn btn-primary btn-sm">
+              <i class="fa fa-file-pdf"></i>
+              DESCARGAR PDF
+            </button>
+          </div>
     </div>
   </div>
   {{-- boton de regresar --}}
 
 
         <!-- contenedor de todo -->
-        <div class="container bg-white p-5 sombra mt-2">
+        <div class="container bg-white p-5 sombra mt-2" id="contenedor_print">
 
             <!-- encabezado -->
             <div class="container shadow shadow-sm bg-white">
@@ -141,7 +147,7 @@
             
             
                     <div class="col-10 mt-3 border border-gray border-2 fondo-titulos">
-                        <h6 class="mt-1">PROVEEDOR (S) / CLIENTE (S)</h6>
+                        <h6 class="mt-1">PROVEEDOR (S) / CLIENTE (S): </h6>
                     </div>
             
                     <div class="col-10 p-2">
@@ -149,7 +155,7 @@
                         <h5>{{$fvu->propietario2}}</h5>
                     </div>
                     <div class="col-10 mt-3 border fondo-titulos border border-gray">
-                        <h6 class="mt-1">LINEA TRANSPORTISTA</h6>
+                        <h6 class="mt-1">LINEA TRANSPORTISTA: </h6>
                     </div>
                     
                     <div class="col-10 text-left p-2">
@@ -157,16 +163,21 @@
                     </div>
             
                     <div class="col-10 fondo-titulos mt-3 border">
-                        <h6 class="mt-1">NÚMERO DE EMBARQUE</h6>
+                        <h6 class="mt-1">NÚMERO DE EMBARQUE: </h6>
                     </div>
             
-                    <div class="col-10 p-2">
+                    <div class="col-10 p-2 text-center">
                         @if ($fvu->numero_embarque == 'pendiente' && isset(Auth::user()->nombre_completo))
                             
                             @if (Auth::user()->nombre_completo == $fvu->usuario_logeado)
-                                <button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#embarque">Agregar No. Embarque</button>
+                                <button class="btn btn-success w-50 btn-sm" data-bs-toggle="modal" data-bs-target="#embarque">
+                                    <i class="fa fa-plus"></i>
+                                    Agregar No. Embarque </button>
                             @else
-                                <button class="btn btn-danger w-100" disabled>Agregar No. Embarque</button>
+                                <button class="btn btn-success btn-sm w-100" disabled>
+                                    <i class="fa fa-plus"></i>
+                                    Agregar No. Embarque </button>
+                                <small class="text-center fw-bold">El No. de embarque solo puede añadirse por la persona que hizo el dictamen final.</small>
                             @endif
                         
                         @else
@@ -190,20 +201,20 @@
                     </div>
                         
                     <div class="col-10 mt-3 fondo-titulos border border-gray">
-                        <h6 class="mt-1">OPERADOR</h6>
+                        <h6 class="mt-1">OPERADOR: </h6>
                     </div>
             
                     <div class="col-10 p-2">
                         <h6>{{$fvu->operador}}</h6>
                     </div>
                     <div class="col-10 fondo-titulos mt-3 border">        
-                        <h6 class="mt-2">PLACAS DEL TRACTO O TORTON :</h6>
+                        <h6 class="mt-2">PLACAS DEL TRACTO O TORTON: </h6>
                     </div>
                     <div class="col-10 p-2 mt-1">
                         <h6>{{$fvu->placas_unidad}}</h6>
                     </div>
                     <div class="col-10 fondo-titulos mt-3 border">        
-                        <h6 class="mt-2">PLACAS CAJA :</h6>
+                        <h6 class="mt-2">PLACAS CAJA: </h6>
                     </div>
                     <div class="col-10 p-2 mt-1">
                         <h6>{{$fvu->placas_caja}}</h6>
@@ -274,17 +285,17 @@
             
             
             <!-- verificacion interna -->
-            <div class="container bg-white p-5">
+            <div class="container bg-white px-5 py-2">
             
                 <div class="row justify-content-around ">
                     <div class="col-12 fondo border border-dark text-center">
-                        <h5 class="mt-2" >VERIFICACIÓN INTERNA</h5>
+                        <h5 class="" >VERIFICACIÓN INTERNA</h5>
                         <b> ANTES DE INICIAR LA CARGA, REVISAR LA UNIDAD PROPUESTA SEÑALANDO CON UNA MARCA EL ESTADO QUE GUARDAN LOS PUNTOS: </b>
                     <br> <small> SI CUMPLEN LOS REQUERIMIENT MENCIONADOS EN LAS INSTRUCCIONES MARCAR CON UN <b>SI</b>, SI ALGUNA DE LAS ESPECIFICACIONES NO SE CUMPLE FAVOR DE ANOTAR <b>NO</b>  </small>
                     </div>
                 </div>
             
-                <div class="row mt-4">  <!--row de los criterios de verificacion interna -->
+                <div class="row mt-2">  <!--row de los criterios de verificacion interna -->
             
                     <div class="col-sm-12 col-md-4 col-lg-3 mt-4 border">
                         <label for="" class="fw-bold" >PISO</label>
@@ -565,7 +576,7 @@
 
 
                     @if ($fvu->verifico_almacen == 'no_verificado')
-                        <div class="col-3 text-white text-center" style="background-color: maroon">
+                        <div class="col-12 col-sm-12 col-md-8 col-lg-5 p-3 text-white text-center bg-danger">
                             <h5 class="fw-bold">
                                 <i class="fa fa-circle-exclamation mt-1 mx-2"></i>
                                 NO VERIFICADO
@@ -625,5 +636,21 @@
 
 
 
+
+<script>
+    function descargarPDF() {
+      var element = document.getElementById('contenedor_print'); // o `document.getElementById('miDiv')`
+  
+      var opt = {
+        margin:       0,
+        filename:     'mi_web.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'mm', format: [380, 660], orientation: 'portrait' }
+      };
+  
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
 
 @endsection

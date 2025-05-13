@@ -833,6 +833,7 @@ class Controlador extends Controller
 
 
         $embarque = 'pendiente';
+        $embarque2 = '';
 
         if(request('embarque') !=''){
             $embarque = request('embarque');

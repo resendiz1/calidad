@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+
+
+    
 
 
 </head>
@@ -18,40 +23,9 @@
   <body>
 
 
+    
 
     @yield('contenido')
-
-
-{{-- aqui yace el codigo que da origen al modal --}}
-
-<button class="btn boton_flotante" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  <i class="fa fa-comment"></i>
-</button>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Sugerencia</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-        <span>¿Que te gustaria agregar o quitar de este sitio web, </span>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-{{-- aqui yace el codigo que da origen al modal --}}
 
 
 
@@ -62,6 +36,8 @@
     <script>
 
       if(document.getElementById('form')){
+
+        const body = document.body;
         // aqui esta el codigo que hace funcionar al loader
           document.getElementById('form').addEventListener('submit', function(){
 
@@ -188,6 +164,9 @@
   });
 }
 </script>
+
+
+
 
 
 

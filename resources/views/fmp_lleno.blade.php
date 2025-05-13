@@ -17,12 +17,27 @@
             Regresar
           </a>
         </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-2 text-center">
+          <button onclick="descargarPDF()" class="btn btn-primary btn-sm">
+            <i class="fa fa-file-pdf"></i>
+            DESCARGAR PDF
+          </button>
+        </div>
+        
     @else
 
       <div class="col-sm-12 col-md-6 col-lg-2 text-center">
         <a href="{{route('busqueda.fmp')}}" class="btn btn-success btn-sm w-100 d-print-none">
           Regresar
         </a>
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-2 text-center">
+        <button onclick="descargarPDF()" class="btn btn-primary btn-sm">
+          <i class="fa fa-file-pdf"></i>
+          Descargar PDF
+        </button>
       </div>
         
     @endif
@@ -35,7 +50,7 @@
 {{-- boton de regresar --}}
 
 
-<div class="container bg-white  p-5 sombra .area-a-imprimir"> <!--Contenedor de todo -->
+<div class="container bg-white  p-5 sombra" id="contenedor_print"> <!--Contenedor de todo -->
 
 <!-- encabezado -->
 
@@ -1016,6 +1031,8 @@
 
 
 
+
+
 </div><!--Cierra contenedor de todo-->
 
 
@@ -1027,7 +1044,7 @@
 @if ($fmp->lote == 'pendiente' and isset(Auth::user()->nombre_completo))
 
                 {{-- modal de ADD PROVEDORES --}}
-                <div class="modal fade" id="lote" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade d-print-none" id="lote" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-sm">
                       <div class="modal-content ">
                           <div class="modal-body">
@@ -1057,15 +1074,21 @@
 
 
 
+<script>
+  function descargarPDF() {
+    var element = document.getElementById('contenedor_print'); // o `document.getElementById('miDiv')`
 
+    var opt = {
+      margin:       0,
+      filename:     'mi_web.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'mm', format: [380, 500], orientation: 'portrait' }
+    };
 
+    html2pdf().set(opt).from(element).save();
+  }
+</script>
 
-
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/vfs_fonts.js"></script>
 
 @endsection

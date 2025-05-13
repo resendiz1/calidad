@@ -84,7 +84,7 @@
                     </div>
                     </div>
                     
-                    <div class="row mt-2 border-top">
+                <div class="row mt-2 border-top d-flex align-items-center">
                     <div class="col-auto mt-1">
                         <span class="centrar-verticalmente h6">Fecha:</span>
                     </div>       
@@ -192,7 +192,7 @@
                         </select>
                     </div>
             
-                    <div class="col-10 fondo-titulos mt-3 mb-3">
+                    <div class="col-10 fondo-titulos mt-3 ">
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6">
                                 <h6 class="mt-1">NÚMERO DE EMBARQUE</h6>

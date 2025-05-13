@@ -2,7 +2,7 @@
 @section('contenido')
 @include('assets.nav') 
 @section('title', Auth::user()->nombre_completo )
-
+@include('assets.nav_user')
 
 
 

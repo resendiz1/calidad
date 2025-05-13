@@ -30,7 +30,7 @@ use App\Http\Controllers\estadisticasController;
 
 //Para mantener viva la session 
 Route::get('/keep-alive', function () {
-    return response()->json(['status' => 'alive']);
+    return response()->noContent();
 })->middleware('auth');
 
 

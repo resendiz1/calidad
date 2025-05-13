@@ -13,7 +13,7 @@
 </div>
 {{-- contenedor de el boton regresar --}}
 
-<div class="container bg-white  p-5 sombra"> <!--Contenedor de todo -->
+<div class="container bg-white  p-5 sombra"  > <!--Contenedor de todo -->
 
 
 
