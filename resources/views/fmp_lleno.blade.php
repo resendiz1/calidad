@@ -1,53 +1,22 @@
 @extends('plantilla')
-@section('contenido')
-@include('assets.nav')  
+@section('contenido') 
 @section('title', $fmp->folio)  
- 
-<br class="d-print-none">
-<br>
+@include('assets.nav_user')
 
-{{-- boton de regresar --}}
-<div class="container mb-4">
-  <div class="row justify-content-center">
-
-    @if (Auth::guard('adminis')->user() == null &&  isset(Auth::user()->nombre_completo))
-    
-        <div class="col-sm-12 col-md-6 col-lg-2 text-center">
-          <a href="{{route('fmp.generados')}}" class="btn btn-success btn-sm w-100 d-print-none">
-            Regresar
-          </a>
-        </div>
-
-        <div class="col-sm-12 col-md-6 col-lg-2 text-center">
-          <button onclick="descargarPDF()" class="btn btn-primary btn-sm">
-            <i class="fa fa-file-pdf"></i>
-            DESCARGAR PDF
-          </button>
-        </div>
-        
-    @else
-
-      <div class="col-sm-12 col-md-6 col-lg-2 text-center">
-        <a href="{{route('busqueda.fmp')}}" class="btn btn-success btn-sm w-100 d-print-none">
-          Regresar
-        </a>
+{{-- boton de imprimir --}}
+<div class="container my-2">
+  <div class="row px-0">
+      <div class="col-12 text-center">
+          <div class="btn-group">
+              <button  class="btn btn-dark btn-sm" id="save_pdf">
+                  <i class="fa fa-file-pdf"></i>
+                  DESCARGAR PDF
+              </button>
+          </div>
       </div>
-
-      <div class="col-sm-12 col-md-6 col-lg-2 text-center">
-        <button onclick="descargarPDF()" class="btn btn-primary btn-sm">
-          <i class="fa fa-file-pdf"></i>
-          Descargar PDF
-        </button>
-      </div>
-        
-    @endif
-   
-    
-
-
   </div>
 </div>
-{{-- boton de regresar --}}
+{{-- boton de imprimir --}}
 
 
 <div class="container bg-white  p-5 sombra" id="contenedor_print"> <!--Contenedor de todo -->
@@ -183,20 +152,20 @@
             <h6 class="m-2">{{$fmp->proveedor}}</h6>
         </div>
 
-        <div class="col-10 col-sm-10 col-md-10 col-lg-12">
+        <div class="col-12 col-sm-12 col-md-10 col-lg-12">
             <div class="row justify-content-around">
               <div class="col-10 col-sm-6 col-md-12 col-lg-10 fondo-titulos mt-3">
                   <div class="row">
                     <div class="col-12 border">
                       <h6 class="mt-1  ">CADUCIDAD: </h6>
                     </div>
-                    <div class="col-12 p-0 mx-1">
-                      <span class="" >{{$fmp->caducidad}}</span>
+                    <div class="col-12 ">
+                      <span class="p-0" >{{$fmp->caducidad}}</span>
                     </div>
                   </div>
               </div>
     
-              <div class="col-10 col-sm-6 col-md-12 col-lg-10 fondo-titulos mt-3">
+              <div class="col-10 col-sm-12 col-md-12 col-lg-10 fondo-titulos mt-3">
                 <div class="row">
                   <div class="col-12  border">
                     <h6 class="mt-1  ">FLEJE: </h6>
@@ -210,7 +179,7 @@
             </div>
         </div>
 
-        <div class="col-10 fondo-titulos mt-3 text-center border">
+        <div class="col-10 fondo-titulos my-3 text-center border">
           <div class="row justify-content-center">
 
             <div class="col-6 p-0">
@@ -1075,12 +1044,30 @@
 
 
 <script>
+
+ const save_pdf = document.getElementById('save_pdf');
+
+ save_pdf.addEventListener('click', () => {
+
+  save_pdf.innerHTML = "<img src='{{ asset('/img/loader.gif') }}' class='img-fluid' style='width:20px' >";
+
+  setTimeout(() => {
+    descargarPDF();
+    save_pdf.innerHTML = "<i class='fa fa-check-circle mx-2'></i> DESCARGADO";
+
+  }, 1000);
+
+
+
+ })
+
+
   function descargarPDF() {
     var element = document.getElementById('contenedor_print'); // o `document.getElementById('miDiv')`
 
     var opt = {
       margin:       0,
-      filename:     'mi_web.pdf',
+      filename:     "RECEPCIÓN DE MATERIAS PRIMAS - FOLIO {{$fmp->folio}}",
       image:        { type: 'jpeg', quality: 0.98 },
       html2canvas:  { scale: 2 },
       jsPDF:        { unit: 'mm', format: [380, 500], orientation: 'portrait' }

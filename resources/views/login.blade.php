@@ -4,9 +4,9 @@
 
 
 
-    <div class="container p-5 mt-5">
+    <div class="container p-5 mt-1">
         <div class="row mt-5 justify-content-center">
-            <div class="col-sm-12 col-md-9 col-lg-5 mt-5 bg-white p-5 border border-5 sombra">
+            <div class="col-sm-12 col-md-9 col-lg-4 mt-1 bg-white py-5 border border-5 sombra">
                 <div class="row">
                     <div class="col-12 text-center">
                         <img src="img/user.gif" class="img-fluid w-50" alt="">
@@ -44,9 +44,9 @@
 
 
                 <div class="row mt-4 justify-content-center">
-                     <div class="col-9 text-center">
+                     <div class="col-12 text-center">
                         <input type="checkbox" class="form-check-input" value="admin" name="admin" id="administrador">
-                        <label for="administrador" class="text-secondary fw-bold">Ingresar como administrador</label>
+                        <label for="administrador" class="text-secondary fw-bold small">Ingresar como administrador</label>
                     </div>
                     <div class="col-sm-12 col-md-9 col-lg-9 mt-3">
                         <button  class="btn btn-secondary w-100 mt-2" id="btn_login">

@@ -1,5 +1,5 @@
 <!-- BARRA DE NAVEGACIÓN -->
-<div class="container-fluid p-0 bg-light border-bottom border-5 fixed-top mb-5 d-print-none">
+<div class="container-fluid p-0 bg-light border-bottom border-5  d-print-none">
     <div class="row p-2 justify-content-center">
 
         <div class="col-sm-6 col-md-4 col-lg-2 d-flex align-items-center text-center mt-2 mb-2">
@@ -56,17 +56,14 @@
     </div>
 </div>
 <!-- BARRA DE NAVEGACIÓN -->
-<br>
-<br>
-<br class="d-print-none">
-<br class="d-print-none">
+
 
 <div class="d-block d-md-none"><!-- Salto de línea en pantallas pequeñas -->
     <br class="d-print-none">
     <br class="d-print-none">
     <br class="d-print-none">
     <br class="d-print-none">
-    <br class="d-print-none">
+    {{-- <br class="d-print-none"> --}}
     <br class="d-print-none">
     <br class="d-print-none">
 

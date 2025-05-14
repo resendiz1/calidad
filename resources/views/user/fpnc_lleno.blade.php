@@ -1,33 +1,26 @@
 @extends('plantilla')
 @section('contenido')
-@include('assets.nav')  
 @section('title', 'FO/GP/CC/001/001')  
-<br>
+@include('assets.nav_user')
 
 
-<div class="container">
-    <div class="row justify-content-center my-3">
-
-        @if (request()->route()->getName() == 'fpnc.lleno.admin')
-            <div class="col-2 text-center">
-                <a href="{{route('busqueda.fpnc')}}" class="btn btn-success btn-sm w-100 d-print-none">Regresar</a>
-            </div>    
-        @endif 
-
-        @if (request()->route()->getName() == 'fpnc.lleno')
-            <div class="col-2 text-center">
-                <a href="{{route('fpnc.generados')}}" class="btn btn-success btn-sm w-100 d-print-none">Regresar</a>
-            </div>    
-        @endif
-
-
-
-
+{{-- boton de imprimir --}}
+<div class="container my-2">
+    <div class="row px-0">
+        <div class="col-12 text-center">
+            <div class="btn-group">
+                <button  class="btn btn-dark btn-sm" id="save_pdf">
+                    <i class="fa fa-file-pdf"></i>
+                    DESCARGAR PDF
+                </button>
+            </div>
+        </div>
     </div>
-</div>
+  </div>
+  {{-- boton de imprimir --}}
 
 
-<div class="container bg-white  p-5 sombra"> <!--Contenedor de todo -->
+<div class="container bg-white  p-5 sombra " id="contenedor_print"> <!--Contenedor de todo -->
 
 
 <!-- encabezado -->
@@ -492,6 +485,38 @@
 <br>
 
 
+<script>
 
+    const save_pdf = document.getElementById('save_pdf');
+   
+    save_pdf.addEventListener('click', () => {
+   
+     save_pdf.innerHTML = "<img src='{{ asset('/img/loader.gif') }}' class='img-fluid' style='width:20px' >";
+   
+     setTimeout(() => {
+       descargarPDF();
+       save_pdf.innerHTML = "<i class='fa fa-check-circle mx-2'></i> DESCARGADO";
+   
+     }, 1000);
+   
+   
+   
+    })
+   
+   
+     function descargarPDF() {
+       var element = document.getElementById('contenedor_print'); // o `document.getElementById('miDiv')`
+   
+       var opt = {
+         margin:       0,
+         filename:     "PRODUCTO NO CONFORME - FOLIO {{$fpnc->folio}}",
+         image:        { type: 'jpeg', quality: 0.98 },
+         html2canvas:  { scale: 2 },
+         jsPDF:        { unit: 'mm', format: [380, 450], orientation: 'portrait' }
+       };
+   
+       html2pdf().set(opt).from(element).save();
+     }
+</script>
 
 @endsection

@@ -1,17 +1,9 @@
 @extends('plantilla')
 @section('contenido')
-@include('assets.nav')
 @section('title', 'FO/GP/CC/070/01')
+@include('assets.nav_user')
 
-{{-- contenedor de el boton regresar --}}
-<div class="container">
-  <div class="row justify-content-center m-3">
-    <div class="col-2 text-center">
-      <a href="{{route('user.perfil')}}" class="btn btn-success btn-sm" >Regresar</a>
-    </div>
-  </div>
-</div>
-{{-- contenedor de el boton regresar --}}
+
 
 <div class="container bg-white  p-5 sombra"  > <!--Contenedor de todo -->
 

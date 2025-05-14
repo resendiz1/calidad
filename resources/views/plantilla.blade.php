@@ -153,12 +153,12 @@
   btn_login.addEventListener('click', function(){
 
     btn_login.disabled = true;
-    btn_login.innerHTML = "<img src='https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif' class='img-fluid' style='width:20px' >"
+    btn_login.innerHTML = "<img src='{{ asset('/img/loader.gif') }}' class='img-fluid' style='width:20px' >"
     login_form.submit();
 
     setTimeout(() => {
       btn_login.disabled = false;
-    }, 3000);
+    }, 60000);
 
 
   });

@@ -1,26 +1,22 @@
 @extends('plantilla')
 @section('contenido')
-@include('assets.nav')
 @section('title', 'FO/GP/CC/070/05')
+@include('assets.nav_user')
 
-
-{{-- boton de regresar --}}
-<div class="container my-4">
+{{-- boton de imprimir --}}
+<div class="container">
     <div class="row justify-content-center">
-        <div class="col-2 text-center">
-          <a  id="back" class="btn btn-success btn-sm w-100 d-print-none">
-            Regresar
-          </a>
+        <div class="col-12 text-center">
+            <div class="btn-group">
+                <button  class="btn btn-dark btn-sm" id="save_pdf">
+                    <i class="fa fa-file-pdf"></i>
+                    DESCARGAR PDF
+                </button>
+            </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-2 text-center">
-            <button onclick="descargarPDF()" class="btn btn-primary btn-sm">
-              <i class="fa fa-file-pdf"></i>
-              DESCARGAR PDF
-            </button>
-          </div>
     </div>
-  </div>
-  {{-- boton de regresar --}}
+</div>
+{{-- boton de imprimir --}}
 
 
         <!-- contenedor de todo -->
@@ -638,19 +634,37 @@
 
 
 <script>
-    function descargarPDF() {
-      var element = document.getElementById('contenedor_print'); // o `document.getElementById('miDiv')`
-  
-      var opt = {
-        margin:       0,
-        filename:     'mi_web.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'mm', format: [380, 660], orientation: 'portrait' }
-      };
-  
-      html2pdf().set(opt).from(element).save();
-    }
-  </script>
+
+    const save_pdf = document.getElementById('save_pdf');
+   
+    save_pdf.addEventListener('click', () => {
+   
+     save_pdf.innerHTML = "<img src='{{ asset('/img/loader.gif') }}' class='img-fluid' style='width:20px' >";
+   
+     setTimeout(() => {
+       descargarPDF();
+       save_pdf.innerHTML = "<i class='fa fa-check-circle mx-2'></i> DESCARGADO";
+   
+     }, 1000);
+   
+   
+   
+    })
+   
+   
+     function descargarPDF() {
+       var element = document.getElementById('contenedor_print'); // o `document.getElementById('miDiv')`
+   
+       var opt = {
+         margin:       0,
+         filename:     "VERIFICACIÓN DE UNIDADES - FOLIO {{$fvu->folio}}",
+         image:        { type: 'jpeg', quality: 0.98 },
+         html2canvas:  { scale: 2 },
+         jsPDF:        { unit: 'mm', format: [380, 680], orientation: 'portrait' }
+       };
+   
+       html2pdf().set(opt).from(element).save();
+     }
+</script>
 
 @endsection

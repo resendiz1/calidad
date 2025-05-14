@@ -1,17 +1,10 @@
 @extends('plantilla')
-@section('contenido')
-@include('assets.nav')  
+@section('contenido')  
 @section('title', 'FO/GP/CC/001/001')  
+@include('assets.nav_user')
 
 
 
-<div class="container my-4 d-print">
-    <div class="row justify-content-center">
-        <div class="col-2 text-center">
-            <a href="{{route('tabla.fpnc')}}" class="btn btn-success w-100">Regresar</a>
-        </div>
-    </div>
-</div>
 
 
 <form action="{{route('fpnc.agregar')}}" id="form" enctype="multipart/form-data" method="POST">

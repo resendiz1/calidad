@@ -1,18 +1,7 @@
 @extends('plantilla')
 @section('contenido')
-@include('assets.nav')
 @section('title', 'FO/GP/CC/070/05')
-
-
-
-<div class="container my-2 d-print-none">
-    <div class="row justify-content-center">
-        <div class="col-2 text-center">
-            <a href="{{route('user.perfil')}}" class="btn btn-success w-100  d-print-none">Regresar</a>
-        </div>
-    </div>
-</div>
-
+@include('assets.nav_user')
 
 
 <form action="{{route('fvu.agregar')}}" id="form" enctype="multipart/form-data" method="POST">
