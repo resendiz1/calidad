@@ -38,13 +38,7 @@
 
 
 <div class="d-block d-md-none"><!-- Salto de línea en pantallas pequeñas -->
-    <br class="d-print-none">
-    <br class="d-print-none">
-    <br class="d-print-none">
-    <br class="d-print-none">
-    {{-- <br class="d-print-none"> --}}
-    <br class="d-print-none">
-    <br class="d-print-none">
+
 
 </div>
 
@@ -55,82 +49,93 @@
 @if (Auth()->user()->area == 'CALIDAD')
     <div class="container-fluid py-0 mb-5">
 
-        <div class="row justify-content-center fw-bold">
+        <div class="row fw-bold ">
 
-            <div class="col-12 arvo">
-                <div class="btn-group border border-5">
+            <div class="col-12 col-sm-12 col-md-auto col-lg-auto arvo p-0">
+                <a href="{{route('user.perfil')}}" class="btn btn-light rounded-0 " type="button" >
+                    <i class="fa fa-home mx-2"></i>
+                    <span>INICIO</span>
+                </a>            
+            </div>
+            <div class="col-auto col-sm-12 col-md-auto col-lg-auto arvo p-0">
+                <div class="dropdown">
+                    <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-file-export mx-2"></i>
+                        <span>MATERIA PRIMA</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="{{route('fmp.rellenar')}}">
+                            <i class="fa fa-plus-circle mx-2"></i>
+                            Crear Nuevo Formato
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{{route('fmp.generados')}}">
+                            <i class="fa fa-search mx-2"></i>
+                            Buscar Documentos
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-auto col-sm-12 col-md-auto col-lg-auto arvo p-0">
+                <div class="dropdown">
+                    <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-xmark-circle mx-2"></i>
+                        <span>PRODUCTO NO CONFORME</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="{{route('tabla.fpnc')}}">
+                            <i class="fa fa-plus-circle mx-2"></i>
+                            Llenar Nuevo Formato
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{{route('fpnc.generados')}}">
+                            <i class="fa fa-search mx-2"></i>
+                            Buscar Documentos
+                        </a>
+                    </li>
+                    </ul>
+                </div>    
+            </div>
+            <div class="col-auto col-sm-12 col-md-auto col-lg-auto arvo p-0">
+                <div class="dropdown">
+                    <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-truck mx-2"></i>
+                        <span>LIBERACIÓN DE UNIDADES</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="{{route('fvu.rellenar')}}">
+                            <i class="fa fa-plus-circle mx-2"></i>
+                            Crear Nuevo Formato
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{{route('fvu.tabla')}}">
+                            <i class="fa fa-search mx-2"></i>
+                            Buscar Documentos
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
 
-                    <a href="{{route('user.perfil')}}" class="btn btn-light rounded-0 " type="button" >
-                        <i class="fa fa-home mx-2"></i>
-                        <span>Inicio</span>
-                    </a>                
+               
 
                 
-                    <div class="dropdown a">
-                        <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-file-export mx-2"></i>
-                            <span>MATERIA PRIMA</span>
-                        </button>
-                        <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item" href="{{route('fmp.rellenar')}}">
-                                <i class="fa fa-plus-circle mx-2"></i>
-                                Crear Nuevo Formato
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{route('fmp.generados')}}">
-                                <i class="fa fa-search mx-2"></i>
-                                Buscar Documentos
-                            </a>
-                        </li>
-                        </ul>
-                    </div>
 
-                    <div class="dropdown">
-                        <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-xmark-circle mx-2"></i>
-                            <span>PRODUCTO NO CONFORME</span>
-                        </button>
-                        <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item" href="{{route('tabla.fpnc')}}">
-                                <i class="fa fa-plus-circle mx-2"></i>
-                                Llenar Nuevo Formato
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{route('fpnc.generados')}}">
-                                <i class="fa fa-search mx-2"></i>
-                                Buscar Documentos
-                            </a>
-                        </li>
-                        </ul>
-                    </div>
 
-                    <div class="dropdown">
-                        <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-truck mx-2"></i>
-                            <span>LIBERACIÓN DE UNIDADES</span>
-                        </button>
-                        <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item" href="{{route('fvu.rellenar')}}">
-                                <i class="fa fa-plus-circle mx-2"></i>
-                                Crear Nuevo Formato
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{route('fvu.tabla')}}">
-                                <i class="fa fa-search mx-2"></i>
-                                Buscar Documentos
-                            </a>
-                        </li>
-                        </ul>
-                    </div>
-                </div>
 
-            </div>
+
+
+
+
+
+           
         </div>
 
     </div>
