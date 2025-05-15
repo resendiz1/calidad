@@ -119,21 +119,28 @@
 @if (Auth()->user()->area == 'CALIDAD')
 
 
-<div class="col-5 bg-white shadow">
+<div class="col-3 bg-white shadow p-5 m-5">
     <div class="row">
-        <div class="col-12">
-            <h4>Más Recibidos</h4>
+        <div class="col-12 text-center">
+            <h4>Top 5 más Recibidos</h4>
+        </div>
+        <div class="col-12 mt-4">
+                @php
+                    $contador = 1;
+                @endphp
+                @forelse ($fmp_mas_recibidos as $fmp)
+                      
+                    <b> {{$contador++}}.- {{$fmp->producto}}</b> <br>  
+                      
+                    <small class="badge text-bg-light px-4 mb-4">{{$fmp->cantidad}} Entregas</small>
+                    <br> 
+                @empty
+                
+                @endforelse
         </div>
     </div>
 </div>
 
-<div class="col-5 bg-white shadow">
-    <div class="row">
-        <div class="col-12">
-            <h4>Más Recibidos</h4>
-        </div>
-    </div>
-</div>
 
 @endif
 

@@ -2,7 +2,7 @@
 @section('contenido')
 @section('title', 'Estadisticas Proveedores')
 @include('assets.nav')
-@include('assets.nav_admin')
+{{-- @include('assets.nav_admin') --}}
     
 
 

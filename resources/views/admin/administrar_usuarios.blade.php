@@ -1,7 +1,7 @@
 @extends('plantilla')
 @section('contenido')
 @include('assets.nav')
-@include('assets.nav_admin')
+{{-- @include('assets.nav_admin') --}}
 
 
 {{-- boton de regresar --}}
@@ -9,14 +9,12 @@
     <div class="row">
         <div class="col-12 text-center p-3">
             <h3 class="fw-bold">USUARIOS REGISTRADOS</h3>
-            <a href="{{route('admin.view')}}" class="btn btn-success btn-sm">
+            {{-- <a href="{{route('admin.view')}}" class="btn btn-success btn-sm">
                 Regresar
-            </a>
+            </a> --}}
         </div>
     </div>
 </div>
-
-
 {{-- boton de regresar --}}
 
 

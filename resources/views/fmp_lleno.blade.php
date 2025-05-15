@@ -1,7 +1,11 @@
 @extends('plantilla')
 @section('contenido') 
 @section('title', $fmp->folio)  
-@include('assets.nav_user')
+@if(Auth::guard('adminis')->user())
+  @include('assets.nav')
+@else
+  @include('assets.nav_user')
+@endif
 
 {{-- boton de imprimir --}}
 <div class="container my-2">

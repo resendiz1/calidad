@@ -9,7 +9,6 @@
 
 <div class="container bg-white  p-5 sombra"> <!--Contenedor de todo -->
 
-<h1>ETE ARCHIVO NO SE OCUPA?</h1>
 <!-- encabezado -->
 
 <div class="container shadow shadow-sm">

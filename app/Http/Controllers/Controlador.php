@@ -973,6 +973,20 @@ class Controlador extends Controller
 
 
 
+    public function user_perfil(){
+
+        $fmp_mas_recibidos = DB::table('fmp')
+                                 ->select('producto', DB::raw('COUNT(*) as cantidad'))
+                                 ->groupBy('producto')
+                                 ->orderByDesc('cantidad')
+                                 ->limit(5)
+                                 ->get();
+
+
+
+        return view('user.perfil', compact('fmp_mas_recibidos'));
+    }
+
 
 
 

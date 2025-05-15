@@ -1,7 +1,11 @@
 @extends('plantilla')
 @section('contenido')
-@include('assets.nav')
 @section('title', 'FORMATOS PENDIENTES')
+@if(Auth::guard('adminis')->user())
+  @include('assets.nav')
+@else
+  @include('assets.nav_user')
+@endif
 
 <div class="container mt-4 mb-3 ">
     <div class="row d-flex justify-content-center">

@@ -110,7 +110,7 @@ Route::get('/admin/datos/actulizar-encabezados', [encabezadosController::class, 
 
 
 //Rutas del usuario
-Route::view('/user', 'user.perfil')->name('user.perfil')->middleware('auth');
+Route::get('/user', [Controlador::class, 'user_perfil'])->name('user.perfil')->middleware('auth');
 
 
 //Rutas del formato de materia prima
