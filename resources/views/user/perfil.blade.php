@@ -116,6 +116,31 @@
 {{-- ANTIOGUO MENU --}}
 
 
+@if (Auth()->user()->area == 'CALIDAD')
+
+
+<div class="col-5 bg-white shadow">
+    <div class="row">
+        <div class="col-12">
+            <h4>Más Recibidos</h4>
+        </div>
+    </div>
+</div>
+
+<div class="col-5 bg-white shadow">
+    <div class="row">
+        <div class="col-12">
+            <h4>Más Recibidos</h4>
+        </div>
+    </div>
+</div>
+
+@endif
+
+
+
+
+
 @if (Auth::user()->area == 'PRODUCCION' || Auth::user()->area == 'BASCULA' )
 
         <div class="col-sm-12 col-md-3 mt-1 col-lg-3 sombra btn resizeable-div  border border-5 mt-5">
