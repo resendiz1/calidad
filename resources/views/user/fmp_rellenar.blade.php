@@ -180,7 +180,7 @@
               <div class="row justify-content-around">
                 <div class="col-10 col-sm-10 col-md-10 col-lg-4 p-0 mt-4">
                   <h6 >CADUCIDAD</h6>
-                  <input type="date" class="form-control" name="caducidad" value="{{old('caducidad')}}">
+                  <input type="date"  class="form-control fecha" name="caducidad" value="{{old('caducidad')}}">
               </div>
 
                 <div class="col-10 col-sm-10 col-md-10 col-lg-4 mt-4 p-0 my-3">
@@ -780,13 +780,16 @@
 
 
 <script>
-
-
-
-
-
+  const hoy = new Date();
+  const yyyy = hoy.getFullYear();
+  const mm = String(hoy.getMonth() + 1).padStart(2, '0');
+  const dd = String(hoy.getDate()).padStart(2, '0');
+  const fechaMinima = `${yyyy}-${mm}-${dd}`;
+  // Selecciona todos los inputs con la clase "fecha"
+  document.querySelectorAll('.fecha').forEach(input => {
+    input.setAttribute('min', fechaMinima);
+  });
 </script>
-
 
 
 @endsection

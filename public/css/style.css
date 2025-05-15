@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 
+.scroll-estadisticas{
+    height: 500px;
+    overflow-x: auto;
+}
 
 .arvo {
     font-family: "Arvo", serif;

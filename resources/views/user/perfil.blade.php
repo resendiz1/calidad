@@ -119,12 +119,12 @@
 @if (Auth()->user()->area == 'CALIDAD')
 
 
-<div class="col-3 bg-white shadow p-5 m-5">
+<div class="col-4 bg-white shadow p-5 m-5 ">
     <div class="row">
-        <div class="col-12 text-center">
-            <h4>Top 5 más Recibidos</h4>
+        <div class="col-12 text-center arvo">
+            <h4>Top Recepcionados</h4>
         </div>
-        <div class="col-12 mt-4">
+        <div class="col-12 mt-4 scroll-estadisticas border p-4">
                 @php
                     $contador = 1;
                 @endphp
@@ -132,11 +132,48 @@
                       
                     <b> {{$contador++}}.- {{$fmp->producto}}</b> <br>  
                       
-                    <small class="badge text-bg-light px-4 mb-4">{{$fmp->cantidad}} Entregas</small>
+                    <small class="badge text-bg-light px-4 mb-4">{{$fmp->cantidad}} Recepciones</small>
                     <br> 
                 @empty
                 
                 @endforelse
+        </div>
+    </div>
+</div>
+
+<div class="col-4 bg-white shadow p-5 m-5">
+    <div class="row">
+        <div class="col-12 text-center arvo">
+            <h4>Proximos a Caducar</h4>
+        </div>
+        <div class="col-12 mt-4 scroll-estadisticas">
+
+            <div class="accordion accordion-flush  border" id="accordionFlushExample">
+                @forelse ($caducidades_proximas as $fmp)
+
+                    <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                {{$fmp->producto}} - {{$fmp->fecha_larga}}
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                   <div class="row justify-content-center">
+                                        <div class="col-6 text-center">
+                                           <b> Lote: </b>{{$fmp->lote}}
+                                        </div>
+                                        <div class="col-6 text-center">
+                                           <b> Folio:</b> {{$fmp->folio}}
+                                        </div>
+                                   </div>
+                                </div>
+                            </div>
+                    </div> 
+                @empty
+                        
+                @endforelse
+            </div>
         </div>
     </div>
 </div>

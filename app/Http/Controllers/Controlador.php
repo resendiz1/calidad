@@ -975,16 +975,26 @@ class Controlador extends Controller
 
     public function user_perfil(){
 
+
+        //Obtiene el top de las materias primas mas recepcionadass
         $fmp_mas_recibidos = DB::table('fmp')
                                  ->select('producto', DB::raw('COUNT(*) as cantidad'))
                                  ->groupBy('producto')
                                  ->orderByDesc('cantidad')
-                                 ->limit(5)
+                                 ->limit(20)
                                  ->get();
 
 
+        $hoy = Carbon::today();
+        $limite = Carbon::today()->addDays(30);
+        $caducidades_proximas = Fmp::whereBetween('caducidad', [$hoy, $limite])->get();
 
-        return view('user.perfil', compact('fmp_mas_recibidos'));
+        foreach($caducidades_proximas as $caducidad){
+            $caducidad->fecha_larga = Carbon::parse($caducidad->caducidad)->locale('es')->translatedFormat('j \d\e F \d\e Y');
+        }
+
+
+        return view('user.perfil', compact('fmp_mas_recibidos', 'caducidades_proximas'));
     }
 
 
