@@ -191,8 +191,8 @@
                         {!!$errors->first('cantidad_recepcionada', "<small class='text-danger fw-bold'> :message </small>")!!}
                     </div>
                     <div class="col-4 p-0">
-                      <select name="unidad_medida" id="unidad" class="form-control text-white bg-dark">
-                        <option value="">- - </option>
+                      <select name="unidad_medida" id="unidad" class="form-control text-white bg-dark" required>
+                        <option value="">--</option>
                         <option value="Kg">Kg</option>
                         <option value="Pieza(s)">Piezas</option>
                       </select>

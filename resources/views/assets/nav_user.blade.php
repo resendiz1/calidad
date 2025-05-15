@@ -2,9 +2,9 @@
 <div class="container-fluid p-0 bg-light border-bottom border-5  d-print-none">
     <div class="row p-2 justify-content-center">
 
-        <div class="col-sm-6 col-md-4 col-lg-2 d-flex align-items-center text-center mt-2 mb-2">
+        <div class="col-sm-6 col-md-4 col-lg-2 d-flex align-items-center text-center mt-2 mb-2 ">
             {{-- <img src="{{asset('img/logo.png')}}" class="img-fluid w-25 mx-auto" alt=""> <br> --}}
-            <h3 class="mx-auto" style="font-family: Cascadia Code">
+            <h3 class="mx-auto cascadia">
             <i class="fa fa-flask"></i>
                 QualiTrack
             </h3>
@@ -57,7 +57,7 @@
 
         <div class="row justify-content-center fw-bold">
 
-            <div class="col-12">
+            <div class="col-12 arvo">
                 <div class="btn-group border border-5">
 
                     <a href="{{route('user.perfil')}}" class="btn btn-light rounded-0 " type="button" >
@@ -66,7 +66,7 @@
                     </a>                
 
                 
-                    <div class="dropdown">
+                    <div class="dropdown a">
                         <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-file-export mx-2"></i>
                             <span>MATERIA PRIMA</span>

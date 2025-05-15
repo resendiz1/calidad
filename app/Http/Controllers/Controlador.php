@@ -353,7 +353,7 @@ class Controlador extends Controller
         $fmp->lote = $lote;
         $fmp->fleje = request('fleje');
         $fmp->caducidad = request('caducidad');
-        $fmp->cantidad_recepcionada = request('catindad_recepcionada');
+        $fmp->cantidad_recepcionada = request('cantidad_recepcionada');
         $fmp->linea_transportista = request('linea_transportista');
         $fmp->nombre_operador = request('operador');
         $fmp->placas_transporte = request('placas_transporte');
