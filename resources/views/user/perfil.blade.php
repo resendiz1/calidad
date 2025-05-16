@@ -8,7 +8,7 @@
 
 
 <!-- MENU DE OPCIONES -->
-<div class="container-fluid">
+<div class="container">
 
 <div class="row d-flex justify-content-around">
         
@@ -119,7 +119,7 @@
 @if (Auth()->user()->area == 'CALIDAD')
 
 
-<div class="col-4 bg-white shadow p-5 m-5 ">
+<div class="col-10 col-sm-10 col-md-10 col-lg-5 bg-white shadow p-5 m-5 ">
     <div class="row">
         <div class="col-12 text-center arvo">
             <h4>Top Recepcionados</h4>
@@ -136,15 +136,20 @@
                     <br> 
                 @empty
                 
+
+
                 @endforelse
         </div>
     </div>
 </div>
 
-<div class="col-4 bg-white shadow p-5 m-5">
+
+
+
+<div class="col-10 col-sm-10 col-md-10 col-lg-5 bg-white shadow p-5 m-5">
     <div class="row">
         <div class="col-12 text-center arvo">
-            <h4>Proximos a Caducar</h4>
+            <h4>A caducar en los siguientes 30 dias</h4>
         </div>
         <div class="col-12 mt-4 scroll-estadisticas">
 
@@ -153,25 +158,34 @@
 
                     <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#coll{{$fmp->id}}" aria-expanded="false" aria-controls="flush-collapseOne">
                                 {{$fmp->producto}} - {{$fmp->fecha_larga}}
                                 </button>
                             </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div id="coll{{$fmp->id}}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
                                    <div class="row justify-content-center">
                                         <div class="col-6 text-center">
                                            <b> Lote: </b>{{$fmp->lote}}
                                         </div>
                                         <div class="col-6 text-center">
-                                           <b> Folio:</b> {{$fmp->folio}}
+                                            <a href="{{route('fmp.lleno', $fmp->id)}}" class="btn btn-light btn-sm">
+                                                <i class="fa fa-eye mx-1"></i>
+                                                Folio: {{$fmp->folio}}</a>
                                         </div>
                                    </div>
                                 </div>
                             </div>
                     </div> 
                 @empty
-                        
+                    <div class="row">
+                        <div class="col-12 text-center mt-5">
+                            <i class="fa-solid fa-wand-magic-sparkles fa-5x text-center"></i>
+                        </div>
+                        <div class="col-12 text-center p-4">
+                            <p class="cascadia h5">No hay proximos a caducar en los siguientes 30 dias</p>
+                        </div>
+                    </div>
                 @endforelse
             </div>
         </div>
