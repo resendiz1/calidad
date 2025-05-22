@@ -122,7 +122,7 @@
 <div class="col-10 col-sm-10 col-md-10 col-lg-5 bg-white shadow p-5 m-5 ">
     <div class="row">
         <div class="col-12 text-center arvo">
-            <h4>Top Recepcionados</h4>
+            <h4>Top Recepcionados - Planta {{Auth()->user()->planta}}</h4>
         </div>
         <div class="col-12 mt-4 scroll-estadisticas border p-4">
                 @php
@@ -149,7 +149,7 @@
 <div class="col-10 col-sm-10 col-md-10 col-lg-5 bg-white shadow p-5 m-5">
     <div class="row">
         <div class="col-12 text-center arvo">
-            <h4>A caducar en los siguientes 30 dias</h4>
+            <h4>A caducar en los siguientes 30 dias - Planta {{Auth()->user()->planta}}</h4>
         </div>
         <div class="col-12 mt-4 scroll-estadisticas">
 

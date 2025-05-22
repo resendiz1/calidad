@@ -7,7 +7,7 @@
 <form action="{{route('fvu.agregar')}}" id="form" enctype="multipart/form-data" method="POST">
     @csrf
         <!-- contenedor de todo -->
-        <div class="container bg-white p-5 sombra mt-2">
+        <div class="container bg-white p-5 sombra mt-4">
 
             <!-- encabezado -->
 
@@ -312,7 +312,7 @@
 
                             <div class="col-auto m-2 ">
                                 <input type="radio" class="btn-check" value="Unidad Refresquera" name="estructura_contenedor" id="refresquera" autocomplete="off">
-                                <label class="btn btn-outline-secondary" for="refresquera">UNIDAD REFRESQUERA</label>    
+                                <label class="btn btn-outline-secondary" for="refresquera">Unidad Refresquera</label>    
                             </div>
 
                         </div>

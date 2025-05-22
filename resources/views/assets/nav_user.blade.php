@@ -17,7 +17,7 @@
         <div class="col-sm-6 col-md-4 col-lg-2">
             <div class="row justify-content-center">
                 <div class="col-12 text-center mb-0">
-                    <h6>{{  Auth::guard('adminis')->user()->nombre_completo}} </h6>
+                    <h6>{{  Auth::guard('adminis')->user()->nombre_completo}}  </h6>
                 </div>
                 <div class="col-12 text-center mt-0">
                     <form action="{{route('cerrar.sesion')}}" method="POST">
@@ -135,7 +135,7 @@
        <div class="col-sm-6 col-md-4 col-lg-2">
             <div class="row justify-content-center">
                 <div class="col-12 text-center mb-0">
-                    <h6>{{  Auth::user()->nombre_completo}} </h6>
+                    <h6>{{  Auth::user()->nombre_completo}}  <br> Planta {{Auth::user()->planta}} </h6>
                 </div>
                 <div class="col-12 text-center mt-0">
                     <form action="{{route('cerrar.sesion')}}" method="POST">

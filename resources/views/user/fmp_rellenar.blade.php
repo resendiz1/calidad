@@ -5,7 +5,7 @@
 
 
 
-<div class="container bg-white  p-5 sombra"  > <!--Contenedor de todo -->
+<div class="container bg-white  p-5 sombra mt-4"  > <!--Contenedor de todo -->
 
 
 
@@ -165,16 +165,12 @@
               </div>
 
               <div class="row justify-content-around">
-                <div class="col-10 col-sm-10 col-md-10 col-lg-4  fondo-titulos p-0 mt-3">
+                <div class="col-10  fondo-titulos p-0 mt-3">
                   <h6 class="mt-1">LOTE</h6>
                   <input types="text" class="form-control mt-1" name="lote" value="{{old('lote')}}" >
                 </div>
   
-                <div class="col-10 col-sm-10 col-md-10 col-lg-4 p-0 mt-3">
-                  <h6 class="mt-1">FLEJE</h6>
-                  <input types="text" class="form-control mt-1" name="fleje" value="{{old('lote')}}" >
-                  {!!$errors->first('fleje', "<small class='text-danger fw-bold'> :message </small>")!!}
-                </div>
+
               </div>
 
               <div class="row justify-content-around">
@@ -468,46 +464,38 @@
         <!-- FILA DE CERTIFICADO DE CALIDAD, BX Y ASEGURADO -->
         <div class="row justify-content-between">
           
-          <div class="col-sm-12 col-md-12 col-lg-6 my-2">
-            <div class="row justify-content-center border">
-              <div class="col-5 mt-2">
+          <div class="col-sm-12 col-md-12 col-lg-12 my-2">
+
+            <div class="row  border p-3">
+
+              <div class="col-12 col-sm-12 col-md-12 col-lg-4 mt-2">
                 <small class="fw-bold">CERTIF. DE CALIDAD</small>
-              </div>
-              <div class="col-6">
+
                 <select class="text-left form-select form-control mt-1" name="certificado_calidad">
                   <option value="NO">NO</option>
                   <option value="SI">SI</option>
                 </select>
               </div>
-            </div>
-          </div>
 
-          
-          {{-- <div class="col-sm-12 col-md-12 col-lg-4 my-2">
-            <div class="row justify-content-center border">
-              <div class="col-5 mt-2">
-                <small class="fw-bold">FLUORECENCIA</small>
-              </div>
-              <div class="col-6">
-                <input type="text" class="form-control form-control" name="fluorecencia" value="{{old('fluorecencia')}}" >
-              </div>   
-            </div>
-          </div> --}}
-
-
-          <div class="col-sm-12 col-md-12 col-lg-6 my-2">
-            <div class="row justify-content-center border">
-              <div class="col-5 mt-2">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-4 mt-2">
                 <small class="fw-bold">ASEGURADO</small>
-              </div>
-              <div class="col-6">
+    
                 <select class="text-left form-select form-control mt-1" name="asegurado" >
                   <option value="SI/FLEJE">SI/FLEJE</option>
                   <option value="SI/CANDADO">SI/CANDADO</option>
                   <option value="NO">NO</option>
                 </select>
-              </div>   
+              </div>  
+
+
+              <div class="col-12 col-sm-12 col-md-12 col-lg-4 mt-2">
+                <h6 class="mt-1">FLEJE</h6>
+                <input types="text" class="form-control mt-1" name="fleje" value="{{old('lote')}}" >
+                {!!$errors->first('fleje', "<small class='text-danger fw-bold'> :message </small>")!!}
+              </div> 
+              
             </div>
+
           </div>
 
         </div>

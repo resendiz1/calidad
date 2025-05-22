@@ -219,9 +219,9 @@
                 </div>
 
                 <div class="col-sm-4 col-md-4 col-lg-2 p-0">  
-                    <input type="number" min="0" class="form-control form-control-sm" name="cantidad" value="{{old('cantidad')}}">
+                    {{$fmp->cantidad_recepcionada}} {{$fmp->unidad_medida}}
+                    <input type="hidden" min="0" class="form-control form-control-sm" name="cantidad" value="{{$fmp->cantidad_recepcionada}} {{$fmp->unidad_medida}}">
                 </div>
-                {!!$errors->first('cantidad', '<li class="text-danger text-justify fw-bold">:message</li>')!!}
 
             </div>
         </div>        

@@ -2,9 +2,9 @@
 @section('contenido')
 @include('assets.nav')
 @section('title', 'FO/GP/CC/001/001')
-@include('assets.nav_admin')
 
-<div class="container bg-white  mb-3 sombra border border-5">
+
+<div class="container bg-white mt-4 mb-3 sombra border border-5">
     <div class="row">
         <div class="col-12 text-center p-3">
             <h3 class="fw-bold">FORMATOS DE PRODUCTO NO CONFORME</h3>
