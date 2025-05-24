@@ -2,21 +2,8 @@
 @section('contenido')
 @include('assets.nav')
 @section('title', 'Datos')
-@include('assets.nav_admin')
 
-
-
-<br><br>
 <div class="container-fluid mt-3">
-
-    <div class="row justify-content-center mb-5">
-        <div class="col-3 text-center">
-            <a href="{{route('admin.view')}}" class="btn btn-success w-100">Regresar</a>
-        </div>
-    </div>
-
-
-
 
     <div class="row justify-content-around mt-5">
 
@@ -33,7 +20,7 @@
                 </div>
 
                 <div class="col-2 text-center">
-                    <a class="btn btn-success btn-sm rounded rounded-circle" data-bs-toggle="modal" data-bs-target="#add_proveedores">
+                    <a class="btn btn-success " data-bs-toggle="modal" data-bs-target="#add_proveedores">
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>
@@ -159,7 +146,7 @@
                 </div>
 
                 <div class="col-2 text-center">
-                    <a class="btn btn-success btn-sm rounded rounded-circle" data-bs-toggle="modal" data-bs-target="#add_transportistas">
+                    <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#add_transportistas">
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>
@@ -293,7 +280,7 @@
                 </div>
 
                 <div class="col-2 text-center">
-                    <a class="btn btn-success btn-sm rounded rounded-circle" data-bs-toggle="modal" data-bs-target="#add_productos">
+                    <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#add_productos">
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>

@@ -550,7 +550,7 @@
   <!-- FILA DE CERTIFICADO DE CALIDAD, BX Y ASEGURADO -->
   <div class="row justify-content-between">
     
-    <div class="col-sm-12 col-md-12 col-lg-4 my-2">
+    <div class="col-sm-12 col-md-12 col-lg-6 my-2">
       <div class="row justify-content-center border">
         <div class="col-5 mt-2">
           <small class="fw-bold">CERTIF. DE CALIDAD</small>
@@ -562,27 +562,9 @@
     </div>
 
     
-    <div class="col-sm-12 col-md-12 col-lg-4 my-2">
-      <div class="row justify-content-center border">
-        <div class="col-5 mt-2">
-          <small class="fw-bold">FLOURECENCIA</small>
-        </div>
-          @if ($fmp->fluorecencia)
-          <div class="col-6">
-              <h6 class="m-2">{{$fmp->fluorecencia}}%</h6>
-          </div>  
-
-          @else
-            <div class="col-6 fondo">
-              <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-              <small class="text-info-emphasis mt-2" >No rellenado</small>
-            </div>  
-          @endif 
-      </div>
-    </div>
 
 
-    <div class="col-sm-12 col-md-12 col-lg-4 my-2">
+    <div class="col-sm-12 col-md-12 col-lg-6 my-2">
       <div class="row justify-content-center border">
         <div class="col-5 mt-2">
           <small class="fw-bold">ASEGURADO</small>
@@ -1074,7 +1056,7 @@
       filename:     "RECEPCIÓN DE MATERIAS PRIMAS - FOLIO {{$fmp->folio}}",
       image:        { type: 'jpeg', quality: 0.98 },
       html2canvas:  { scale: 2 },
-      jsPDF:        { unit: 'mm', format: [380, 500], orientation: 'portrait' }
+      jsPDF:        { unit: 'mm', format: [380, 530], orientation: 'portrait' }
     };
 
     html2pdf().set(opt).from(element).save();
