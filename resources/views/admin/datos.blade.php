@@ -3,8 +3,19 @@
 @include('assets.nav')
 @section('title', 'Datos')
 
+<<<<<<< HEAD
 <div class="container-fluid mt-3">
 
+=======
+
+<div class="container-fluid mt-3">
+
+
+
+
+
+
+>>>>>>> d2962f10ab7f0dd94ecda2dcb89ebb44bd14d0ba
     <div class="row justify-content-around mt-5">
 
 
