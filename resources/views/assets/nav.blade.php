@@ -17,7 +17,7 @@
                 <div class="row fw-bold ">
         
                     <div class="col-12 col-sm-12 col-md-auto col-lg-auto arvo p-0">
-                        <a href="{{route('admin.view')}}" class="btn btn-light rounded-0 " type="button" >
+                        <a href="{{route('admin.view')}}" class='btn btn-light rounded-0 {{request()->routeIs('admin.view') ? 'active' : ''}}' type="button" >
                             <i class="fa fa-home mx-2"></i>
                             <span>Inicio</span>
                         </a>            
@@ -25,7 +25,7 @@
 
                     <div class="col-auto col-sm-12 col-md-auto col-lg-auto arvo p-0">
                         <div class="dropdown">
-                            <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-light rounded-0  dropdown-toggle {{request()->routeIs('busqueda.fmp') ? 'active' : '' }}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-file-export mx-2"></i>
                                 <span>Materia Prima</span>
                             </button>
@@ -42,7 +42,7 @@
 
                     <div class="col-auto col-sm-12 col-md-auto col-lg-auto arvo p-0">
                         <div class="dropdown">
-                            <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-light rounded-0  dropdown-toggle {{request()->routeIs('busqueda.fpnc') ? 'active' : '' }}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-xmark-circle mx-2"></i>
                                 <span>Producto No Conforme</span>
                             </button>
@@ -59,7 +59,7 @@
 
                     <div class="col-auto col-sm-12 col-md-auto col-lg-auto arvo p-0">
                         <div class="dropdown">
-                            <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-light rounded-0  dropdown-toggle {{request()->routeIs('busqueda.fvu') ? 'active' : '' }}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-truck mx-2"></i>
                                 <span>Liberación de Unidades</span>
                             </button>
@@ -76,7 +76,7 @@
 
                     <div class="col-auto col-sm-12 col-md-auto col-lg-auto arvo p-0">
                         <div class="dropdown">
-                            <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-light rounded-0  dropdown-toggle {{request()->routeIs('admin.add_usuario') ? 'active' : '' }} {{request()->routeIs('lista.usuarios') ? 'active' : '' }}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-user mx-2"></i>
                                 <span>Usuarios</span>
                             </button>
@@ -99,7 +99,7 @@
                     
                     <div class="col-auto col-sm-12 col-md-auto col-lg-auto arvo p-0">
                         <div class="dropdown">
-                            <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-light rounded-0  dropdown-toggle {{request()->routeIs('datos.admin') ? 'active' : ''}}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-table mx-2"></i>
                                 <span>Datos</span>
                             </button>

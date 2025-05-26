@@ -124,7 +124,7 @@
         <div class="col-12 text-center arvo">
             <h4>Top Recepcionados - Planta {{Auth()->user()->planta}}</h4>
         </div>
-        <div class="col-12 mt-4 scroll-estadisticas border p-4">
+        <div class="col-12 mt-4 scroll-estadisticas  p-4">
                 @php
                     $contador = 1;
                 @endphp
@@ -153,7 +153,7 @@
         </div>
         <div class="col-12 mt-4 scroll-estadisticas">
 
-            <div class="accordion accordion-flush  border" id="accordionFlushExample">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
                 @forelse ($caducidades_proximas as $fmp)
 
                     <div class="accordion-item">
@@ -201,7 +201,7 @@
 
 @if (Auth::user()->area == 'PRODUCCION' || Auth::user()->area == 'BASCULA' )
 
-        <div class="col-sm-12 col-md-3 mt-1 col-lg-3 sombra btn resizeable-div  border border-5 mt-5">
+        <div class="col-sm-12 col-md-3 mt-1 col-lg-3 sombra btn resizeable-div mt-5">
             <div class="row d-flex align-items-center">
                 <a href="{{route('pendientes.revisar')}}">
                     <div class="col-12">

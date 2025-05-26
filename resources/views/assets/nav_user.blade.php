@@ -41,14 +41,14 @@
                     <div class="row fw-bold ">
             
                         <div class="col-12 col-sm-12 col-md-auto col-lg-auto arvo p-0">
-                            <a href="{{route('user.perfil')}}" class="btn btn-light rounded-0 " type="button" >
+                            <a href="{{route('user.perfil')}}" class="btn btn-light rounded-0 {{request()->routeIs('user.perfil') ? 'active' : ''}}" type="button" >
                                 <i class="fa fa-home mx-2"></i>
                                 <span>Inicio</span>
                             </a>            
                         </div>
                         <div class="col-auto col-sm-12 col-md-auto col-lg-auto arvo p-0">
                             <div class="dropdown">
-                                <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-light rounded-0  dropdown-toggle {{request()->routeIs('fmp.*') ? 'active' : ''}}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-file-export mx-2"></i>
                                     <span>Materia Prima</span>
                                 </button>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="col-auto col-sm-12 col-md-auto col-lg-auto arvo p-0">
                             <div class="dropdown">
-                                <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-light rounded-0  dropdown-toggle {{request()->routeIs('tabla.fpnc') ? 'active' : '' }} {{request()->routeIs('fpnc.generados') ? 'active' : ''}} " type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-xmark-circle mx-2"></i>
                                     <span>Producto No Conforme</span>
                                 </button>
@@ -92,13 +92,13 @@
                         </div>
                         <div class="col-auto col-sm-12 col-md-auto col-lg-auto arvo p-0">
                             <div class="dropdown">
-                                <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-light rounded-0  dropdown-toggle {{request()->routeIs('fvu.*') ? 'active' : '' }} " type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-truck mx-2"></i>
                                     <span>Liberación de Unidades</span>
                                 </button>
                                 <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href="{{route('fvu.rellenar')}}">
+                                    <a class="dropdown-item " href="{{route('fvu.rellenar')}}">
                                         <i class="fa fa-plus-circle mx-2"></i>
                                         Crear Nuevo Formato
                                     </a>

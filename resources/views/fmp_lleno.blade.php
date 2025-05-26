@@ -550,7 +550,7 @@
   <!-- FILA DE CERTIFICADO DE CALIDAD, BX Y ASEGURADO -->
   <div class="row justify-content-between">
     
-    <div class="col-sm-12 col-md-12 col-lg-4 my-2">
+    <div class="col-sm-12 col-md-12 col-lg-6 my-2">
       <div class="row justify-content-center border">
         <div class="col-5 mt-2">
           <small class="fw-bold">CERTIF. DE CALIDAD</small>
@@ -562,7 +562,7 @@
     </div>
 
     
-    <div class="col-sm-12 col-md-12 col-lg-4 my-2">
+    {{-- <div class="col-sm-12 col-md-12 col-lg-4 my-2">
       <div class="row justify-content-center border">
         <div class="col-5 mt-2">
           <small class="fw-bold">FLOURECENCIA</small>
@@ -579,10 +579,10 @@
             </div>  
           @endif 
       </div>
-    </div>
+    </div> --}}
 
 
-    <div class="col-sm-12 col-md-12 col-lg-4 my-2">
+    <div class="col-sm-12 col-md-12 col-lg-6 my-2">
       <div class="row justify-content-center border">
         <div class="col-5 mt-2">
           <small class="fw-bold">ASEGURADO</small>
@@ -828,7 +828,7 @@
           <h4>SUPERVISO MUESTREO</h4>
         </div>
         <div class="col-12 text-center mt-4 fondo-titulos">
-          <h4 class="mt-2">{{$fmp->usuario_logeado}}</h4>
+          <h4 class="mt-2">{{$fmp->superviso_muestreo}}</h4>
         </div>
       </div>
 
