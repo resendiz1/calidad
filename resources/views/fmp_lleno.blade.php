@@ -562,6 +562,7 @@
     </div>
 
     
+<<<<<<< HEAD
     {{-- <div class="col-sm-12 col-md-12 col-lg-4 my-2">
       <div class="row justify-content-center border">
         <div class="col-5 mt-2">
@@ -580,6 +581,8 @@
           @endif 
       </div>
     </div> --}}
+=======
+>>>>>>> 043c3dc251756f2914054fc713511ea968e8bfe0
 
 
     <div class="col-sm-12 col-md-12 col-lg-6 my-2">
@@ -1074,7 +1077,7 @@
       filename:     "RECEPCIÓN DE MATERIAS PRIMAS - FOLIO {{$fmp->folio}}",
       image:        { type: 'jpeg', quality: 0.98 },
       html2canvas:  { scale: 2 },
-      jsPDF:        { unit: 'mm', format: [380, 500], orientation: 'portrait' }
+      jsPDF:        { unit: 'mm', format: [380, 530], orientation: 'portrait' }
     };
 
     html2pdf().set(opt).from(element).save();

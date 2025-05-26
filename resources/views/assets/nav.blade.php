@@ -114,6 +114,23 @@
                         </div>
                     </div> 
 
+                    <div class="col-auto col-sm-12 col-md-auto col-lg-auto arvo p-0">
+                        <div class="dropdown">
+                            <button class="btn btn-light rounded-0  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-table mx-2"></i>
+                                <span>Datos</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="{{route('datos.admin')}}">
+                                        <i class="fa fa-list-check mx-2"></i>
+                                        Gestionar Proveedores, Productos y Transportistas
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>  
+
 
                 </div>
         
