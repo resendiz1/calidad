@@ -618,7 +618,6 @@ class Controlador extends Controller
 
         request()->validate([
             'presentacion' => 'required',
-            'cantidad' => 'required',
             'desviacion' => 'required',
             'observaciones' => 'required',
             'recibe_notificacion' => 'required',
