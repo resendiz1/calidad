@@ -14,12 +14,15 @@
 
 <!-- PANEL PARA MOSTRAR LA TABLA CON LOS RESULTADOS DE LA BUSQUEDA -->
 <div class="container mt-4">
-    <div class="row">
-        <div class="col-12 bg-light p-4">
+    <div class="row justify-content-center">
+        <div class="col-10 text-center">
+            <input type="text" class="form-control p-4 fs-4 fw-bold" placeholder="Buscar por palabra clave" id="buscador_formatos" style="border: none;" autofocus>
+        </div>
+        <div class="col-12 bg-light p-4 mt-3">
 
         @forelse ($fpnc as $ifpnc)
                
-                <a href="{{route('fpnc.lleno', $ifpnc->id)}}">
+                <a href="{{route('fpnc.lleno', $ifpnc->id)}}" class="formato">
                     <div class="row p-3 resizeable-table mt-1"> 
                         <div class=" col-sm-6 col-md-6 col-lg-2 p-2 border-start">
                             <b>Folio: </b> <br>

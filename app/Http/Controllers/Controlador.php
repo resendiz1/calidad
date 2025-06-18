@@ -333,8 +333,7 @@ class Controlador extends Controller
             'placas_caja' => 'required',
             'hora_entrada_laboratorio' => 'required',
             'hora_liberacion' => 'required',
-            'superviso_muestreo' => 'required',
-            'cantidad_recepcionada' => 'required'
+            'superviso_muestreo' => 'required'
         ]);
         
         $lote = 'pendiente';

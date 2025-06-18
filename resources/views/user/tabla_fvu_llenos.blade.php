@@ -5,7 +5,7 @@
 <div class="container bg-white mt-4 mb-3 sombra border border-5">
     <div class="row">
         <div class="col-12 text-center p-3">
-            <h3 class="fw-bold">FORMATOS DE VERIFICACIÓN DE UNIDADES</h3>
+            <h3 class="fw-bold">FORMATOS DE VERIFICACIÓN DE UNIDADEaS</h3>
         </div>
     </div>
 </div>
@@ -15,12 +15,15 @@
 
 <!-- PANEL PARA MOSTRAR LA TABLA CON LOS RESULTADOS DE LA BUSQUEDA -->
 <div class="container mt-4">
-    <div class="row">
-        <div class="col-12 bg-light p-4">
+    <div class="row justify-content-center">
+        <div class="col-10 text-center">
+            <input type="text" class="form-control p-4 fs-4 fw-bold" placeholder="Buscar por palabra clave" id="buscador_formatos" style="border: none;" autofocus>
+        </div>
+        <div class="col-12 bg-light p-4 mt-3">
 
         @forelse ($fvu as $ifvu)
                
-                <a href="{{route('fvu.lleno', $ifvu->id)}}">
+                <a href="{{route('fvu.lleno', $ifvu->id)}}" class="formato">
                     <div class="row p-3 resizeable-table mt-1"> 
 
                         <div class=" col-sm-6 col-md-6 col-lg-2 p-2 border-start">

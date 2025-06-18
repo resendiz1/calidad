@@ -108,7 +108,6 @@
 
 
   <script>
-
     $(window).on('resize', function () {
         $('.select_busqueda').each(function () {
             $(this).select2('destroy').select2({
@@ -119,8 +118,6 @@
             });
         });
     });
-
-
   </script>
 
 
@@ -130,18 +127,12 @@
 
       const unidad = document.getElementById('unidad');
       const unidad_medida = document.getElementById('unidad_medida');
-      
-      
       unidad.addEventListener('change', function(){
-        
-        
-        unidad_medida.innerHTML = unidad.value;
-        
-        
+      unidad_medida.innerHTML = unidad.value;
+  
       })
     }
-      
-
+    
   </script>
 
 <script>
@@ -163,6 +154,32 @@
 
   });
 }
+</script>
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        const input = document.getElementById('buscador_formatos');
+        const items = document.querySelectorAll('.formato');
+
+        input.addEventListener('keyup', function(){
+            const filtro = this.value.toLowerCase();
+            
+            items.forEach(function(item){
+                const texto = item.textContent.toLowerCase();
+
+                if(texto.includes(filtro)){
+                    item.style.display = "";
+                }
+                else{
+                    item.style.display='none';
+                }
+            })
+
+
+        })
+    })
 </script>
 
 

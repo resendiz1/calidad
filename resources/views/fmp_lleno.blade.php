@@ -188,7 +188,14 @@
 
             <div class="col-6 p-0">
               <h6 class="mt-1">CANT. RECEPCIONADA: </h6>
-              <span class="" >{{$fmp->cantidad_recepcionada}} - {{$fmp->unidad_medida}}</span>
+              @if ($fmp->cantidad_recepcionada && $fmp->unidad_medida)
+                <span class="" >{{$fmp->cantidad_recepcionada}} - {{$fmp->unidad_medida}}</span>
+              @else
+                <span class="text-secondary" >
+                  <i class="fa fa-info-circle"></i>
+                  N/A
+                </span>
+              @endif
             </div>
 
             
@@ -336,8 +343,8 @@
 
           @else
             <div class="col-6 fondo">
-              <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-              <small class="text-info-emphasis mt-2" >No rellenado</small>
+              <i class="fa-solid fa-info-circle text-info-emphasis mt-2"></i>
+              <small class="text-info-emphasis mt-2" >N/A</small>
             </div>  
           @endif
       </div>
@@ -359,8 +366,8 @@
 
           @else
             <div class="col-6 fondo">
-              <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-              <small class="text-info-emphasis mt-2" >No rellenado</small>
+              <i class="fa-solid fa-info-circle text-info-emphasis mt-2"></i>
+              <small class="text-info-emphasis mt-2" >N/A</small>
             </div>  
           @endif 
       </div>
@@ -384,8 +391,8 @@
 
           @else
             <div class="col-6 fondo">
-              <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-              <small class="text-info-emphasis mt-2" >No rellenado</small>
+              <i class="fa-solid fa-info-circle text-info-emphasis mt-2"></i>
+              <small class="text-info-emphasis mt-2" >N/A</small>
             </div>  
           @endif
         
@@ -422,8 +429,8 @@
 
           @else
             <div class="col-6 fondo">
-              <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-              <small class="text-info-emphasis mt-2" >No rellenado</small>
+              <i class="fa-solid fa-info-circle text-info-emphasis mt-2"></i>
+              <small class="text-info-emphasis mt-2" >N/A</small>
             </div>  
           @endif
       </div>
@@ -442,8 +449,8 @@
 
           @else
             <div class="col-6 fondo">
-              <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-              <small class="text-info-emphasis mt-2" >No rellenado</small>
+              <i class="fa-solid fa-info-circle text-info-emphasis mt-2"></i>
+              <small class="text-info-emphasis mt-2" >N/A</small>
             </div>  
           @endif 
       </div>
@@ -461,8 +468,8 @@
 
           @else
             <div class="col-6 fondo">
-              <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-              <small class="text-info-emphasis mt-2" >No rellenado</small>
+              <i class="fa-solid fa-info-circle text-info-emphasis mt-2"></i>
+              <small class="text-info-emphasis mt-2" >N/A</small>
             </div>  
           @endif
       </div>
@@ -494,8 +501,8 @@
 
           @else
             <div class="col-6 fondo">
-              <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-              <small class="text-info-emphasis mt-2" >No rellenado</small>
+              <i class="fa-solid fa-info-circle text-info-emphasis mt-2"></i>
+              <small class="text-info-emphasis mt-2" >N/A</small>
             </div>  
           @endif
       </div>
@@ -515,8 +522,8 @@
 
           @else
             <div class="col-6 fondo">
-              <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-              <small class="text-info-emphasis mt-2" >No rellenado</small>
+              <i class="fa-solid fa-info-circle text-info-emphasis mt-2"></i>
+              <small class="text-info-emphasis mt-2" >N/A</small>
             </div>  
           @endif 
       </div>
@@ -594,7 +601,7 @@
           <small class="fw-bold">COLOR Y OLOR CARACTERISTICO</small>
         </div>
         <div class="col-6">
-            <h6 class="m-2">{{$fmp->colo_olor_caracteristico}}</h6>
+            <h6 class="m-2">{{$fmp->color_olor_caracteristico}}</h6>
         </div>
       </div>
     </div>
@@ -642,8 +649,8 @@
 
       @else
         <div class="col-6 fondo">
-          <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-          <small class="text-info-emphasis mt-2" >No rellenado</small>
+          <i class="fa-solid fa-info-circle text-info-emphasis mt-2"></i>
+          <small class="text-info-emphasis mt-2" >N/A</small>
         </div>  
       @endif 
       </div>
@@ -699,8 +706,8 @@
 
         @else
           <div class="col-6 fondo">
-            <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-            <small class="text-info-emphasis mt-2" >No rellenado</small>
+            <i class="fa-solid fa-info-circle text-info-emphasis mt-2"></i>
+            <small class="text-info-emphasis mt-2" >N/A</small>
           </div>  
         @endif
 
@@ -719,8 +726,8 @@
 
           @else
             <div class="col-6 fondo border border-white">
-              <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-              <small class="text-info-emphasis mt-2" >No rellenado</small>
+              <i class="fa-solid fa-info-circle text-info-emphasis mt-2"></i>
+              <small class="text-info-emphasis mt-2" >N/A</small>
             </div>  
           @endif
       </div>
@@ -741,8 +748,8 @@
 
           @else
             <div class="col-6 fondo border border-white">
-              <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-              <small class="text-info-emphasis mt-2" >No rellenado</small>
+              <i class="fa-solid fa-info-circle text-info-emphasis mt-2"></i>
+              <small class="text-info-emphasis mt-2" >N/A</small>
             </div>  
           @endif
       </div>
@@ -762,8 +769,8 @@
 
             @else
               <div class="col-6 fondo border border-white">
-                <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-                <small class="text-info-emphasis mt-2" >No rellenado</small>
+                <i class="fa-solid fa-info-circle text-info-emphasis mt-2"></i>
+                <small class="text-info-emphasis mt-2" >N/A</small>
               </div>  
             @endif
       </div>
@@ -785,8 +792,8 @@
 
           @else
             <div class="col-6 fondo">
-              <i class="fa-solid fa-square-xmark text-info-emphasis mt-2"></i>
-              <small class="text-info-emphasis mt-2" >No rellenado</small>
+              <i class="fa-solid fa-info-circle text-info-emphasis mt-2"></i>
+              <small class="text-info-emphasis mt-2" >N/A</small>
             </div>  
           @endif
       </div>
