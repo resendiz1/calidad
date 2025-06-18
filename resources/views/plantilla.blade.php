@@ -162,14 +162,18 @@
     document.addEventListener('DOMContentLoaded', function(){
         const input = document.getElementById('buscador_formatos');
         const items = document.querySelectorAll('.formato');
+        const mensajeVacio = document.getElementById('mensaje_vacio')
+
 
         input.addEventListener('keyup', function(){
             const filtro = this.value.toLowerCase();
+            let hayResultados = false;
             
             items.forEach(function(item){
                 const texto = item.textContent.toLowerCase();
 
                 if(texto.includes(filtro)){
+                  hayResultados = true;
                     item.style.display = "";
                 }
                 else{
@@ -178,7 +182,16 @@
             })
 
 
+            if(!hayResultados){
+              mensajeVacio.style.display = 'block'
+            }
+            else{
+              mensajeVacio.style.display = "none"
+            }
+
         })
+
+        
     })
 </script>
 

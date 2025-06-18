@@ -13,39 +13,24 @@
 
 
 
-<form action="{{route('buscados.fvu')}}" method="POST">
-    @csrf
-    <!-- INPUT PARA INGRESAR DATOS PARA BUSCAR -->
-    <div class="container mt-2 bg-white p-4 border border-5 sombra">
-        <div class="row">
-            <div class="col-12">
-                <div class="row justify-content-center">
-                    <div class="col-sm-6 col-md-4 col-lg-11 font-weight-bold">
-                        <label for="" class="my-2  h5"> <b> Busca por:</b> Proveedor, Folio, Producto o Lote </label>
-                        <input type="text" name="busqueda" class="form-control p-3 " placeholder="Busca por : Proveedor, Folio, Producto o Lote" autofocus >
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-11 d-flex align-items-center mt-2">
-                        <button class="btn btn-primary w-100  "> <i class="fa fa-search mx-3"></i> Buscar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- INPUT PARA INGRESAR DATOS PARA BUSCAR -->
-</form>
-
 
 
 
 
 <!-- PANEL PARA MOSTRAR LA TABLA CON LOS RESULTADOS DE LA BUSQUEDA -->
 <div class="container mt-4">
-    <div class="row">
-        <div class="col-12 bg-light p-4">
-
+    <div class="row justify-content-center">
+        <div class="col-10 text-center">
+            <input type="text" class="form-control p-4 fs-4 fw-bold" placeholder="Buscar por palabra clave" id="buscador_formatos" style="border: none;" autofocus>
+        </div>
+        <div class="col-12 bg-light p-4 mt-3">
+            <div id="mensaje_vacio" class="alert alert-gray text-center h3" style="display: none;">
+                <i class="fa fa-info-circle"></i>
+                No se encontraron resultados.
+            </div>
         @forelse ($formatos as $formato)
         <a href="{{route('fvu.lleno.admin', $formato->id)}}">
-            <div class="row p-3 resizeable-table mt-1 justify-content-around"> 
+            <div class="row p-3 resizeable-table mt-1 justify-content-around formato"> 
                 <div class="col-sm-12 col-md-6 col-lg-2">
                     <b>Folio: </b>
                     <h6 class="text-danger">{{$formato->folio}}</h6>

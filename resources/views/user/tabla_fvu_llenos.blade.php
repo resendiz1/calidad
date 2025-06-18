@@ -5,7 +5,7 @@
 <div class="container bg-white mt-4 mb-3 sombra border border-5">
     <div class="row">
         <div class="col-12 text-center p-3">
-            <h3 class="fw-bold">FORMATOS DE VERIFICACIÓN DE UNIDADEaS</h3>
+            <h3 class="fw-bold">FORMATOS DE VERIFICACIÓN DE UNIDADES</h3>
         </div>
     </div>
 </div>
@@ -20,7 +20,10 @@
             <input type="text" class="form-control p-4 fs-4 fw-bold" placeholder="Buscar por palabra clave" id="buscador_formatos" style="border: none;" autofocus>
         </div>
         <div class="col-12 bg-light p-4 mt-3">
-
+            <div id="mensaje_vacio" class="alert alert-gray text-center h3" style="display: none;">
+                <i class="fa fa-info-circle"></i>
+                No se encontraron resultados.
+            </div>
         @forelse ($fvu as $ifvu)
                
                 <a href="{{route('fvu.lleno', $ifvu->id)}}" class="formato">

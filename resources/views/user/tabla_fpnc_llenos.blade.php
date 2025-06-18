@@ -19,7 +19,10 @@
             <input type="text" class="form-control p-4 fs-4 fw-bold" placeholder="Buscar por palabra clave" id="buscador_formatos" style="border: none;" autofocus>
         </div>
         <div class="col-12 bg-light p-4 mt-3">
-
+            <div id="mensaje_vacio" class="alert alert-gray text-center h3" style="display: none;">
+                <i class="fa fa-info-circle"></i>
+                No se encontraron resultados.
+            </div>
         @forelse ($fpnc as $ifpnc)
                
                 <a href="{{route('fpnc.lleno', $ifpnc->id)}}" class="formato">
